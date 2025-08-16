@@ -1,40 +1,142 @@
 :root {
-  --color-primary: #0f172a;
-  --color-primary-100: #1e293b;
-  --color-primary-50: #334155;
-  --color-accent: #d4af37;
+  --color-primary: #2563eb; /* Brand blue */
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-accent: #fbbf24; /* Gold accent */
   --color-surface: #ffffff;
-  --color-ink: #0b1220;
+  --color-ink: #0f172a;
 }
 
 .dark {
-  --color-surface: #0b1220;
+  --color-surface: #0f172a;
   --color-ink: #f8fafc;
-  --color-accent: #e8c052;
 }
 
-/* Typography tweaks */
+/* Global */
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
 .display {
   letter-spacing: -0.02em;
 }
 
-/* Card hover pop effect */
+/* Cards */
 .card {
-  transition: all 0.25s ease-in-out;
+  background: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
 }
 .card:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(2, 6, 23, 0.18);
-  border-color: var(--color-accent);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
 }
 
-/* Fade-in animations */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+/* Inputs & Buttons */
+.input {
+  width: 100%;
+  border: 1px solid rgba(0,0,0,0.1);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  font-size: 0.9rem;
+  background: var(--color-surface);
 }
-.fade-in.visible {
+.input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+}
+
+.btn-primary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  display: inline-block;
+  background: var(--color-accent);
+  color: black;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+  opacity: 0.9;
+}
+
+/* Testimonials */
+.testimonial-carousel {
+  position: relative;
+  overflow: hidden;
+}
+.testimonial-slide {
+  display: none;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.testimonial-slide.active {
+  display: block;
   opacity: 1;
-  transform: translateY(0);
+  transform: translateX(0);
+}
+.stars {
+  color: var(--color-accent);
+  margin-top: 0.5rem;
+  font-size: 1.25rem;
+}
+
+/* Carousel Buttons */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.4);
+  border: none;
+  border-radius: 9999px;
+  padding: 0.75rem 1rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.carousel-btn:hover {
+  background: rgba(255,255,255,0.7);
+}
+.carousel-btn.left {
+  left: 0.5rem;
+}
+.carousel-btn.right {
+  right: 0.5rem;
+}
+
+/* Dots */
+#testimonialDots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+#testimonialDots button {
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 9999px;
+  background: #d1d5db;
+  border: none;
+  transition: background 0.3s ease;
+}
+#testimonialDots button.active {
+  background: var(--color-accent);
 }
