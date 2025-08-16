@@ -1,52 +1,74 @@
+/* ===== Theme Vars ===== */
 :root {
-  --color-primary: #2563eb; /* Brand blue */
-  --color-primary-50: #eff6ff;
-  --color-primary-100: #dbeafe;
-  --color-accent: #fbbf24; /* Gold accent */
+  --color-primary: #0f172a;   /* slate-900 */
+  --color-primary-100: #1e293b; /* slate-800 */
+  --color-primary-50: #334155;  /* slate-700 */
+  --color-accent: #d4af37;    /* elegant gold */
   --color-surface: #ffffff;
-  --color-ink: #0f172a;
+  --color-ink: #0b1220;
 }
 
 .dark {
-  --color-surface: #0f172a;
+  --color-surface: #0b1220;
   --color-ink: #f8fafc;
+  --color-accent: #e8c052;
 }
 
-/* Global */
+/* ===== Base ===== */
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Inter, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
+.display { letter-spacing: -0.02em; }
 
-.display {
-  letter-spacing: -0.02em;
-}
-
-/* Cards */
+/* ===== Cards (glass feel) ===== */
 .card {
-  background: var(--color-surface);
-  padding: 1.5rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.8));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(2,6,23,0.06);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 10px 24px rgba(2,6,23,0.08);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+.dark .card {
+  background: linear-gradient(180deg, rgba(15,23,42,0.8), rgba(15,23,42,0.6));
+  border-color: rgba(255,255,255,0.06);
 }
 .card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+  box-shadow: 0 16px 32px rgba(2,6,23,0.16);
+  border-color: rgba(212,175,55,0.4);
 }
 
-/* Inputs & Buttons */
+/* ===== Hero visual card ===== */
+.hero-card {
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  border-radius: 1.5rem;
+  border: 1px solid rgba(2,6,23,0.08);
+  background: linear-gradient(135deg, rgba(15,23,42,0.9), rgba(51,65,85,0.8));
+  padding: 0.25rem;
+  box-shadow: 0 16px 32px rgba(2,6,23,0.24);
+}
+.dark .hero-card {
+  background: linear-gradient(135deg, rgba(212,175,55,0.25), rgba(51,65,85,0.25));
+}
+
+/* ===== Inputs & Buttons ===== */
 .input {
   width: 100%;
   border: 1px solid rgba(0,0,0,0.1);
   border-radius: 0.75rem;
   padding: 0.75rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   background: var(--color-surface);
+  transition: box-shadow .2s ease, border-color .2s ease;
 }
 .input:focus {
   outline: none;
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px rgba(37,99,235,0.2);
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(212,175,55,0.25);
 }
 
 .btn-primary {
@@ -55,13 +77,12 @@ body {
   color: white;
   padding: 0.75rem 1.25rem;
   border-radius: 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(2,6,23,0.18);
+  transition: transform .2s ease, opacity .2s ease;
 }
-.btn-primary:hover {
-  background: #1d4ed8;
-}
+.btn-primary:hover { transform: translateY(-2px); opacity: .95; }
 
 .btn-secondary {
   display: inline-block;
@@ -69,74 +90,77 @@ body {
   color: black;
   padding: 0.75rem 1.25rem;
   border-radius: 0.75rem;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  font-weight: 600;
+  box-shadow: 0 8px 24px rgba(212,175,55,0.25);
+  transition: transform .2s ease, opacity .2s ease;
 }
-.btn-secondary:hover {
-  opacity: 0.9;
-}
+.btn-secondary:hover { transform: translateY(-2px); opacity: .95; }
 
-/* Testimonials */
-.testimonial-carousel {
-  position: relative;
-  overflow: hidden;
-}
-.testimonial-slide {
-  display: none;
-  opacity: 0;
-  transform: translateX(20px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
-}
-.testimonial-slide.active {
-  display: block;
-  opacity: 1;
-  transform: translateX(0);
-}
+/* ===== Testimonials ===== */
 .stars {
   color: var(--color-accent);
   margin-top: 0.5rem;
   font-size: 1.25rem;
+  letter-spacing: 2px;
 }
 
-/* Carousel Buttons */
+/* Slides (fade) */
+.testimonial { /* each slide */
+  opacity: 0;
+  transform: translateX(16px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.testimonial:not(.hidden) {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Arrows (fade white) */
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background: rgba(255,255,255,0.4);
+  color: black;
   border: none;
   border-radius: 9999px;
-  padding: 0.75rem 1rem;
-  font-size: 1.25rem;
+  padding: 0.6rem 0.85rem;
+  font-size: 1.1rem;
   cursor: pointer;
-  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  transition: background .2s ease, transform .15s ease;
 }
-.carousel-btn:hover {
-  background: rgba(255,255,255,0.7);
-}
-.carousel-btn.left {
-  left: 0.5rem;
-}
-.carousel-btn.right {
-  right: 0.5rem;
-}
+.carousel-btn:hover { background: rgba(255,255,255,0.7); transform: translateY(-50%) scale(1.04); }
+.dark .carousel-btn { background: rgba(255,255,255,0.2); color: white; }
+.dark .carousel-btn:hover { background: rgba(255,255,255,0.4); }
+.carousel-btn.left { left: -0.25rem; }
+.carousel-btn.right { right: -0.25rem; }
 
 /* Dots */
 #testimonialDots {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  margin-top: 1rem;
+  display: flex; justify-content: center; gap: 0.5rem; margin-top: 1rem;
 }
 #testimonialDots button {
-  width: 0.75rem;
-  height: 0.75rem;
-  border-radius: 9999px;
-  background: #d1d5db;
-  border: none;
-  transition: background 0.3s ease;
+  width: 10px; height: 10px; border-radius: 9999px; border: none;
+  background: #d1d5db; transition: background .25s ease, transform .25s ease;
 }
-#testimonialDots button.active {
-  background: var(--color-accent);
+#testimonialDots button.active { background: var(--color-accent); transform: scale(1.1); }
+.dark #testimonialDots button { background: #475569; }
+
+/* ===== Avatar (circle frame) ===== */
+.avatar-wrap {
+  position: relative;
+  width: 16rem; height: 16rem;
+  border-radius: 9999px;
+  padding: 6px;
+  background: radial-gradient(120% 120% at 10% 10%, rgba(212,175,55,0.45), rgba(255,255,255,0) 60%);
+  box-shadow: 0 12px 28px rgba(2,6,23,0.18);
+}
+.avatar-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 9999px;
+  background: transparent;
+  border: 2px solid rgba(212,175,55,0.6);
 }
