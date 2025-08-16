@@ -6,7 +6,7 @@ export default defineConfig({
   root: "app",
   plugins: [react()],
   base: "/",
-  publicDir: "app/public",
+  publicDir: "public",   // important: relative to the Vite root ("app")
   build: {
     outDir: "../",       // write production files to repository root
     emptyOutDir: false,  // do not wipe the repo root
