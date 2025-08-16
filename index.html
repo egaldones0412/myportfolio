@@ -1,404 +1,425 @@
 <!doctype html>
-<html lang="en" class="scroll-smooth">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
-    <meta name="description" content="Professional bookkeeping & management reporting — accurate, reliable, on time. Full-charge bookkeeping for U.S. & Canadian clients (IFRS/GAAP)." />
-    <meta name="theme-color" content="#0f172a" />
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Edz Lilian Galdones — Bookkeeping & Management Reporting</title>
+  <meta name="description" content="Full-charge bookkeeping, cleanup, and decision-ready management reporting for US & Canadian businesses. IFRS/GAAP discipline, on-time delivery." />
+  <link rel="canonical" href="https://your-domain.com/" />
+  <meta name="theme-color" content="#0b0d0f" />
 
-    <!-- Tailwind (Play CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: {
-                DEFAULT: 'var(--color-primary)',
-                50: 'var(--color-primary-50)',
-                100: 'var(--color-primary-100)',
-              },
-              accent: 'var(--color-accent)',
-              surface: 'var(--color-surface)',
-              ink: 'var(--color-ink)',
-            },
-            boxShadow: {
-              elevate: '0 8px 24px rgba(2,6,23,0.12)'
-            }
-          }
-        }
-      }
-    </script>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body class="bg-surface text-ink antialiased">
-    <!-- ============ Header ============ -->
-    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/80 border-b border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="flex h-16 items-center justify-between">
-          <a href="#" class="flex items-center gap-3 font-semibold">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand/90 text-white shadow-elevate">EG</span>
-            <span class="hidden sm:block">Edz Lilian Galdones</span>
-          </a>
+  <!-- Open Graph -->
+  <meta property="og:title" content="Edz Lilian Galdones — Bookkeeping & Management Reporting" />
+  <meta property="og:description" content="Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero." />
+  <meta property="og:image" content="https://your-domain.com/assets/og-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://your-domain.com/" />
 
-          <nav class="hidden md:flex items-center gap-6 text-sm">
-            <a href="#work" class="hover:text-accent">Work</a>
-            <a href="#services" class="hover:text-accent">Services</a>
-            <a href="#skills" class="hover:text-accent">Skills</a>
-            <a href="#process" class="hover:text-accent">Process</a>
-            <a href="#about" class="hover:text-accent">About</a>
-            <a href="#testimonials" class="hover:text-accent">Testimonials</a>
-            <a href="#faq" class="hover:text-accent">FAQ</a>
-            <a href="#contact" class="hover:text-accent">Contact</a>
-          </nav>
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Edz Lilian Galdones — Bookkeeping & Management Reporting" />
+  <meta name="twitter:description" content="Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero." />
+  <meta name="twitter:image" content="https://your-domain.com/assets/og-image.jpg" />
 
-          <div class="flex items-center gap-2">
-            <button id="themeToggle" aria-label="Toggle dark mode" class="rounded-xl border border-black/10 px-3 py-2 text-sm hover:bg-black/5">Theme</button>
-            <a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-4 py-2 text-sm font-medium text-black shadow-elevate hover:opacity-90">Book a Free Call</a>
-            <button class="md:hidden rounded-xl border border-black/10 p-2" id="menuBtn" aria-label="Open menu">☰</button>
+  <!-- Icons / Manifest -->
+  <link rel="icon" href="/favicon.ico" sizes="any" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <!-- Preconnects (safe to remove if unused) -->
+  <link rel="preconnect" href="https://calendly.com" crossorigin />
+
+  <link rel="stylesheet" href="style.css" />
+  <script>
+    // Respect user's last theme before paint (avoid flash)
+    (function() {
+      try {
+        var stored = localStorage.getItem('theme');
+        if (stored === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+        else if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch(e) {}
+    })();
+  </script>
+
+  <!-- SVG sprite (icons) -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path stroke-width="2" d="M12 22s8-7.58 8-12a8 8 0 10-16 0c0 4.42 8 12 8 12z"/>
+      <circle cx="12" cy="10" r="3" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <circle cx="12" cy="12" r="9" stroke-width="2"/>
+      <path d="M12 7v6l4 2" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" stroke-width="2"/>
+      <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+    </symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <rect x="3" y="5" width="18" height="16" rx="2" stroke-width="2"/>
+      <path d="M16 3v4M8 3v4M3 11h18" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-report" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <rect x="4" y="3" width="16" height="18" rx="2" stroke-width="2"/>
+      <path d="M8 9h8M8 13h8M8 17h5" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12V8l-4-6z" stroke-width="2"/>
+      <path d="M14 2v6h6" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M3 17l6-6 4 4 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M14 7h6v6" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M9 18h6M10 22h4" stroke-width="2" stroke-linecap="round"/>
+      <path d="M12 2a7 7 0 00-4 13c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0012 2z" stroke-width="2"/>
+    </symbol>
+    <symbol id="i-money" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <rect x="3" y="6" width="18" height="12" rx="2" stroke-width="2"/>
+      <circle cx="12" cy="12" r="3" stroke-width="2"/>
+      <path d="M7 10v4M17 10v4" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <rect x="5" y="4" width="14" height="16" rx="2" stroke-width="2"/>
+      <path d="M9 4V2h6v2" stroke-width="2"/>
+      <path d="M8 10h8M8 14h8" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 17.3l-5.56 3.27 1.43-6.15L3 9.97l6.27-.54L12 3.6l2.73 5.83 6.27.54-4.87 4.45 1.43 6.15z"/>
+    </symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M6 6l12 12M18 6l-12 12" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-width="2" stroke-linecap="round"/>
+    </symbol>
+  </svg>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Edz Lilian Galdones",
+    "description": "Full-charge bookkeeping, cleanup, and management reporting (IFRS/GAAP) for US & Canadian clients.",
+    "areaServed": ["US", "Canada"],
+    "url": "https://your-domain.com/",
+    "email": "mailto:hello@your-domain.com",
+    "sameAs": ["https://calendly.com/elgaldones"]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Homepage">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span class="brand-text">Edz Galdones</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#process">Process</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+        <a class="cta-small" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Call</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" aria-pressed="false">
+          <svg width="20" height="20" aria-hidden="true"><use href="#i-moon"/></svg>
+        </button>
+      </nav>
+
+      <button id="menuBtn" class="icon-btn nav-mobile-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
+        <svg width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+
+    <div id="mobileMenu" class="mobile-menu" hidden>
+      <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
+        <div class="mobile-menu-head">
+          <span class="brand-text">Menu</span>
+          <button id="menuClose" class="icon-btn" aria-label="Close menu">
+            <svg width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
+          </button>
+        </div>
+        <nav class="mobile-menu-nav">
+          <a href="#services" data-nav-close>Services</a>
+          <a href="#process" data-nav-close>Process</a>
+          <a href="#testimonials" data-nav-close>Testimonials</a>
+          <a href="#contact" data-nav-close>Contact</a>
+          <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="section-hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h1 class="h1">Accurate. Reliable. On Time.</h1>
+          <p class="lead">Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero.</p>
+
+          <div class="hero-ctas">
+            <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
+            <a class="btn btn-secondary" href="#work">See Case Studies</a>
           </div>
-        </div>
-      </div>
-      <div id="mobileMenu" class="md:hidden hidden border-t border-black/5 bg-surface">
-        <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm">
-          <a href="#work" class="hover:text-accent">Work</a>
-          <a href="#services" class="hover:text-accent">Services</a>
-          <a href="#skills" class="hover:text-accent">Skills</a>
-          <a href="#process" class="hover:text-accent">Process</a>
-          <a href="#about" class="hover:text-accent">About</a>
-          <a href="#testimonials" class="hover:text-accent">Testimonials</a>
-          <a href="#faq" class="hover:text-accent">FAQ</a>
-          <a href="#contact" class="hover:text-accent">Contact</a>
-        </div>
-      </div>
-    </header>
 
-    <!-- ============ Hero ============ -->
-    <section class="relative overflow-hidden">
-      <div class="mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div class="grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <h1 class="display text-4xl font-bold md:text-6xl">
-              Accurate. Reliable. <span class="text-accent">On&nbsp;Time.</span>
-            </h1>
-            <p class="mt-5 text-lg text-black/70 dark:text-white/70">
-              Bookkeeping & management reporting for growing businesses. Full-charge support across QBO, Xero, and more — with IFRS/GAAP discipline.
-            </p>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 text-white hover:bg-brand/90">Book a Free Consultation</a>
-              <a href="#work" class="inline-flex items-center rounded-xl border border-black/10 px-5 py-3 hover:bg-black/5">See Case Studies</a>
+          <ul class="hero-badges" role="list">
+            <li class="badge">
+              <span class="badge-ico" aria-hidden="true"><svg width="16" height="16"><use href="#i-map-pin"/></svg></span>
+              <span>Philippines (UTC+8)</span>
+            </li>
+            <li class="badge">
+              <span class="badge-ico" aria-hidden="true"><svg width="16" height="16"><use href="#i-clock"/></svg></span>
+              <span>Works EST/CST hours</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="hero-photo">
+          <img src="assets/me.png" width="360" height="360" loading="eager" fetchpriority="high" decoding="async" alt="Portrait of Edz Lilian Galdones" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="section scroll-offset">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="h2">Services</h2>
+          <p class="muted">Bookkeeping and accounting services tailored to startups and small businesses in the US and Canada.</p>
+        </header>
+
+        <div class="grid-cards services-grid">
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-money"/></svg></span>
+            <h3>Monthly bookkeeping and reconciliations</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
+            <h3>Accounts payable and receivable management</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3>Payroll processing support</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
+            <h3>Expense tracking and financial organization</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            <h3>Month‑end and year‑end close</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
+            <h3>Audit preparation and cleanup projects</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-report"/></svg></span>
+            <h3>Management reporting and KPI tracking</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
+            <h3>Tax compliance support (HST, GST, US/CA filings)</h3>
+          </article>
+          <article class="card item">
+            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-lightbulb"/></svg></span>
+            <h3>Advisory and process improvement</h3>
+          </article>
+        </div>
+
+        <p class="center muted mt-lg">Every business is unique. Let’s discuss a customized plan that fits your needs.</p>
+      </div>
+    </section>
+
+    <!-- Process -->
+    <section id="process" class="section scroll-offset">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="h2">Process</h2>
+          <p class="muted">Clear, collaborative steps from day one.</p>
+        </header>
+
+        <ol class="grid-cards process-grid" role="list">
+          <li class="card step-card">
+            <span class="step">
+              <span class="step-num">1</span>
+              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
+            </span>
+            <div class="step-body">
+              <h3>Discovery Call</h3>
+              <p>Needs assessment and scope discussion.</p>
             </div>
-            <p class="mt-4 text-sm text-black/60 dark:text-white/60">4+ years experience • 20+ client files • U.S. & Canada • HST/GST • T1/T2/T4</p>
-          </div>
-          <div class="relative">
-            <div class="hero-card">
-              <div class="h-full w-full rounded-[1.25rem] bg-surface p-6 grid grid-rows-3 gap-4">
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Month-End Close</div>
-                  <div class="mt-2 h-2 w-3/4 rounded-full bg-black/10"></div>
-                </div>
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Bank Recs • AJE • KPIs</div>
-                  <div class="mt-2 h-2 w-1/2 rounded-full bg-black/10"></div>
-                </div>
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Management Report</div>
-                  <div class="mt-2 h-2 w-2/3 rounded-full bg-black/10"></div>
-                </div>
-              </div>
+          </li>
+          <li class="card step-card">
+            <span class="step">
+              <span class="step-num">2</span>
+              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-doc"/></svg></span>
+            </span>
+            <div class="step-body">
+              <h3>File Review</h3>
+              <p>Historical cleanup or new system setup.</p>
             </div>
-            <div class="pointer-events-none absolute inset-x-0 -bottom-10 blur-2xl opacity-40" aria-hidden>
-              <div class="mx-auto h-32 w-3/4 rounded-full bg-accent"></div>
+          </li>
+          <li class="card step-card">
+            <span class="step">
+              <span class="step-num">3</span>
+              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+            </span>
+            <div class="step-body">
+              <h3>Monthly Cycle</h3>
+              <p>Reconciliations, AR/AP, payroll, close, reporting.</p>
             </div>
-          </div>
-        </div>
-
-        <!-- Trust badges -->
-        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 items-center opacity-80">
-          <div class="text-sm">Certified Xero Advisor</div>
-          <div class="text-sm">Certified QuickBooks ProAdvisor</div>
-          <div class="text-sm">Intuit-trained Bookkeeper</div>
-          <div class="text-sm">IFRS & GAAP</div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Services ============ -->
-    <section id="services" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Flexible, month-to-month support. Cleanup available as a project.</p>
-        </header>
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="card">
-            <h3 class="font-semibold">Monthly Bookkeeping</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Categorization, reconciliations, AJEs, financial statements (cash/accrual).</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Bank/CC tie-outs</li>
-              <li>Close checklist</li>
-              <li>Deliverables review</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3 class="font-semibold">Catch-Up & Cleanup</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Backlog completion and historical correction to restore accuracy.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Error tracing</li>
-              <li>Balance validation</li>
-              <li>Documentation</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3 class="font-semibold">Management Reporting</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Decision-ready P&L, BS, KPIs, trends and commentary.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Custom KPIs</li>
-              <li>Variance insight</li>
-              <li>Review session</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3 class="font-semibold">Workflow & Advisory</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Light advisory on process, tech stack, and data hygiene.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Tool alignment</li>
-              <li>Receipt capture</li>
-              <li>AR/AP structuring</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Work / Case Studies ============ -->
-    <section id="work" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Anonymized snapshots of impact delivered for clients.</p>
-        </header>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <article class="card">
-            <div class="text-xs uppercase tracking-wide text-black/50">Cleanup • Retail</div>
-            <h3 class="mt-2 font-semibold">3 years backlogged → 45-day turnaround</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit-ready books.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Variance reduced by 98%</li>
-              <li>Monthly close set to 5 business days</li>
-              <li>Cash flow visibility restored</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="text-xs uppercase tracking-wide text-black/50">Reporting • Services</div>
-            <h3 class="mt-2 font-semibold">From raw data to KPI dashboard</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Drove pricing decision on low-margin SKU</li>
-              <li>Improved AR collections by 17%</li>
-              <li>Board-ready monthly deck</li>
-            </ul>
-          </article>
-          <article class="card">
-            <div class="text-xs uppercase tracking-wide text-black/50">Process • SaaS</div>
-            <h3 class="mt-2 font-semibold">Close process re-engineering</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Built a close checklist, standardized AJEs, and aligned rev-rec with GAAP.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Cut close time by 40%</li>
-              <li>Fewer reclasses & post-close fixes</li>
-              <li>Audit trail hardened</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Skills & Certs ============ -->
-    <section id="skills" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Skills & Certifications</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Platforms, frameworks, and standards I work with.</p>
-        </header>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="card"><strong>QuickBooks Online</strong><div class="text-sm text-black/70 dark:text-white/70">Certified ProAdvisor</div></div>
-          <div class="card"><strong>Xero</strong><div class="text-sm text-black/70 dark:text-white/70">Certified Advisor</div></div>
-          <div class="card"><strong>IFRS & GAAP</strong><div class="text-sm text-black/70 dark:text-white/70">Standards & compliance</div></div>
-          <div class="card"><strong>HST / GST</strong><div class="text-sm text-black/70 dark:text-white/70">Canada filings</div></div>
-          <div class="card"><strong>AR / AP</strong><div class="text-sm text-black/70 dark:text-white/70">Aging, collections, vendor mgmt</div></div>
-          <div class="card"><strong>Management Packs</strong><div class="text-sm text-black/70 dark:text-white/70">KPIs, trends, commentary</div></div>
-          <div class="card"><strong>Cleanup</strong><div class="text-sm text-black/70 dark:text-white/70">Backlogs & corrections</div></div>
-          <div class="card"><strong>Tools</strong><div class="text-sm text-black/70 dark:text-white/70">Zoho, Wave, MYOB, FreshBooks, Sage, Odoo</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Process ============ -->
-    <section id="process" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">From intro call to monthly delivery.</p>
-        </header>
-        <ol class="mt-10 grid gap-6 md:grid-cols-5">
-          <li class="card"><span class="text-xs uppercase text-black/50">Step 1</span><h3 class="font-semibold">Intro Call</h3><p class="mt-2 text-sm">Scope, systems, goals</p></li>
-          <li class="card"><span class="text-xs uppercase text-black/50">Step 2</span><h3 class="font-semibold">File Review</h3><p class="mt-2 text-sm">Assess health & cleanup</p></li>
-          <li class="card"><span class="text-xs uppercase text-black/50">Step 3</span><h3 class="font-semibold">Onboarding</h3><p class="mt-2 text-sm">Access, checklist, KPIs</p></li>
-          <li class="card"><span class="text-xs uppercase text-black/50">Step 4</span><h3 class="font-semibold">Monthly Close</h3><p class="mt-2 text-sm">Recs, AJEs, validate</p></li>
-          <li class="card"><span class="text-xs uppercase text-black/50">Step 5</span><h3 class="font-semibold">Delivery & Review</h3><p class="mt-2 text-sm">Statements + insights</p></li>
+          </li>
+          <li class="card step-card">
+            <span class="step">
+              <span class="step-num">4</span>
+              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
+            </span>
+            <div class="step-body">
+              <h3>Reporting</h3>
+              <p>Management reports, KPIs, insights, commentary.</p>
+            </div>
+          </li>
+          <li class="card step-card">
+            <span class="step">
+              <span class="step-num">5</span>
+              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-lightbulb"/></svg></span>
+            </span>
+            <div class="step-body">
+              <h3>Advisory Support</h3>
+              <p>Recommendations to improve efficiency and decision‑making.</p>
+            </div>
+          </li>
         </ol>
       </div>
     </section>
 
-    <!-- ============ About ============ -->
-    <section id="about" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="grid gap-10 md:grid-cols-2 items-center">
-          <div>
-            <h2 class="display text-3xl font-semibold md:text-4xl">About Me</h2>
-            <p class="mt-4 text-black/70 dark:text-white/70">
-              I’m a QuickBooks Online ProAdvisor and Xero Certified Advisor with 4+ years of full-charge bookkeeping, management reporting, and cleanup for startups and small businesses across the U.S. and Canada. I bring IFRS/GAAP rigor with a calm, reliable delivery style.
-            </p>
-            <p class="mt-3 text-black/70 dark:text-white/70">
-              Right now, I’m also learning to code using GitHub — this site exists because I love building, learning, and shipping. I always aim to upskill so I never stay stagnant.
-            </p>
-            <ul class="mt-4 list-disc pl-5 text-sm">
-              <li>20+ client files managed • HST/GST filings</li>
-              <li>Management reporting & KPI design</li>
-              <li>Remote collaboration across time zones</li>
-            </ul>
-            <div class="mt-5">
-              <h3 class="font-semibold">Recent project-based clients</h3>
-              <ul class="mt-2 grid sm:grid-cols-2 text-sm text-black/70 dark:text-white/70">
-                <li>Group 28th, LLC</li>
-                <li>HOME OFFICE 8643, LLC</li>
-                <li>RealTours, LLC</li>
-                <li>Rise Up Media Limited</li>
-                <li>Unit Retail B.V</li>
-              </ul>
-            </div>
-            <div class="mt-6 flex gap-3">
-              <a href="#contact" class="btn-primary">Work with Me</a>
-              <a href="assets/resume.pdf" target="_blank" class="btn-secondary">View Résumé</a>
-            </div>
-          </div>
-          <div class="flex justify-center">
-            <!-- Upload your transparent PNG to assets/me.png -->
-            <div class="avatar-wrap">
-              <img src="assets/me.png" alt="Edz Lilian Galdones" class="avatar-img" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Testimonials ============ -->
-    <section id="testimonials" class="py-20">
-      <div class="mx-auto max-w-4xl px-4 md:px-6 relative">
-        <header class="max-w-2xl mx-auto text-center">
-          <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
+    <!-- Testimonials -->
+    <section id="testimonials" class="section scroll-offset">
+      <div class="container">
+        <header class="section-head">
+          <h2 class="h2">What Clients Say</h2>
+          <p class="muted">Trust built on accuracy, consistency, and proactive communication.</p>
         </header>
 
-        <div class="mt-10 relative">
-          <!-- Slides -->
-          <div class="testimonial transition-all duration-700 ease-in-out text-center">
-            <blockquote class="text-lg italic">“Thank you for everything, Edz! You saved my life. This is just a partial payment — more to come.”</blockquote>
-            <figcaption class="mt-3 text-sm font-medium text-black/70 dark:text-white/70">Danny Batimana — Happiness Is Now Inc.</figcaption>
-            <div class="mt-2 stars" aria-label="5 out of 5 stars">★★★★★</div>
-          </div>
-
-          <div class="testimonial hidden transition-all duration-700 ease-in-out text-center">
-            <blockquote class="text-lg italic">“We’re grateful to have you as part of the team, Edz. Keep up the great work! It’ll be a busy season, but you’ve made everything easier for us.”</blockquote>
-            <figcaption class="mt-3 text-sm font-medium text-black/70 dark:text-white/70">Scarlet Ngo — Clarity Tax</figcaption>
-            <div class="mt-2 stars" aria-label="5 out of 5 stars">★★★★★</div>
-          </div>
-
-          <!-- Arrows -->
-          <button id="prevTestimonial" class="carousel-btn left" aria-label="Previous testimonial">◀</button>
-          <button id="nextTestimonial" class="carousel-btn right" aria-label="Next testimonial">▶</button>
-        </div>
-
-        <!-- Dots -->
-        <div id="testimonialDots" class="mt-6 flex justify-center gap-3"></div>
-      </div>
-    </section>
-
-    <!-- ============ FAQ ============ -->
-    <section id="faq" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Quick answers to common questions.</p>
-        </header>
-        <div class="mt-10 grid gap-4 md:max-w-3xl">
-          <details class="group card">
-            <summary class="cursor-pointer font-medium">Do you work 100% virtually?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Yes — secure, remote delivery across time zones using least-privilege access and encrypted tools.</p>
-          </details>
-          <details class="group card">
-            <summary class="cursor-pointer font-medium">Which platforms do you support?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
-          </details>
-          <details class="group card">
-            <summary class="cursor-pointer font-medium">Do you handle taxes?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
-          </details>
-          <details class="group card">
-            <summary class="cursor-pointer font-medium">How do you price services?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">I scope based on transaction volume, accounts, and complexity. After a brief file review, I provide a simple monthly quote. Cleanup is quoted as a one-time project.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ Contact ============ -->
-    <section id="contact" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="grid gap-10 md:grid-cols-2 items-start">
-          <form action="https://formspree.io/f/xblkbpav" method="POST" class="space-y-4 bg-surface p-6 rounded-2xl shadow-elevate">
-            <h2 class="display text-2xl font-semibold">Let’s Talk</h2>
-            <p class="text-sm text-black/70 dark:text-white/70">Tell me about your books and goals. I’ll reply within one business day.</p>
-            <input type="text" name="name" placeholder="Your Name" required class="input" />
-            <input type="email" name="email" placeholder="you@company.com" required class="input" />
-            <textarea name="message" rows="5" placeholder="What do you need help with?" required class="input"></textarea>
-            <button type="submit" class="btn-primary">Send Message</button>
-            <p class="text-xs text-black/60 dark:text-white/60">By submitting, you agree to be contacted about your inquiry.</p>
-          </form>
-
-          <div class="bg-surface p-6 rounded-2xl shadow-elevate">
-            <h3 class="font-semibold">Book a Call</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Schedule directly with me on Calendly.</p>
-            <a href="https://calendly.com/elgaldones" target="_blank" class="btn-secondary mt-4 inline-block">Open Calendly</a>
-
-            <div class="mt-6">
-              <h3 class="font-semibold">Contact Details</h3>
-              <ul class="mt-2 text-sm">
-                <li>Email: <a class="underline hover:text-accent" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></li>
-                <li>Location: Philippines (GMT+8)</li>
-                <li>Availability: Mon–Fri</li>
-              </ul>
+        <div class="grid-cards testimonials-grid">
+          <figure class="card t-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
             </div>
-          </div>
+            <blockquote>“Edz is meticulous and reliable — our month‑end close has never been smoother.”</blockquote>
+            <figcaption><strong>COO</strong>, Real Estate Firm (US)</figcaption>
+          </figure>
+
+          <figure class="card t-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>“She caught and fixed discrepancies our previous accountant missed.”</blockquote>
+            <figcaption>Founder, Tech Startup (Canada)</figcaption>
+          </figure>
+
+          <figure class="card t-card">
+            <div class="stars" aria-label="5 out of 5 stars">
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
+            </div>
+            <blockquote>“Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution.”</blockquote>
+            <figcaption>Mick P., Business Owner</figcaption>
+          </figure>
         </div>
       </div>
     </section>
 
-    <!-- ============ Footer ============ -->
-    <footer class="py-10">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div class="text-sm">© <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div>
-          <nav class="flex flex-wrap gap-4 text-sm">
-            <a href="#work" class="hover:text-accent">Work</a>
-            <a href="#services" class="hover:text-accent">Services</a>
-            <a href="#contact" class="hover:text-accent">Contact</a>
-          </nav>
-        </div>
-      </div>
-    </footer>
+    <!-- Contact -->
+    <section id="contact" class="section scroll-offset">
+      <div class="container contact-grid">
+        <header>
+          <h2 class="h2">Get in touch</h2>
+          <p class="muted">Tell me about your bookkeeping needs. I’ll respond within one business day.</p>
+          <p class="mt-sm"><a class="link" href="mailto:hello@your-domain.com">hello@your-domain.com</a></p>
+          <p class="mt-sm">
+            <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
+          </p>
+        </header>
 
-    <script src="main.js"></script>
-  </body>
+        <form id="contactForm" class="form" action="https://formspree.io/f/your-id" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Your Name</label>
+            <input id="name" name="name" type="text" autocomplete="name" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="What do you need help with?" required></textarea>
+          </div>
+          <div class="field">
+            <button class="btn btn-primary" type="submit">Send Message</button>
+            <a class="btn btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">View Résumé</a>
+          </div>
+          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</p>
+      <nav class="footer-nav" aria-label="Footer">
+        <a href="/robots.txt">Robots</a>
+        <a href="/sitemap.xml">Sitemap</a>
+        <a href="#top">Back to top</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Welcome Modal (pops up on first visit) -->
+  <div id="welcome" class="modal" hidden>
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDesc">
+      <button class="icon-btn modal-close" aria-label="Close" data-close>
+        <svg width="22" height="22" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+      <h2 id="welcomeTitle" class="h3">Welcome — let’s make your books decision‑ready</h2>
+      <p id="welcomeDesc" class="muted">Book a quick call to discuss your needs, or browse case studies first.</p>
+
+      <div class="modal-ctas">
+        <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
+        <a class="btn btn-secondary" href="#work" data-close>See Case Studies</a>
+      </div>
+
+      <label class="dont-show">
+        <input id="dontShow" type="checkbox" />
+        Don’t show this again
+      </label>
+    </div>
+  </div>
+
+  <script src="main.js" defer></script>
+</body>
 </html>
