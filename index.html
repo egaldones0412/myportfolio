@@ -1,458 +1,171 @@
-<!doctype html>
-<html lang="en" dir="ltr">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Edz Lilian Galdones — Bookkeeping & Management Reporting</title>
-  <meta name="description" content="Full-charge bookkeeping, cleanup, and decision-ready management reporting for US & Canadian businesses. IFRS/GAAP discipline, on-time delivery." />
-  <link rel="canonical" href="https://www.elgaldones.works/" />
-  <meta name="theme-color" content="#0b0d0f" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Edz Lilian Galdones — Bookkeeping & Management Reporting" />
-  <meta property="og:description" content="Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero." />
-  <meta property="og:image" content="https://www.elgaldones.works/assets/og-image.jpg" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.elgaldones.works/" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Edz Lilian Galdones — Bookkeeping & Management Reporting" />
-  <meta name="twitter:description" content="Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero." />
-  <meta name="twitter:image" content="https://www.elgaldones.works/assets/og-image.jpg" />
-
-  <!-- Icons / Manifest -->
-  <link rel="icon" href="/favicon.ico" sizes="any" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- Optional: Inter font (remove if you didn't use it previously) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Preconnects (safe to remove if unused) -->
-  <link rel="preconnect" href="https://calendly.com" crossorigin />
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edz Lilian Galdones - Bookkeeping & Accounting</title>
   <link rel="stylesheet" href="style.css" />
-  <script>
-    // Respect user's last theme before paint (avoid flash)
-    (function() {
-      try {
-        var stored = localStorage.getItem('theme');
-        if (stored === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
-        else if (stored === 'light') document.documentElement.setAttribute('data-theme', 'light');
-      } catch(e) {}
-    })();
-  </script>
-
-  <!-- SVG sprite (icons) -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="i-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path stroke-width="2" d="M12 22s8-7.58 8-12a8 8 0 10-16 0c0 4.42 8 12 8 12z"/>
-      <circle cx="12" cy="10" r="3" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <circle cx="12" cy="12" r="9" stroke-width="2"/>
-      <path d="M12 7v6l4 2" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M12 3l7 4v5c0 5-3.5 9-7 9s-7-4-7-9V7l7-4z" stroke-width="2"/>
-      <path d="M9 12l2 2 4-4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-    </symbol>
-    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <rect x="3" y="5" width="18" height="16" rx="2" stroke-width="2"/>
-      <path d="M16 3v4M8 3v4M3 11h18" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-report" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <rect x="4" y="3" width="16" height="18" rx="2" stroke-width="2"/>
-      <path d="M8 9h8M8 13h8M8 17h5" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-doc" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12V8l-4-6z" stroke-width="2"/>
-      <path d="M14 2v6h6" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M3 17l6-6 4 4 7-7" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M14 7h6v6" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M9 18h6M10 22h4" stroke-width="2" stroke-linecap="round"/>
-      <path d="M12 2a7 7 0 00-4 13c.6.5 1 1.2 1 2h6c0-.8.4-1.5 1-2A7 7 0 0012 2z" stroke-width="2"/>
-    </symbol>
-    <symbol id="i-money" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <rect x="3" y="6" width="18" height="12" rx="2" stroke-width="2"/>
-      <circle cx="12" cy="12" r="3" stroke-width="2"/>
-      <path d="M7 10v4M17 10v4" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-clipboard" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <rect x="5" y="4" width="14" height="16" rx="2" stroke-width="2"/>
-      <path d="M9 4V2h6v2" stroke-width="2"/>
-      <path d="M8 10h8M8 14h8" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-star" viewBox="0 0 24 24" fill="currentColor">
-      <path d="M12 17.3l-5.56 3.27 1.43-6.15L3 9.97l6.27-.54L12 3.6l2.73 5.83 6.27.54-4.87 4.45 1.43 6.15z"/>
-    </symbol>
-    <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M3 6h18M3 12h18M3 18h18" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M6 6l12 12M18 6l-12 12" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-    <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-width="2" stroke-linecap="round"/>
-    </symbol>
-  </svg>
-
-  <!-- Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "name": "Edz Lilian Galdones",
-    "description": "Full-charge bookkeeping, cleanup, and management reporting (IFRS/GAAP) for US & Canadian clients.",
-    "areaServed": ["US", "Canada"],
-    "url": "https://www.elgaldones.works/",
-    "email": "mailto:hello@elgaldones.works",
-    "sameAs": ["https://calendly.com/elgaldones"]
-  }
-  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a2e0adf6d4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" id="top">
-    <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="Homepage">
-        <span class="brand-dot" aria-hidden="true"></span>
-        <span class="brand-text">Edz Galdones</span>
-      </a>
-
-      <nav class="nav-desktop" aria-label="Primary">
-        <a href="#services">Services</a>
-        <a href="#process">Process</a>
-        <a href="#work">Case Studies</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-        <a class="cta-small" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Call</a>
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" aria-pressed="false">
-          <svg width="20" height="20" aria-hidden="true"><use href="#i-moon"/></svg>
-        </button>
-      </nav>
-
-      <button id="menuBtn" class="icon-btn nav-mobile-btn" aria-label="Open menu" aria-controls="mobileMenu" aria-expanded="false">
-        <svg width="24" height="24" aria-hidden="true"><use href="#i-menu"/></svg>
-      </button>
-    </div>
-
-    <div id="mobileMenu" class="mobile-menu" hidden>
-      <div class="mobile-menu-panel" role="dialog" aria-modal="true" aria-label="Mobile menu">
-        <div class="mobile-menu-head">
-          <span class="brand-text">Menu</span>
-          <button id="menuClose" class="icon-btn" aria-label="Close menu">
-            <svg width="24" height="24" aria-hidden="true"><use href="#i-close"/></svg>
-          </button>
-        </div>
-        <nav class="mobile-menu-nav">
-          <a href="#services" data-nav-close>Services</a>
-          <a href="#process" data-nav-close>Process</a>
-          <a href="#work" data-nav-close>Case Studies</a>
-          <a href="#testimonials" data-nav-close>Testimonials</a>
-          <a href="#contact" data-nav-close>Contact</a>
-          <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
-        </nav>
+  <!-- Navbar -->
+  <header id="navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <img src="images/edz-logo.png" alt="Edz Logo">
+        <span>Edz Lilian Galdones</span>
       </div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li class="dropdown">
+            <a href="#services">Services <i class="fas fa-caret-down"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="#services">Payroll</a></li>
+              <li><a href="#services">Monthly Bookkeeping</a></li>
+              <li><a href="#services">Cleanup</a></li>
+              <li><a href="#services">Advisory</a></li>
+              <li><a href="#services">Audit Prep</a></li>
+              <li><a href="#services">Reporting</a></li>
+              <li><a href="#services">Tax Support</a></li>
+            </ul>
+          </li>
+          <li><a href="#case-studies">Case Studies</a></li>
+          <li><a href="https://calendly.com/elgaldones" class="btn-nav">Book a Call</a></li>
+        </ul>
+        <div class="hamburger"><i class="fas fa-bars"></i></div>
+      </nav>
     </div>
   </header>
 
-  <main id="main">
-    <!-- Hero -->
-    <section class="section-hero">
-      <div class="container hero-grid">
-        <div class="hero-copy">
-          <h1 class="h1">Accurate. Reliable. On Time.</h1>
-          <p class="lead">Reliable month-end close, clean reconciliations, and decision-ready reporting in QuickBooks Online or Xero.</p>
-
-          <div class="hero-ctas">
-            <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
-            <a class="btn btn-secondary" href="#work">See Case Studies</a>
-          </div>
-
-          <ul class="hero-badges" role="list">
-            <li class="badge">
-              <span class="badge-ico" aria-hidden="true"><svg width="16" height="16"><use href="#i-map-pin"/></svg></span>
-              <span>Philippines (UTC+8)</span>
-            </li>
-            <li class="badge">
-              <span class="badge-ico" aria-hidden="true"><svg width="16" height="16"><use href="#i-clock"/></svg></span>
-              <span>Works EST/CST hours</span>
-            </li>
-          </ul>
-        </div>
-
-        <div class="hero-photo">
-          <img src="assets/me.png" width="360" height="360" loading="eager" fetchpriority="high" decoding="async" alt="Portrait of Edz Lilian Galdones" />
+  <!-- Hero Section -->
+  <section id="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Accurate. Reliable. On Time.</h1>
+        <p>Helping startups and small businesses in the U.S. and Canada build solid financial foundations through bookkeeping, reporting, and advisory support.</p>
+        <div class="hero-buttons">
+          <a href="https://calendly.com/elgaldones" class="btn-primary">Work With Me</a>
+          <a href="resume.pdf" class="btn-secondary" target="_blank">Download Resume</a>
         </div>
       </div>
-    </section>
-
-    <!-- Services -->
-    <section id="services" class="section scroll-offset">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="h2">Services</h2>
-          <p class="muted">Bookkeeping and accounting services tailored to startups and small businesses in the US and Canada.</p>
-        </header>
-
-        <div class="grid-cards services-grid">
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-money"/></svg></span>
-            <h3>Monthly bookkeeping and reconciliations</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
-            <h3>Accounts payable and receivable management</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-            <h3>Payroll processing support</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-clipboard"/></svg></span>
-            <h3>Expense tracking and financial organization</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-            <h3>Month‑end and year‑end close</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
-            <h3>Audit preparation and cleanup projects</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-report"/></svg></span>
-            <h3>Management reporting and KPI tracking</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-doc"/></svg></span>
-            <h3>Tax compliance support (HST, GST, US/CA filings)</h3>
-          </article>
-          <article class="card item">
-            <span class="icon-wrap"><svg width="20" height="20" aria-hidden="true"><use href="#i-lightbulb"/></svg></span>
-            <h3>Advisory and process improvement</h3>
-          </article>
-        </div>
-
-        <p class="center muted mt-lg">Every business is unique. Let’s discuss a customized plan that fits your needs.</p>
+      <div class="hero-photo">
+        <img src="images/edz-photo.png" alt="Edz Lilian Galdones">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Process -->
-    <section id="process" class="section scroll-offset">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="h2">Process</h2>
-          <p class="muted">Clear, collaborative steps from day one.</p>
-        </header>
-
-        <ol class="grid-cards process-grid" role="list">
-          <li class="card step-card">
-            <span class="step">
-              <span class="step-num">1</span>
-              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-shield-check"/></svg></span>
-            </span>
-            <div class="step-body">
-              <h3>Discovery Call</h3>
-              <p>Needs assessment and scope discussion.</p>
-            </div>
-          </li>
-          <li class="card step-card">
-            <span class="step">
-              <span class="step-num">2</span>
-              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-doc"/></svg></span>
-            </span>
-            <div class="step-body">
-              <h3>File Review</h3>
-              <p>Historical cleanup or new system setup.</p>
-            </div>
-          </li>
-          <li class="card step-card">
-            <span class="step">
-              <span class="step-num">3</span>
-              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-calendar"/></svg></span>
-            </span>
-            <div class="step-body">
-              <h3>Monthly Cycle</h3>
-              <p>Reconciliations, AR/AP, payroll, close, reporting.</p>
-            </div>
-          </li>
-          <li class="card step-card">
-            <span class="step">
-              <span class="step-num">4</span>
-              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-trending-up"/></svg></span>
-            </span>
-            <div class="step-body">
-              <h3>Reporting</h3>
-              <p>Management reports, KPIs, insights, commentary.</p>
-            </div>
-          </li>
-          <li class="card step-card">
-            <span class="step">
-              <span class="step-num">5</span>
-              <span class="step-ico"><svg width="18" height="18" aria-hidden="true"><use href="#i-lightbulb"/></svg></span>
-            </span>
-            <div class="step-body">
-              <h3>Advisory Support</h3>
-              <p>Recommendations to improve efficiency and decision‑making.</p>
-            </div>
-          </li>
-        </ol>
+  <!-- About -->
+  <section id="about">
+    <div class="about-container">
+      <div class="about-photo">
+        <img src="images/edz-photo.png" alt="About Edz">
       </div>
-    </section>
-
-    <!-- Case Studies / Work -->
-    <section id="work" class="section scroll-offset">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="h2">Case Studies</h2>
-          <p class="muted">Selected engagements highlighting cleanup, monthly close discipline, and decision‑ready reporting.</p>
-        </header>
-
-        <div class="grid-cards">
-          <article class="card">
-            <h3>Tech Startup (Canada)</h3>
-            <p class="muted">Corrected prior discrepancies, rebuilt QBO files, and implemented a 5‑day close with KPI reporting.</p>
-          </article>
-          <article class="card">
-            <h3>Real Estate Firm (US)</h3>
-            <p class="muted">Stabilized AR/AP workflows, automated bank feeds, and delivered reliable month‑end reconciliations.</p>
-          </article>
-          <article class="card">
-            <h3>International Review</h3>
-            <p class="muted">Prepared management reports for cross‑border submission; finalized statements accepted by HK institution.</p>
-          </article>
-        </div>
+      <div class="about-text">
+        <h2>Hi, I’m Edz Lilian Galdones 👋</h2>
+        <p>I’m a Certified QuickBooks Online ProAdvisor, Xero Certified Advisor, and Intuit Trained Bookkeeper with over 4 years of experience providing bookkeeping and accounting support to startups and small businesses in the U.S. and Canada.</p>
+        <p>I specialize in full-cycle bookkeeping, management reporting, reconciliations, payroll, and audit-ready cleanups. My goal is to give business owners clarity, confidence, and control over their finances — so they can focus on growth.</p>
+        <p><strong>✨ Fun fact:</strong> I built this very website by teaching myself GitHub and coding. I believe in constantly upskilling so I never remain stagnant.</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Testimonials -->
-    <section id="testimonials" class="section scroll-offset">
-      <div class="container">
-        <header class="section-head">
-          <h2 class="h2">What Clients Say</h2>
-          <p class="muted">Trust built on accuracy, consistency, and proactive communication.</p>
-        </header>
+  <!-- Services -->
+  <section id="services">
+    <h2>Services I Offer</h2>
+    <div class="services-container">
+      <div class="service-card"><i class="fas fa-receipt"></i><h3>Expense Tracking</h3></div>
+      <div class="service-card"><i class="fas fa-file-invoice-dollar"></i><h3>Accounts Payable / Receivable</h3></div>
+      <div class="service-card"><i class="fas fa-chart-line"></i><h3>Management Reporting</h3></div>
+      <div class="service-card"><i class="fas fa-balance-scale"></i><h3>Tax Compliance Support</h3></div>
+      <div class="service-card"><i class="fas fa-user-check"></i><h3>Payroll Processing</h3></div>
+      <div class="service-card"><i class="fas fa-folder-open"></i><h3>Audit Preparation & Cleanup</h3></div>
+      <div class="service-card"><i class="fas fa-lightbulb"></i><h3>Advisory & Process Improvement</h3></div>
+    </div>
+  </section>
 
-        <div class="grid-cards testimonials-grid">
-          <figure class="card t-card">
-            <div class="stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-            </div>
-            <blockquote>“Edz is meticulous and reliable — our month‑end close has never been smoother.”</blockquote>
-            <figcaption><strong>COO</strong>, Real Estate Firm (US)</figcaption>
-          </figure>
+  <!-- Process -->
+  <section id="process">
+    <h2>My Process</h2>
+    <div class="process-steps">
+      <div class="step"><i class="fas fa-comments"></i><h3>Discovery Call</h3><p>A quick chat to learn more about your business, setup, and goals.</p></div>
+      <div class="step"><i class="fas fa-search"></i><h3>File Review</h3><p>I check your books to see what’s working, what needs fixing, and what’s missing.</p></div>
+      <div class="step"><i class="fas fa-sync-alt"></i><h3>Monthly Cycle</h3><p>Ongoing bookkeeping, reconciliations, payroll, and compliance.</p></div>
+      <div class="step"><i class="fas fa-chart-pie"></i><h3>Reporting</h3><p>Monthly reports (P&L, Balance Sheet, KPIs) to track your business health.</p></div>
+      <div class="step"><i class="fas fa-handshake"></i><h3>Advisory Support</h3><p>Insights and guidance to improve processes and prepare for growth.</p></div>
+    </div>
+  </section>
 
-          <figure class="card t-card">
-            <div class="stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-            </div>
-            <blockquote>“She caught and fixed discrepancies our previous accountant missed.”</blockquote>
-            <figcaption>Founder, Tech Startup (Canada)</figcaption>
-          </figure>
+  <!-- Case Studies -->
+  <section id="case-studies">
+    <h2>Case Studies</h2>
+    <div class="case-container">
+      <div class="case-card"><h3>Saving Time During Tax Season</h3><p>Cleanup and reconciliations for a U.S. tax firm under deadline pressure.</p><p><strong>Result:</strong> Hours saved, fewer errors, on-time filing.</p></div>
+      <div class="case-card"><h3>Financial Clarity for a Retailer</h3><p>Built reporting packs for a Netherlands retailer lacking visibility.</p><p><strong>Result:</strong> Clear decision-making, successful expansion.</p></div>
+      <div class="case-card"><h3>Fixing Compliance Issues</h3><p>Corrected rejected QuickBooks reports for a media company.</p><p><strong>Result:</strong> Reports accepted, compliance restored.</p></div>
+    </div>
+  </section>
 
-          <figure class="card t-card">
-            <div class="stars" aria-label="5 out of 5 stars">
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-              <svg width="16" height="16" aria-hidden="true"><use href="#i-star"/></svg>
-            </div>
-            <blockquote>“Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution.”</blockquote>
-            <figcaption>Mick P., Business Owner</figcaption>
-          </figure>
-        </div>
+  <!-- Clients -->
+  <section id="clients">
+    <h2>Selected Clients</h2>
+    <ul>
+      <li>Group 28th, LLC (US)</li>
+      <li>HOME OFFICE 8643, LLC (US)</li>
+      <li>RealTours, LLC (US)</li>
+      <li>Rise Up Media Limited (UK)</li>
+      <li>Unit Retail B.V. (Netherlands)</li>
+    </ul>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>What Clients Say</h2>
+    <div class="testimonial-carousel">
+      <div class="testimonial active">
+        <p>"Working with Edz has been a game-changer for me... I honestly feel like she saved me."</p>
+        <h4>— Danny Batimana, Founder – Happiness Is Now Inc.</h4>
+        <div class="stars">★★★★★</div>
       </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="section scroll-offset">
-      <div class="container contact-grid">
-        <header>
-          <h2 class="h2">Get in touch</h2>
-          <p class="muted">Tell me about your bookkeeping needs. I’ll respond within one business day.</p>
-          <p class="mt-sm"><a class="link" href="mailto:hello@elgaldones.works">hello@elgaldones.works</a></p>
-          <p class="mt-sm">
-            <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
-          </p>
-        </header>
-
-        <!-- Replace the Formspree action URL with your actual form endpoint -->
-        <form id="contactForm" class="form" action="https://formspree.io/f/your-form-id" method="POST" novalidate>
-          <div class="field">
-            <label for="name">Your Name</label>
-            <input id="name" name="name" type="text" autocomplete="name" required />
-          </div>
-          <div class="field">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required />
-          </div>
-          <div class="field">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="What do you need help with?" required></textarea>
-          </div>
-          <div class="field">
-            <button class="btn btn-primary" type="submit">Send Message</button>
-            <a class="btn btn-secondary" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">View Résumé</a>
-          </div>
-          <p id="formStatus" class="form-status" role="status" aria-live="polite"></p>
-        </form>
+      <div class="testimonial">
+        <p>"Edz has been such a valuable part of our team... We’re grateful to have her support."</p>
+        <h4>— Scarlet Ngo, Managing Partner – Clarity Tax</h4>
+        <div class="stars">★★★★★</div>
       </div>
-    </section>
-  </main>
+      <div class="testimonial">
+        <p>"Thanks to Edz, our QuickBooks reports were corrected and accepted... proactive and meticulous."</p>
+        <h4>— Mick P., Business Owner</h4>
+        <div class="stars">★★★★★</div>
+      </div>
+    </div>
+    <div class="carousel-nav">
+      <span class="prev"><i class="fas fa-chevron-left"></i></span>
+      <span class="next"><i class="fas fa-chevron-right"></i></span>
+    </div>
+  </section>
 
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <p>&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</p>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="/robots.txt">Robots</a>
-        <a href="/sitemap.xml">Sitemap</a>
-        <a href="#top">Back to top</a>
-      </nav>
+  <!-- Contact + Footer -->
+  <footer id="contact">
+    <h2>Let’s Talk</h2>
+    <p>I’d love to hear from you! Whether you need ongoing bookkeeping support, a one-time cleanup, or just want to see how I can help your business — let’s connect.</p>
+    <form action="https://formspree.io/f/xblkbpav" method="POST" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+    <a href="https://calendly.com/elgaldones" class="btn-calendly">📅 Book a Call</a>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Edz Lilian Galdones | Accurate. Reliable. On Time.</p>
     </div>
   </footer>
 
-  <!-- Welcome Modal (pops up on first visit) -->
-  <div id="welcome" class="modal" hidden>
-    <div class="modal-backdrop" data-close></div>
-    <div class="modal-dialog" role="dialog" aria-modal="true" aria-labelledby="welcomeTitle" aria-describedby="welcomeDesc">
-      <button class="icon-btn modal-close" aria-label="Close" data-close>
-        <svg width="22" height="22" aria-hidden="true"><use href="#i-close"/></svg>
-      </button>
-      <h2 id="welcomeTitle" class="h3">Welcome — let’s make your books decision‑ready</h2>
-      <p id="welcomeDesc" class="muted">Book a quick call to discuss your needs, or browse case studies first.</p>
+  <!-- Back to Top -->
+  <button id="backToTop"><i class="fas fa-arrow-up"></i></button>
 
-      <div class="modal-ctas">
-        <a class="btn btn-primary" href="https://calendly.com/elgaldones/15min" target="_blank" rel="noopener noreferrer">Book a Free 15‑min Consultation</a>
-        <a class="btn btn-secondary" href="#work" data-close>See Case Studies</a>
-      </div>
-
-      <label class="dont-show">
-        <input id="dontShow" type="checkbox" />
-        Don’t show this again
-      </label>
-    </div>
-  </div>
-
-  <script src="main.js" defer></script>
+  <script src="main.js"></script>
 </body>
 </html>
