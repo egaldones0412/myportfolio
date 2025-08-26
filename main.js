@@ -1,51 +1,32 @@
-// Navbar mobile menu
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-hamburger.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+// Year
+document.getElementById('year').textContent = new Date().getFullYear();
 
-// Testimonials Carousel
-let currentTestimonial = 0;
-const testimonials = document.querySelectorAll(".testimonial");
-const prev = document.querySelector(".prev");
-const next = document.querySelector(".next");
+// Mobile menu
+const mbtn = document.getElementById('menuBtn');
+const mmenu = document.getElementById('mobileMenu');
+mbtn?.addEventListener('click', () => mmenu.classList.toggle('hidden'));
 
-function showTestimonial(index) {
-  testimonials.forEach((t, i) => {
-    t.classList.remove("active");
-    if (i === index) t.classList.add("active");
-  });
-}
+// Theme toggle
+const toggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+const key = 'prefers-dark-edz';
 
-prev.addEventListener("click", () => {
-  currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-
-next.addEventListener("click", () => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-});
-
-// Auto-slide
-setInterval(() => {
-  currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-  showTestimonial(currentTestimonial);
-}, 6000);
-
-// Back to top
-const backToTop = document.getElementById("backToTop");
-window.addEventListener("scroll", () => {
-  if (window.scrollY > 300) {
-    backToTop.style.display = "flex";
+const set = (on) => {
+  if (on) {
+    root.classList.add('dark');
+    localStorage.setItem(key, '1');
   } else {
-    backToTop.style.display = "none";
+    root.classList.remove('dark');
+    localStorage.removeItem(key);
   }
-});
-backToTop.addEventListener("click", () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-});
+};
 
-// Year in footer
-document.getElementById("year").textContent = new Date().getFullYear();
+// init from system or storage
+const prefers =
+  localStorage.getItem(key) === '1' ||
+  window.matchMedia('(prefers-color-scheme: dark)').matches;
+set(prefers);
+
+toggle?.addEventListener('click', () =>
+  set(!root.classList.contains('dark'))
+);
