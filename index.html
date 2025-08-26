@@ -4,193 +4,92 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
-    <meta name="description" content="Bookkeeping Portfolio of Edz Lilian Galdones - Certified Xero & QuickBooks ProAdvisor, Intuit-trained, 4+ years experience in U.S. & Canadian bookkeeping, IFRS/GAAP standards." />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://kit.fontawesome.com/a2d9d6c8f4.js" crossorigin="anonymous"></script>
+    <meta name="description" content="Portfolio of Edz Lilian Galdones - Certified Bookkeeper and Accountant specializing in Xero, QuickBooks, and full-charge bookkeeping services for US and Canadian clients." />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-white text-gray-900">
+  <body class="bg-white text-gray-800">
     <!-- Header -->
     <header class="fixed w-full bg-white shadow z-50">
-      <nav class="max-w-6xl mx-auto flex justify-between items-center px-6 py-4">
-        <a href="#hero" class="text-lg font-bold">ELG Bookkeeping</a>
-        <ul class="hidden md:flex space-x-6 font-medium">
-          <li><a href="#services" class="hover:text-blue-600">Services</a></li>
-          <li><a href="#work" class="hover:text-blue-600">Work</a></li>
-          <li><a href="#skills" class="hover:text-blue-600">Skills</a></li>
-          <li><a href="#process" class="hover:text-blue-600">Process</a></li>
-          <li><a href="#testimonials" class="hover:text-blue-600">Testimonials</a></li>
-          <li><a href="#faq" class="hover:text-blue-600">FAQ</a></li>
-          <li><a href="#about" class="hover:text-blue-600">About</a></li>
-          <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
-          <li><a href="resume.pdf" target="_blank" class="hover:text-blue-600">Resume</a></li>
-        </ul>
-      </nav>
+      <div class="container mx-auto flex justify-between items-center py-4 px-6">
+        <h1 class="text-xl font-bold text-primary">Edz Lilian Galdones</h1>
+        <nav>
+          <ul class="flex space-x-6 font-medium">
+            <li><a href="#home" class="hover:text-primary">Home</a></li>
+            <li><a href="#about" class="hover:text-primary">About</a></li>
+            <li><a href="#services" class="hover:text-primary">Services</a></li>
+            <li><a href="#contact" class="hover:text-primary">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Hero -->
-    <section id="hero" class="pt-32 pb-20 text-center max-w-3xl mx-auto px-6">
-      <h1 class="text-4xl md:text-5xl font-bold leading-tight">Accurate. Reliable. On Time.</h1>
-      <p class="mt-6 text-lg text-gray-600">Certified Bookkeeper helping U.S. & Canadian businesses stay compliant, efficient, and stress-free.</p>
-      <div class="mt-6 flex justify-center space-x-4">
-        <a href="#contact" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Book a Free Consultation</a>
-        <a href="resume.pdf" target="_blank" class="border border-gray-400 px-6 py-3 rounded-lg hover:bg-gray-100">Download Resume</a>
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gradient-to-r from-primary/10 to-secondary/10">
+      <div class="text-center max-w-2xl">
+        <h2 class="text-4xl font-bold mb-4">Trusted Bookkeeping & Accounting Solutions</h2>
+        <p class="text-lg mb-6">Helping businesses stay financially organized with accurate bookkeeping and reporting.</p>
+        <a href="#contact" class="px-6 py-3 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition">Get in Touch</a>
       </div>
-      <div class="mt-8 flex justify-center space-x-8 opacity-70">
-        <img src="/logos/xero.png" alt="Xero" class="h-10" />
-        <img src="/logos/qbo.png" alt="QuickBooks" class="h-10" />
-        <img src="/logos/intuit.png" alt="Intuit" class="h-10" />
-        <img src="/logos/ifrs.png" alt="IFRS" class="h-10" />
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-20 container mx-auto px-6">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <!-- Photo -->
+        <div class="flex justify-center">
+          <img src="assets/me.png" alt="Edz Lilian Galdones" class="rounded-2xl shadow-lg max-w-sm" />
+        </div>
+        <!-- Text -->
+        <div>
+          <h3 class="text-3xl font-bold mb-4">About Me</h3>
+          <p class="mb-4">
+            I’m <strong>Edz Lilian Galdones</strong>, a Certified Xero ProAdvisor, Certified QuickBooks ProAdvisor, and Intuit-trained bookkeeper with over <strong>4 years of professional bookkeeping and accounting experience</strong>.  
+            I hold a <strong>Bachelor’s degree in Accounting</strong> and specialize in <strong>full-charge bookkeeping</strong> for U.S. and Canadian clients.
+          </p>
+          <p class="mb-4">
+            My expertise covers <strong>IFRS</strong> and <strong>GAAP standards</strong>, HST/GST compliance, and tax filings (<strong>T1, T2, T4</strong>). I have successfully managed books for <strong>20+ clients</strong>, ensuring accuracy, efficiency, and compliance every step of the way.
+          </p>
+          <p class="mb-6">
+            With a passion for helping businesses stay financially healthy, I provide tailored solutions to streamline processes, reduce errors, and keep finances organized.
+          </p>
+          <a href="resume.pdf" target="_blank" class="inline-block px-6 py-3 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition">View Resume</a>
+        </div>
       </div>
     </section>
 
     <!-- Services -->
     <section id="services" class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Services</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <i class="fas fa-book text-blue-600 text-3xl mb-4"></i>
-            <h3 class="font-semibold mb-2">Monthly Bookkeeping</h3>
-            <p class="text-gray-600">Accurate reconciliations, reports, and compliance to keep your books up to date.</p>
+      <div class="container mx-auto px-6 text-center">
+        <h3 class="text-3xl font-bold mb-12">Services</h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold mb-3">Full-Charge Bookkeeping</h4>
+            <p>End-to-end bookkeeping services including accounts payable, receivable, reconciliations, and reporting.</p>
           </div>
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <i class="fas fa-chart-line text-blue-600 text-3xl mb-4"></i>
-            <h3 class="font-semibold mb-2">Management Reporting</h3>
-            <p class="text-gray-600">Clear financial insights for decision making and business growth strategies.</p>
+          <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold mb-3">Tax & Compliance</h4>
+            <p>Preparation of HST, GST, and corporate filings (T1, T2, T4) with strict adherence to regulations.</p>
           </div>
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <i class="fas fa-undo-alt text-blue-600 text-3xl mb-4"></i>
-            <h3 class="font-semibold mb-2">Catch-Up Bookkeeping</h3>
-            <p class="text-gray-600">Get back on track with clean, accurate, and compliant books quickly.</p>
-          </div>
-          <div class="p-6 bg-white rounded-xl shadow hover:shadow-lg transition">
-            <i class="fas fa-cogs text-blue-600 text-3xl mb-4"></i>
-            <h3 class="font-semibold mb-2">Workflow & Advisory</h3>
-            <p class="text-gray-600">Streamlined systems and expert advisory to optimize your accounting process.</p>
+          <div class="p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
+            <h4 class="text-xl font-semibold mb-3">Software Expertise</h4>
+            <p>Certified in Xero and QuickBooks with system setup, training, and troubleshooting support.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Selected Work</h2>
-        <div class="space-y-8">
-          <div class="p-6 bg-gray-50 rounded-lg shadow">
-            <h3 class="font-semibold mb-2">Retail Business – Clean-up & GST/HST Filing</h3>
-            <p class="text-gray-600">Caught up 2 years of backlog, implemented automated reporting, and filed GST/HST accurately.</p>
-          </div>
-          <div class="p-6 bg-gray-50 rounded-lg shadow">
-            <h3 class="font-semibold mb-2">SaaS Client – Financial Dashboard</h3>
-            <p class="text-gray-600">Created monthly performance dashboards, providing real-time insights into ARR, churn, and expenses.</p>
-          </div>
-          <div class="p-6 bg-gray-50 rounded-lg shadow">
-            <h3 class="font-semibold mb-2">Construction – Payroll & T4/T5018 Filing</h3>
-            <p class="text-gray-600">Managed payroll, subcontractor reporting, and year-end compliance for 50+ employees and vendors.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Skills & Certifications</h2>
-        <div class="grid md:grid-cols-3 gap-6 text-center">
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fab fa-quora text-blue-600 text-3xl mb-3"></i><p>Certified QuickBooks ProAdvisor</p></div>
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fas fa-check-circle text-blue-600 text-3xl mb-3"></i><p>Certified Xero ProAdvisor</p></div>
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fas fa-university text-blue-600 text-3xl mb-3"></i><p>Bachelor’s Degree in Accounting</p></div>
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fas fa-balance-scale text-blue-600 text-3xl mb-3"></i><p>IFRS & GAAP Standards</p></div>
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fas fa-file-invoice-dollar text-blue-600 text-3xl mb-3"></i><p>Tax Filings: T1, T2, T4</p></div>
-          <div class="p-6 bg-white rounded-lg shadow"><i class="fas fa-users text-blue-600 text-3xl mb-3"></i><p>Full-charge bookkeeping for 20+ clients</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process" class="py-20">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">My Process</h2>
-        <div class="grid md:grid-cols-5 gap-6 text-center">
-          <div class="p-4"><span class="text-blue-600 text-2xl font-bold">1</span><p class="mt-2">Discovery Call</p></div>
-          <div class="p-4"><span class="text-blue-600 text-2xl font-bold">2</span><p class="mt-2">Onboarding</p></div>
-          <div class="p-4"><span class="text-blue-600 text-2xl font-bold">3</span><p class="mt-2">Clean-up & Setup</p></div>
-          <div class="p-4"><span class="text-blue-600 text-2xl font-bold">4</span><p class="mt-2">Monthly Reporting</p></div>
-          <div class="p-4"><span class="text-blue-600 text-2xl font-bold">5</span><p class="mt-2">Advisory & Support</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20 bg-gray-50">
-      <div class="max-w-6xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">Testimonials</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="p-6 bg-white rounded-lg shadow">
-            <p class="italic mb-3">“Edz keeps our books spotless and is always on time. Highly recommend!”</p>
-            <p class="font-semibold">– U.S. Retail Client ★★★★★</p>
-          </div>
-          <div class="p-6 bg-white rounded-lg shadow">
-            <p class="italic mb-3">“Her reports gave us insights we never had before. Reliable and easy to work with.”</p>
-            <p class="font-semibold">– SaaS Client ★★★★★</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20">
-      <div class="max-w-4xl mx-auto px-6">
-        <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
-        <div class="space-y-6">
-          <details class="bg-gray-50 p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">What software do you use?</summary>
-            <p class="mt-2 text-gray-600">QuickBooks, Xero, and supporting tools (Excel, Google Sheets, Power BI).</p>
-          </details>
-          <details class="bg-gray-50 p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">What industries do you specialize in?</summary>
-            <p class="mt-2 text-gray-600">Retail, SaaS, construction, and service-based businesses.</p>
-          </details>
-          <details class="bg-gray-50 p-4 rounded-lg shadow">
-            <summary class="font-semibold cursor-pointer">Can you work across time zones?</summary>
-            <p class="mt-2 text-gray-600">Yes – I work with U.S. and Canadian clients and provide overlap for meetings.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-20 bg-gray-50">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <img src="/images/headshot.jpg" alt="Edz Lilian Galdones" class="w-32 h-32 rounded-full mx-auto mb-6 shadow" />
-        <h2 class="text-3xl font-bold mb-4">About Me</h2>
-        <p class="text-gray-600 mb-6">Hi, I’m <strong>Edz Lilian Galdones</strong>, a Certified Xero & QuickBooks ProAdvisor and Intuit-trained bookkeeper. With 4+ years of experience, I’ve managed full-charge bookkeeping for 20+ U.S. and Canadian clients across retail, SaaS, and service industries. I hold a Bachelor’s Degree in Accounting and work with IFRS and GAAP standards, ensuring accurate compliance and reporting. I also specialize in HST, GST, and tax filings (T1, T2, T4).</p>
-        <a href="resume.pdf" target="_blank" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Download Resume</a>
       </div>
     </section>
 
     <!-- Contact -->
-    <section id="contact" class="py-20">
-      <div class="max-w-4xl mx-auto px-6 text-center">
-        <h2 class="text-3xl font-bold mb-6">Get in Touch</h2>
-        <form action="https://formspree.io/f/yourformid" method="POST" class="space-y-4">
-          <input type="text" name="name" placeholder="Your Name" required class="w-full border rounded-lg px-4 py-3" />
-          <input type="email" name="email" placeholder="Your Email" required class="w-full border rounded-lg px-4 py-3" />
-          <textarea name="message" placeholder="Your Message" required class="w-full border rounded-lg px-4 py-3"></textarea>
-          <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg shadow hover:bg-blue-700">Send Message</button>
-        </form>
-        <div class="mt-8 flex justify-center space-x-6 text-gray-600 text-xl">
-          <a href="mailto:edz@example.com"><i class="fas fa-envelope"></i></a>
-          <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://calendly.com/yourlink" target="_blank"><i class="fas fa-calendar-alt"></i></a>
-        </div>
+    <section id="contact" class="py-20 container mx-auto px-6">
+      <div class="text-center max-w-xl mx-auto">
+        <h3 class="text-3xl font-bold mb-4">Get in Touch</h3>
+        <p class="mb-6">Let’s discuss how I can help with your bookkeeping and accounting needs.</p>
+        <a href="mailto:your@email.com" class="px-6 py-3 bg-primary text-white rounded-lg shadow hover:bg-primary-dark transition">Email Me</a>
       </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-6 bg-gray-900 text-gray-300 text-center">
-      <p>&copy; 2025 Edz Lilian Galdones. All Rights Reserved.</p>
+    <footer class="bg-gray-800 text-white py-6 text-center">
+      <p>© 2025 Edz Lilian Galdones. All Rights Reserved.</p>
     </footer>
   </body>
 </html>
