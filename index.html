@@ -35,20 +35,20 @@
     <!-- Performance hint -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
 
-    <!-- IMPORTANT: Tailwind config must come BEFORE the CDN script -->
+    <!-- IMPORTANT: Config BEFORE CDN -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
               brand: {
-                DEFAULT: 'var(--color-primary)',
-                50: 'var(--color-primary-50)',
-                100: 'var(--color-primary-100)',
+                DEFAULT: '#0f172a',
+                50: '#334155',
+                100: '#1e293b'
               },
-              accent: 'var(--color-accent)',
-              surface: 'var(--color-surface)',
-              ink: 'var(--color-ink)',
+              accent: '#d4af37',
+              surface: '#ffffff',
+              ink: '#0b1220'
             },
             boxShadow: { 'elevate': '0 8px 24px rgba(2,6,23,0.12)' }
           }
@@ -62,27 +62,16 @@
     <!-- Structured Data: Person -->
     <script type="application/ld+json">
     {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Edz Lilian Galdones",
-      "jobTitle": "Bookkeeper",
-      "description": "Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.",
-      "email": "mailto:hello@edzbooks.com",
-      "url": "https://www.elgaldones.works/",
-      "image": "https://www.elgaldones.works/og-image.jpg",
-      "sameAs": [],
-      "knowsAbout": [
-        "Bookkeeping",
-        "Management reporting",
-        "Financial statements",
-        "IFRS",
-        "GAAP",
-        "HST",
-        "GST",
-        "QuickBooks Online",
-        "Xero",
-        "Cleanup bookkeeping"
-      ]
+      "@context":"https://schema.org",
+      "@type":"Person",
+      "name":"Edz Lilian Galdones",
+      "jobTitle":"Bookkeeper",
+      "description":"Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.",
+      "email":"mailto:hello@edzbooks.com",
+      "url":"https://www.elgaldones.works/",
+      "image":"https://www.elgaldones.works/og-image.jpg",
+      "sameAs":[],
+      "knowsAbout":["Bookkeeping","Management reporting","Financial statements","IFRS","GAAP","HST","GST","QuickBooks Online","Xero","Cleanup bookkeeping"]
     }
     </script>
 
@@ -92,38 +81,10 @@
       "@context":"https://schema.org",
       "@type":"FAQPage",
       "mainEntity":[
-        {
-          "@type":"Question",
-          "name":"Do you work 100% virtually?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Yes — secure, remote delivery across time zones using least‑privilege access."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Which platforms do you support?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"Do you handle taxes?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed."
-          }
-        },
-        {
-          "@type":"Question",
-          "name":"How do you price services?",
-          "acceptedAnswer":{
-            "@type":"Answer",
-            "text":"Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project."
-          }
-        }
+        {"@type":"Question","name":"Do you work 100% virtually?","acceptedAnswer":{"@type":"Answer","text":"Yes — secure, remote delivery across time zones using least‑privilege access."}},
+        {"@type":"Question","name":"Which platforms do you support?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo."}},
+        {"@type":"Question","name":"Do you handle taxes?","acceptedAnswer":{"@type":"Answer","text":"I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed."}},
+        {"@type":"Question","name":"How do you price services?","acceptedAnswer":{"@type":"Answer","text":"Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project."}}
       ]
     }
     </script>
@@ -258,7 +219,7 @@
       </div>
     </section>
 
-    <!-- Work / Case Studies -->
+    <!-- Work -->
     <section id="work" class="py-20">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <header class="max-w-2xl">
@@ -300,7 +261,7 @@
       </div>
     </section>
 
-    <!-- Skills & Certifications -->
+    <!-- Skills -->
     <section id="skills" class="py-20 border-t border-black/5">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <header class="max-w-2xl">
