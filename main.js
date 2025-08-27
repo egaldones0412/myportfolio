@@ -69,7 +69,7 @@ form?.addEventListener('submit', async (e) => {
     await new Promise(r => setTimeout(r, 900)); // simulate network
     form.reset();
     successMsg.classList.remove('hidden');
-  } catch (err) {
+  } catch {
     errorMsg.classList.remove('hidden');
   } finally {
     submitBtn.disabled = false;
