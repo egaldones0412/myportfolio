@@ -1,3 +1,6 @@
+/* =========================================================
+   Global Theme Variables
+   ========================================================= */
 :root {
   --color-primary: #0f172a;
   --color-primary-100: #1e293b;
@@ -6,39 +9,42 @@
   --color-surface: #ffffff;
   --color-ink: #0b1220;
 }
+
 .dark {
   --color-surface: #0b1220;
   --color-ink: #f8fafc;
   --color-accent: #e8c052;
 }
+
+/* Display heading letter-spacing helper */
 .display { letter-spacing: -0.02em; }
 
-/* Accent fallbacks */
+/* Accent utility fallbacks (in case Tailwind config is unavailable) */
 .text-accent { color: var(--color-accent) !important; }
-.bg-accent { background-color: var(--color-accent) !important; color: #0b1220 !important; }
+.bg-accent  { background-color: var(--color-accent) !important; color: #0b1220 !important; }
 .dark .text-accent,
 .dark .bg-accent { color: #0b1220; }
 
-/* Skip link base */
+/* =========================================================
+   Accessibility & Focus
+   ========================================================= */
+
+/* Skip link (visibility handled via utility classes in HTML) */
 .skip-link { position: absolute; left: -999px; }
 
-/* General focus fallback */
+/* Universal focus fallback (Tailwind ring still applies where present) */
 :focus-visible {
   outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
-    scroll-behavior: auto !important;
-  }
+/* Extra prominent focus for interactive elements (fallback) */
+button:focus-visible,
+a:focus-visible {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-accent);
 }
 
-/* Active nav indicator */
+/* Active nav indicator managed via JS (aria-current) */
 .nav-link[aria-current="true"] {
   position: relative;
   color: var(--color-accent);
@@ -54,48 +60,71 @@
   border-radius: 2px;
 }
 
-/* Additional focus ring fallback */
-button:focus-visible, a:focus-visible {
-  box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--color-accent);
+/* =========================================================
+   Motion Preferences
+   ========================================================= */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
+    scroll-behavior: auto !important;
+  }
 }
 
-/* Software logos sizing */
-#software img {
-  max-height: 48px;
-}
-
-/* Dark border subtle adjustment */
+/* =========================================================
+   Dark Mode Border Tweaks
+   (Overrides Tailwind's generated class border-black/10)
+   ========================================================= */
 .dark .border-black\/10 {
   border-color: rgba(255,255,255,0.1);
 }
 
-/* ================================================
-   Grayscale → Color Hover (Desktop Only)
-   Applies starting at md (≥768px). Mobile unaffected.
-   ================================================ */
+/* =========================================================
+   Software Logos (Option 1 Implementation)
+   - Equal height via utility classes in HTML:
+       h-16 md:h-24 (64px mobile -> 96px desktop)
+   - Provide CSS fallback if utilities fail:
+   ========================================================= */
+.software-logo {
+  height: 64px;          /* Fallback for mobile */
+  width: auto;
+  object-fit: contain;
+}
 @media (min-width: 768px) {
-  #software img {
+  .software-logo {
+    height: 96px;        /* Fallback for md+ */
+  }
+}
+
+/* =========================================================
+   Grayscale → Color Hover (Desktop Only)
+   - Affects only .software-logo at >=768px
+   - Mobile remains full color (no filter)
+   ========================================================= */
+@media (min-width: 768px) {
+  #software .software-logo {
     filter: grayscale(100%) brightness(0.9);
     opacity: 0.75;
     transition: filter .35s ease, opacity .35s ease, transform .35s ease;
     will-change: filter, opacity;
   }
-  #software img:hover {
+  #software .software-logo:hover {
     filter: none;
     opacity: 1;
-  }
-  /* If later they become focusable (e.g. wrapped in <a>) provide keyboard parity */
-  #software a:focus-visible img,
-  #software button:focus-visible img {
-    filter: none;
-    opacity: 1;
-  }
-  /* Optional subtle lift */
-  #software img:hover {
     transform: translateY(-2px);
   }
-  #software a:focus-visible img,
-  #software button:focus-visible img {
+  /* Keyboard accessibility parity if logos ever become links/buttons */
+  #software a:focus-visible .software-logo,
+  #software button:focus-visible .software-logo {
+    filter: none;
+    opacity: 1;
     transform: translateY(-2px);
   }
 }
+
+/* =========================================================
+   (Optional space for future custom components)
+   ========================================================= */
+
+/* Add any further custom styles below this line */
