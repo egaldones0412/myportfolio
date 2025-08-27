@@ -1,19 +1,23 @@
-/* Core design tokens and minimal custom styles (moved from inline) */
+/* Design tokens via CSS variables (still used for dark mode swap) */
 :root {
-  --color-primary: #0f172a; /* slate-900 */
-  --color-primary-100: #1e293b; /* slate-800 */
-  --color-primary-50: #334155;  /* slate-700 */
-  --color-accent: #d4af37; /* elegant gold */
+  --color-primary: #0f172a;
+  --color-primary-100: #1e293b;
+  --color-primary-50: #334155;
+  --color-accent: #d4af37;
   --color-surface: #ffffff;
   --color-ink: #0b1220;
 }
-
 .dark {
   --color-surface: #0b1220;
   --color-ink: #f8fafc;
-  --color-accent: #e8c052;
+  --color-accent: #e8c052; /* gold variant for dark background */
 }
+.display { letter-spacing: -0.02em; }
 
-.display {
-  letter-spacing: -0.02em;
-}
+/* Fallback / safety utility overrides (ensures color even if Tailwind missed custom palette) */
+.text-accent { color: var(--color-accent) !important; }
+.bg-accent { background-color: var(--color-accent) !important; }
+.bg-brand { background-color: var(--color-primary) !important; }
+.bg-brand\/90 { background-color: rgba(15,23,42,0.90) !important; }
+.dark .text-accent { color: var(--color-accent) !important; }
+.dark .bg-accent { background-color: var(--color-accent) !important; }
