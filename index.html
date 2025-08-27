@@ -7,14 +7,21 @@
     <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
     <meta name="description" content="Professional bookkeeping & management reporting portfolio — accurate, reliable, on time. Full‑charge bookkeeping for U.S. & Canadian clients (IFRS/GAAP)." />
 
-    <!-- Canonical & robots -->
     <link rel="canonical" href="https://www.elgaldones.works/" />
     <meta name="robots" content="index,follow" />
-
-    <!-- Theming (light/dark) -->
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
+
+    <!-- Favicons / App Icons (manifest kept in /icons/) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#d4af37">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#0f172a">
+    <meta name="theme-color" content="#0f172a">
 
     <!-- Open Graph -->
     <meta property="og:site_name" content="Edz Lilian Galdones Bookkeeping" />
@@ -32,20 +39,17 @@
     <meta name="twitter:description" content="Full‑charge bookkeeping, cleanup, and management reporting for growing U.S. & Canadian businesses." />
     <meta name="twitter:image" content="https://www.elgaldones.works/og-image.jpg" />
 
-    <!-- Performance hint -->
+    <!-- Performance -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
+    <link rel="preconnect" href="https://formspree.io" />
 
-    <!-- Tailwind config (can still use custom names) -->
+    <!-- Tailwind config first -->
     <script>
       tailwind.config = {
         theme: {
           extend: {
             colors: {
-              brand: {
-                DEFAULT: '#0f172a',
-                50: '#334155',
-                100: '#1e293b'
-              },
+              brand: { DEFAULT: '#0f172a', 50: '#334155', 100: '#1e293b' },
               accent: '#d4af37',
               surface: '#ffffff',
               ink: '#0b1220'
@@ -55,342 +59,426 @@
         }
       }
     </script>
-    <!-- Cache-bust param -->
-    <script src="https://cdn.tailwindcss.com?v=1"></script>
+    <script src="https://cdn.tailwindcss.com?v=2"></script>
 
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/styles.css" />
+
+    <!-- Person Schema -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Person","name":"Edz Lilian Galdones","jobTitle":"Bookkeeper","description":"Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.","email":"mailto:hello@edzbooks.com","url":"https://www.elgaldones.works/","image":"https://www.elgaldones.works/og-image.jpg","sameAs":[],"knowsAbout":["Bookkeeping","Management reporting","Financial statements","IFRS","GAAP","HST","GST","QuickBooks Online","Xero","Cleanup bookkeeping"]}
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"Do you work 100% virtually?","acceptedAnswer":{"@type":"Answer","text":"Yes — secure, remote delivery across time zones using least‑privilege access."}},
+      {"@type":"Question","name":"Which platforms do you support?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo."}},
+      {"@type":"Question","name":"Do you handle taxes?","acceptedAnswer":{"@type":"Answer","text":"I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed."}},
+      {"@type":"Question","name":"How do you price services?","acceptedAnswer":{"@type":"Answer","text":"Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project."}}
+    ]}
+    </script>
   </head>
   <body class="bg-surface text-ink antialiased">
+    <a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#d4af37] focus:text-[#0b1220] font-medium shadow-elevate">
+      Skip to main content
+    </a>
+
     <!-- Header -->
     <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/75 border-b border-black/5">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <div class="flex h-16 items-center justify-between">
-          <a href="#" class="flex items-center gap-3 font-semibold">
+          <a href="#hero" class="flex items-center gap-3 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
             <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand/90 text-white shadow-elevate">EG</span>
             <span class="hidden sm:block">Edz Lilian Galdones</span>
           </a>
-          <nav class="hidden md:flex items-center gap-6 text-sm">
-            <a href="#work" class="hover:text-[#d4af37]">Work</a>
-            <a href="#services" class="hover:text-[#d4af37]">Services</a>
-            <a href="#about" class="hover:text-[#d4af37]">About</a>
-            <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
-            <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
+            <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+            <a href="#work" class="nav-link hover:text-[#d4af37]">Work</a>
+            <a href="#services" class="nav-link hover:text-[#d4af37]">Services</a>
+            <a href="#software" class="nav-link hover:text-[#d4af37]">Software</a>
+            <a href="#about" class="nav-link hover:text-[#d4af37]">About</a>
+            <a href="#testimonials" class="nav-link hover:text-[#d4af37]">Testimonials</a>
+            <a href="#faq" class="nav-link hover:text-[#d4af37]">FAQ</a>
+            <a href="#contact" class="nav-link hover:text-[#d4af37]">Contact</a>
           </nav>
           <div class="flex items-center gap-2">
-            <button id="themeToggle" aria-label="Toggle dark mode" class="rounded-xl border border-black/10 px-3 py-2 text-sm hover:bg-black/5">Theme</button>
-            <!-- Gold CTA -->
-            <a href="#contact" class="inline-flex items-center rounded-xl bg-[#d4af37] px-4 py-2 text-sm font-medium text-[#0b1220] shadow-elevate hover:opacity-90">Book a Free Call</a>
-            <button class="md:hidden rounded-xl border border-black/10 p-2" id="menuBtn" aria-label="Open menu">☰</button>
+            <button id="themeToggle" aria-label="Toggle dark mode" class="rounded-xl border border-black/10 px-3 py-2 text-sm hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Theme</button>
+            <a href="#contact" class="inline-flex items-center rounded-xl bg-[#d4af37] px-4 py-2 text-sm font-medium text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Book a Free Call</a>
+            <button class="md:hidden rounded-xl border border-black/10 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
           </div>
         </div>
       </div>
-      <div id="mobileMenu" class="md:hidden hidden border-t border-black/5 bg-surface">
+      <div id="mobileMenu" class="md:hidden hidden border-t border-black/5 bg-surface" role="dialog" aria-label="Mobile navigation">
         <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm">
           <a href="#work" class="hover:text-[#d4af37]">Work</a>
           <a href="#services" class="hover:text-[#d4af37]">Services</a>
+          <a href="#software" class="hover:text-[#d4af37]">Software</a>
           <a href="#about" class="hover:text-[#d4af37]">About</a>
-          <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
+          <a href="#testimonials" class="hover:text-[#d4af37]">Testimonials</a>
+            <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
           <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
         </div>
       </div>
     </header>
 
-    <!-- Hero -->
-    <section class="relative overflow-hidden">
-      <div class="mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-        <div class="grid items-center gap-10 md:grid-cols-2">
-          <div>
-            <h1 class="display text-4xl font-bold md:text-6xl">
-              Accurate. Reliable. <span class="text-[#d4af37]">On&nbsp;Time.</span>
-            </h1>
-            <p class="mt-5 text-lg text-black/70 dark:text-white/70">
-              Bookkeeping & management reporting for growing businesses. Full‑charge support across QBO, Xero, and more — with IFRS/GAAP discipline.
-            </p>
-            <div class="mt-8 flex flex-wrap gap-3">
-              <!-- Primary dark (brand) button -->
-              <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 text-white hover:bg-brand/90">Book a Free Consultation</a>
-              <!-- Secondary outline -->
-              <a href="#work" class="inline-flex items-center rounded-xl border border-black/10 px-5 py-3 hover:bg-black/5">See Case Studies</a>
+    <main id="main" tabindex="-1">
+      <!-- Hero -->
+      <section id="hero" class="relative overflow-hidden">
+        <div class="mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-20 md:pt-24 md:pb-28">
+          <div class="grid items-center gap-10 md:grid-cols-2">
+            <div>
+              <h1 class="display text-4xl font-bold md:text-6xl">
+                Accurate. Reliable. <span class="text-[#d4af37]">On&nbsp;Time.</span>
+              </h1>
+              <p class="mt-5 text-lg text-black/70 dark:text-white/70">
+                Bookkeeping & management reporting for growing businesses. Full‑charge support across QBO, Xero, and more — with IFRS/GAAP discipline.
+              </p>
+              <div class="mt-8 flex flex-wrap gap-3">
+                <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 text-white hover:bg-brand/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Book a Free Consultation</a>
+                <a href="#work" class="inline-flex items-center rounded-xl border border-black/10 px-5 py-3 hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">See Case Studies</a>
+              </div>
+              <p class="mt-4 text-sm text-black/60 dark:text-white/60">4+ years experience • 20+ client files • U.S. & Canada • HST/GST • T1/T2/T4</p>
             </div>
-            <p class="mt-4 text-sm text-black/60 dark:text-white/60">4+ years experience • 20+ client files • U.S. & Canada • HST/GST • T1/T2/T4</p>
-          </div>
-          <div class="relative">
-            <div class="aspect-[4/3] w-full rounded-3xl border border-black/10 bg-gradient-to-br from-brand/90 to-brand/60 p-1 shadow-elevate">
-              <div class="h-full w-full rounded-[1.25rem] bg-surface p-6 grid grid-rows-3 gap-4">
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Month‑End Close</div>
-                  <div class="mt-2 h-2 w-3/4 rounded-full bg-black/10"></div>
-                </div>
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Bank Recs • AJE • KPIs</div>
-                  <div class="mt-2 h-2 w-1/2 rounded-full bg-black/10"></div>
-                </div>
-                <div class="rounded-2xl border border-black/10 p-4">
-                  <div class="text-sm font-medium">Management Report</div>
-                  <div class="mt-2 h-2 w-2/3 rounded-full bg-black/10"></div>
+            <div class="relative">
+              <div class="aspect-[4/3] w-full rounded-3xl border border-black/10 bg-gradient-to-br from-brand/90 to-brand/60 p-1 shadow-elevate">
+                <div class="h-full w-full rounded-[1.25rem] bg-surface p-6 grid grid-rows-3 gap-4">
+                  <div class="rounded-2xl border border-black/10 p-4">
+                    <div class="text-sm font-medium">Month‑End Close</div>
+                    <div class="mt-2 h-2 w-3/4 rounded-full bg-black/10"></div>
+                  </div>
+                  <div class="rounded-2xl border border-black/10 p-4">
+                    <div class="text-sm font-medium">Bank Recs • AJE • KPIs</div>
+                    <div class="mt-2 h-2 w-1/2 rounded-full bg-black/10"></div>
+                  </div>
+                  <div class="rounded-2xl border border-black/10 p-4">
+                    <div class="text-sm font-medium">Management Report</div>
+                    <div class="mt-2 h-2 w-2/3 rounded-full bg-black/10"></div>
+                  </div>
                 </div>
               </div>
+              <div class="pointer-events-none absolute inset-x-0 -bottom-10 blur-2xl opacity-40" aria-hidden>
+                <div class="mx-auto h-32 w-3/4 rounded-full bg-[#d4af37] dark:bg-[#e8c052]"></div>
+              </div>
             </div>
-            <div class="pointer-events-none absolute inset-x-0 -bottom-10 blur-2xl opacity-40" aria-hidden>
-              <div class="mx-auto h-32 w-3/4 rounded-full bg-[#d4af37] dark:bg-[#e8c052]"></div>
+          </div>
+          <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 items-center opacity-80">
+            <div class="text-sm">Certified Xero ProAdvisor</div>
+            <div class="text-sm">Certified QuickBooks ProAdvisor</div>
+            <div class="text-sm">Intuit‑trained Bookkeeper</div>
+            <div class="text-sm">IFRS & GAAP</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services -->
+      <section id="services" class="py-20 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Flexible, month‑to‑month support. Cleanup available as a project.</p>
+          </header>
+          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
+              <h3 class="font-semibold">Monthly Bookkeeping</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Categorization, reconciliations, AJEs, financial statements (cash/accrual).</p>
+              <ul class="mt-3 list-disc pl-5 text-sm">
+                <li>Bank/CC tie‑outs</li>
+                <li>Close checklist</li>
+                <li>Deliverables review</li>
+              </ul>
+            </article>
+            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
+              <h3 class="font-semibold">Catch‑Up & Cleanup</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Backlog completion and historical correction to restore accuracy.</p>
+              <ul class="mt-3 list-disc pl-5 text-sm">
+                <li>Error tracing</li>
+                <li>Balance validation</li>
+                <li>Documentation</li>
+              </ul>
+            </article>
+            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
+              <h3 class="font-semibold">Management Reporting</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Decision‑ready P&L, BS, KPIs, trends and commentary.</p>
+              <ul class="mt-3 list-disc pl-5 text-sm">
+                <li>Custom KPIs</li>
+                <li>Variance insight</li>
+                <li>Review session</li>
+              </ul>
+            </article>
+            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
+              <h3 class="font-semibold">Workflow & Advisory</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Light advisory on process, tech stack, and data hygiene.</p>
+              <ul class="mt-3 list-disc pl-5 text-sm">
+                <li>Tool alignment</li>
+                <li>Receipt capture</li>
+                <li>AR/AP structuring</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Work / Case Studies -->
+      <section id="work" class="py-20">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Anonymized snapshots of impact delivered for clients.</p>
+          </header>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
+              <div class="text-xs uppercase tracking-wide text-black/50">Cleanup • Retail</div>
+              <h3 class="mt-2 font-semibold">3 years backlogged → 45‑day turnaround</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit‑ready books.</p>
+              <ul class="mt-3 text-sm list-disc pl-5">
+                <li>Variance reduced by 98%</li>
+                <li>Monthly close set to 5 business days</li>
+                <li>Cash flow visibility restored</li>
+              </ul>
+            </article>
+            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
+              <div class="text-xs uppercase tracking-wide text-black/50">Reporting • Services</div>
+              <h3 class="mt-2 font-semibold">From raw data to KPI dashboard</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
+              <ul class="mt-3 text-sm list-disc pl-5">
+                <li>Drove pricing decision on low‑margin SKU</li>
+                <li>Improved AR collections by 17%</li>
+                <li>Board‑ready monthly deck</li>
+              </ul>
+            </article>
+            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
+              <div class="text-xs uppercase tracking-wide text-black/50">Process • SaaS</div>
+              <h3 class="mt-2 font-semibold">Close process re‑engineering</h3>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Built a close checklist, standardized AJEs, and aligned rev‑rec with GAAP.</p>
+              <ul class="mt-3 text-sm list-disc pl-5">
+                <li>Cut close time by 40%</li>
+                <li>Fewer reclasses & post‑close fixes</li>
+                <li>Audit trail hardened</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills & Certifications -->
+      <section id="skills" class="py-20 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">Skills & Certifications</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Platforms, frameworks, and standards I work with.</p>
+          </header>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div class="rounded-3xl border border-black/10 p-5"><strong>QuickBooks Online</strong><div class="text-sm text-black/70 dark:text-white/70">Certified ProAdvisor</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>Xero</strong><div class="text-sm text-black/70 dark:text-white/70">Certified Advisor</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>IFRS & GAAP</strong><div class="text-sm text-black/70 dark:text-white/70">Standards & compliance</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>HST / GST</strong><div class="text-sm text-black/70 dark:text-white/70">Canada filings</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>AR / AP</strong><div class="text-sm text-black/70 dark:text-white/70">Aging, collections, vendor mgmt</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>Management Packs</strong><div class="text-sm text-black/70 dark:text-white/70">KPIs, trends, commentary</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>Cleanup</strong><div class="text-sm text-black/70 dark:text-white/70">Backlogs & corrections</div></div>
+            <div class="rounded-3xl border border-black/10 p-5"><strong>Tools</strong><div class="text-sm text-black/70 dark:text-white/70">Zoho, Wave, MYOB, FreshBooks, Sage, Odoo</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Software Partners -->
+      <section id="software" class="py-24 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="text-center max-w-3xl mx-auto">
+            <h2 class="display text-3xl md:text-5xl font-semibold tracking-tight">
+              We Partner With the Best Software
+            </h2>
+            <p class="mt-3 text-lg font-medium text-[#d4af37]">
+              Here are a few!
+            </p>
+          </header>
+          <div class="mt-14 grid gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 place-items-center">
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/quickbooks.png" alt="QuickBooks Online" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/xero.png" alt="Xero" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/wave.png" alt="Wave Accounting" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/myob.png" alt="MYOB" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/zoho.png" alt="Zoho Books" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/freshbooks.png" alt="FreshBooks" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/sage.png" alt="Sage" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center justify-center h-16">
+              <img src="/assets/logos/odoo.png" alt="Odoo" class="h-12 w-auto object-contain" loading="lazy" decoding="async"
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;text-xs text-black/50 dark:text-white/50&quot;>Add odoo.png</span>';">
+            </figure>
+          </div>
+          <div class="mt-16 text-center">
+            <a href="#contact"
+              class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-8 py-4 text-sm font-semibold tracking-wide text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
+              CLICK HERE TO SCHEDULE TIME WITH ME
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Process -->
+      <section id="process" class="py-20">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">From intro call to monthly delivery.</p>
+          </header>
+          <ol class="mt-10 grid gap-6 md:grid-cols-5">
+            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 1</span><h3 class="font-semibold">Intro Call</h3><p class="mt-2 text-sm">Scope, systems, goals.</p></li>
+            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 2</span><h3 class="font-semibold">File Review</h3><p class="mt-2 text-sm">Assess health & backlog.</p></li>
+            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 3</span><h3 class="font-semibold">Onboarding</h3><p class="mt-2 text-sm">Access, checklist, cadence.</p></li>
+            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 4</span><h3 class="font-semibold">Monthly Close</h3><p class="mt-2 text-sm">Recs, AJEs, variance.</p></li>
+            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 5</span><h3 class="font-semibold">Delivery & Review</h3><p class="mt-2 text-sm">Statements + KPIs.</p></li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+      <section id="testimonials" class="py-20">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
+          </header>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
+              <blockquote class="text-sm">“We went from messy books to audit‑ready in weeks. Edz is meticulous and fast.”</blockquote>
+              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">COO, Retail Co.</figcaption>
+            </figure>
+            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
+              <blockquote class="text-sm">“Her management pack finally gave us the clarity we needed to make decisions.”</blockquote>
+              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">Founder, Services Co.</figcaption>
+            </figure>
+            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
+              <blockquote class="text-sm">“Month‑end close is now predictable and painless.”</blockquote>
+              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">CEO, SaaS Co.</figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ -->
+      <section id="faq" class="py-20 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Quick answers to common questions.</p>
+          </header>
+          <div class="mt-10 grid gap-4 md:max-w-3xl">
+            <details class="group rounded-2xl border border-black/10 p-5">
+              <summary class="cursor-pointer font-medium">Do you work 100% virtually?</summary>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Yes — secure, remote delivery across time zones using least‑privilege access.</p>
+            </details>
+            <details class="group rounded-2xl border border-black/10 p-5">
+              <summary class="cursor-pointer font-medium">Which platforms do you support?</summary>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
+            </details>
+            <details class="group rounded-2xl border border-black/10 p-5">
+              <summary class="cursor-pointer font-medium">Do you handle taxes?</summary>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
+            </details>
+            <details class="group rounded-2xl border border-black/10 p-5">
+              <summary class="cursor-pointer font-medium">How do you price services?</summary>
+              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="py-20">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <div class="grid gap-10 md:grid-cols-2 items-start">
+            <div>
+              <h2 class="display text-3xl font-semibold md:text-4xl">About Edz</h2>
+              <p class="mt-4 text-black/70 dark:text-white/70">I’m a Certified Xero & QuickBooks ProAdvisor with 4+ years of full‑charge bookkeeping and reporting across U.S. and Canadian clients—supporting founders, operators, and finance leads who need accuracy and on‑time close cycles.</p>
+              <ul class="mt-4 list-disc pl-5 text-sm">
+                <li>20+ client files managed</li>
+                <li>HST, GST, and tax filings support</li>
+                <li>Management reporting & KPI design</li>
+              </ul>
+            </div>
+            <div class="rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate">
+              <h3 class="font-semibold">Contact Details</h3>
+              <ul class="mt-3 text-sm">
+                <li>Email: <a class="underline hover:text-[#d4af37]" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></li>
+                <li>Location: Philippines (GMT+8)</li>
+                <li>Availability: Mon–Fri</li>
+              </ul>
             </div>
           </div>
         </div>
-        <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 items-center opacity-80">
-          <div class="text-sm">Certified Xero ProAdvisor</div>
-          <div class="text-sm">Certified QuickBooks ProAdvisor</div>
-          <div class="text-sm">Intuit‑trained Bookkeeper</div>
-          <div class="text-sm">IFRS & GAAP</div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="py-20 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="max-w-2xl">
+            <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Talk</h2>
+            <p class="mt-3 text-black/70 dark:text-white/70">Tell me about your books and goals. I’ll reply within one business day.</p>
+          </header>
+          <form id="contactForm"
+            class="mt-8 grid gap-4 md:max-w-2xl"
+            method="POST"
+            action="https://formspree.io/f/xblkbpav"
+            novalidate
+            data-service="formspree">
+            <div class="hidden">
+              <label>Leave this field empty
+                <input type="text" name="botField" tabindex="-1" autocomplete="off" />
+              </label>
+            </div>
+            <div class="grid gap-2">
+              <label for="name" class="text-sm">Name</label>
+              <input id="name" name="name" type="text" required aria-required="true" autocomplete="name"
+                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
+                placeholder="Your name" />
+              <p class="hidden text-xs text-red-600" data-error-for="name">Please enter your name.</p>
+            </div>
+            <div class="grid gap-2">
+              <label for="email" class="text-sm">Email</label>
+              <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" inputmode="email"
+                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
+                placeholder="you@company.com" />
+              <p class="hidden text-xs text-red-600" data-error-for="email">Enter a valid email.</p>
+            </div>
+            <div class="grid gap-2">
+              <label for="message" class="text-sm">Message</label>
+              <textarea id="message" name="message" rows="5" required aria-required="true" minlength="20"
+                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
+                placeholder="What do you need help with?"></textarea>
+              <p class="hidden text-xs text-red-600" data-error-for="message">Message should be at least 20 characters.</p>
+            </div>
+            <button id="contactSubmit" type="submit"
+              class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-5 py-3 font-medium text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
+              Send Message
+            </button>
+            <p id="formSuccess" class="hidden text-sm text-green-600" role="status" aria-live="polite">
+              Thank you—your message was sent. I’ll reply soon.
+            </p>
+            <p id="formError" class="hidden text-sm text-red-600" role="alert" aria-live="assertive">
+              Something went wrong. Please try again.
+            </p>
+            <p class="text-xs text-black/60 dark:text-white/60">By submitting, you agree to be contacted about your inquiry.</p>
+          </form>
         </div>
-      </div>
-    </section>
+      </section>
+    </main>
 
-    <!-- Services -->
-    <section id="services" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Flexible, month‑to‑month support. Cleanup available as a project.</p>
-        </header>
-        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-            <h3 class="font-semibold">Monthly Bookkeeping</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Categorization, reconciliations, AJEs, financial statements (cash/accrual).</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Bank/CC tie‑outs</li>
-              <li>Close checklist</li>
-              <li>Deliverables review</li>
-            </ul>
-          </article>
-          <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-            <h3 class="font-semibold">Catch‑Up & Cleanup</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Backlog completion and historical correction to restore accuracy.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Error tracing</li>
-              <li>Balance validation</li>
-              <li>Documentation</li>
-            </ul>
-          </article>
-          <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-            <h3 class="font-semibold">Management Reporting</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Decision‑ready P&L, BS, KPIs, trends and commentary.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Custom KPIs</li>
-              <li>Variance insight</li>
-              <li>Review session</li>
-            </ul>
-          </article>
-          <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-            <h3 class="font-semibold">Workflow & Advisory</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Light advisory on process, tech stack, and data hygiene.</p>
-            <ul class="mt-3 list-disc pl-5 text-sm">
-              <li>Tool alignment</li>
-              <li>Receipt capture</li>
-              <li>AR/AP structuring</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Work -->
-    <section id="work" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Anonymized snapshots of impact delivered for clients.</p>
-        </header>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-            <div class="text-xs uppercase tracking-wide text-black/50">Cleanup • Retail</div>
-            <h3 class="mt-2 font-semibold">3 years backlogged → 45‑day turnaround</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit‑ready books.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Variance reduced by 98%</li>
-              <li>Monthly close set to 5 business days</li>
-              <li>Cash flow visibility restored</li>
-            </ul>
-          </article>
-          <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-            <div class="text-xs uppercase tracking-wide text-black/50">Reporting • Services</div>
-            <h3 class="mt-2 font-semibold">From raw data to KPI dashboard</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Drove pricing decision on low‑margin SKU</li>
-              <li>Improved AR collections by 17%</li>
-              <li>Board‑ready monthly deck</li>
-            </ul>
-          </article>
-          <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-            <div class="text-xs uppercase tracking-wide text-black/50">Process • SaaS</div>
-            <h3 class="mt-2 font-semibold">Close process re‑engineering</h3>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Built a close checklist, standardized AJEs, and aligned rev‑rec with GAAP.</p>
-            <ul class="mt-3 text-sm list-disc pl-5">
-              <li>Cut close time by 40%</li>
-              <li>Fewer reclasses & post‑close fixes</li>
-              <li>Audit trail hardened</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Skills & Certifications</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Platforms, frameworks, and standards I work with.</p>
-        </header>
-        <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          <div class="rounded-3xl border border-black/10 p-5"><strong>QuickBooks Online</strong><div class="text-sm text-black/70 dark:text-white/70">Certified ProAdvisor</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>Xero</strong><div class="text-sm text-black/70 dark:text-white/70">Certified Advisor</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>IFRS & GAAP</strong><div class="text-sm text-black/70 dark:text-white/70">Standards & compliance</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>HST / GST</strong><div class="text-sm text-black/70 dark:text-white/70">Canada filings</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>AR / AP</strong><div class="text-sm text-black/70 dark:text-white/70">Aging, collections, vendor mgmt</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>Management Packs</strong><div class="text-sm text-black/70 dark:text-white/70">KPIs, trends, commentary</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>Cleanup</strong><div class="text-sm text-black/70 dark:text-white/70">Backlogs & corrections</div></div>
-          <div class="rounded-3xl border border-black/10 p-5"><strong>Tools</strong><div class="text-sm text-black/70 dark:text-white/70">Zoho, Wave, MYOB, FreshBooks, Sage, Odoo</div></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Process -->
-    <section id="process" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">From intro call to monthly delivery.</p>
-        </header>
-        <ol class="mt-10 grid gap-6 md:grid-cols-5">
-          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 1</span><h3 class="font-semibold">Intro Call</h3><p class="mt-2 text-sm">Scope, systems, goals.</p></li>
-          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 2</span><h3 class="font-semibold">File Review</h3><p class="mt-2 text-sm">Assess health & backlog.</p></li>
-          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 3</span><h3 class="font-semibold">Onboarding</h3><p class="mt-2 text-sm">Access, checklist, cadence.</p></li>
-          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 4</span><h3 class="font-semibold">Monthly Close</h3><p class="mt-2 text-sm">Recs, AJEs, variance.</p></li>
-          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 5</span><h3 class="font-semibold">Delivery & Review</h3><p class="mt-2 text-sm">Statements + KPIs.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
-        </header>
-        <div class="mt-10 grid gap-6 md:grid-cols-3">
-          <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-            <blockquote class="text-sm">“We went from messy books to audit‑ready in weeks. Edz is meticulous and fast.”</blockquote>
-            <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">COO, Retail Co.</figcaption>
-          </figure>
-          <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-            <blockquote class="text-sm">“Her management pack finally gave us the clarity we needed to make decisions.”</blockquote>
-            <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">Founder, Services Co.</figcaption>
-          </figure>
-          <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-            <blockquote class="text-sm">“Month‑end close is now predictable and painless.”</blockquote>
-            <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">CEO, SaaS Co.</figcaption>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
-    <section id="faq" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Quick answers to common questions.</p>
-        </header>
-        <div class="mt-10 grid gap-4 md:max-w-3xl">
-          <details class="group rounded-2xl border border-black/10 p-5">
-            <summary class="cursor-pointer font-medium">Do you work 100% virtually?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Yes — secure, remote delivery across time zones using least‑privilege access.</p>
-          </details>
-          <details class="group rounded-2xl border border-black/10 p-5">
-            <summary class="cursor-pointer font-medium">Which platforms do you support?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
-          </details>
-          <details class="group rounded-2xl border border-black/10 p-5">
-            <summary class="cursor-pointer font-medium">Do you handle taxes?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
-          </details>
-          <details class="group rounded-2xl border border-black/10 p-5">
-            <summary class="cursor-pointer font-medium">How do you price services?</summary>
-            <p class="mt-2 text-sm text-black/70 dark:text-white/70">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p>
-          </details>
-        </div>
-      </div>
-    </section>
-
-    <!-- About -->
-    <section id="about" class="py-20">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="grid gap-10 md:grid-cols-2 items-start">
-          <div>
-            <h2 class="display text-3xl font-semibold md:text-4xl">About Edz</h2>
-            <p class="mt-4 text-black/70 dark:text-white/70">I’m a Certified Xero & QuickBooks ProAdvisor with 4+ years of full‑charge bookkeeping and reporting across U.S. and Canadian clients—supporting founders, operators, and finance leads who need accuracy and on‑time close cycles.</p>
-            <ul class="mt-4 list-disc pl-5 text-sm">
-              <li>20+ client files managed</li>
-              <li>HST, GST, and tax filings support</li>
-              <li>Management reporting & KPI design</li>
-            </ul>
-          </div>
-          <div class="rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate">
-            <h3 class="font-semibold">Contact Details</h3>
-            <ul class="mt-3 text-sm">
-              <li>Email: <a class="underline hover:text-[#d4af37]" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></li>
-              <li>Location: Philippines (GMT+8)</li>
-              <li>Availability: Mon–Fri</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="py-20 border-t border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <header class="max-w-2xl">
-          <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Talk</h2>
-          <p class="mt-3 text-black/70 dark:text-white/70">Tell me about your books and goals. I’ll reply within one business day.</p>
-        </header>
-        <form id="contactForm" class="mt-8 grid gap-4 md:max-w-2xl" method="post" action="" novalidate>
-          <div class="hidden">
-            <label>Leave this field empty
-              <input type="text" name="botField" tabindex="-1" autocomplete="off" />
-            </label>
-          </div>
-          <div class="grid gap-2">
-            <label for="name" class="text-sm">Name</label>
-            <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]" placeholder="Your name" />
-            <p class="hidden text-xs text-red-600" data-error-for="name">Please enter your name.</p>
-          </div>
-          <div class="grid gap-2">
-            <label for="email" class="text-sm">Email</label>
-            <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" inputmode="email" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]" placeholder="you@company.com" />
-            <p class="hidden text-xs text-red-600" data-error-for="email">Enter a valid email.</p>
-          </div>
-          <div class="grid gap-2">
-            <label for="message" class="text-sm">Message</label>
-            <textarea id="message" name="message" rows="5" required aria-required="true" minlength="20" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]" placeholder="What do you need help with?"></textarea>
-            <p class="hidden text-xs text-red-600" data-error-for="message">Message should be at least 20 characters.</p>
-          </div>
-          <button id="contactSubmit" type="submit" class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-5 py-3 font-medium text-[#0b1220] shadow-elevate hover:opacity-90">Send Message</button>
-          <p id="formSuccess" class="hidden text-sm text-green-600">Thank you—your message was sent. I’ll reply soon.</p>
-          <p id="formError" class="hidden text-sm text-red-600">Something went wrong. Please try again.</p>
-          <p class="text-xs text-black/60 dark:text-white/60">By submitting, you agree to be contacted about your inquiry.</p>
-        </form>
-      </div>
-    </section>
-
-    <!-- Footer -->
     <footer class="py-10">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div class="text-sm">© <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div>
-          <nav class="flex flex-wrap gap-4 text-sm">
+          <nav class="flex flex-wrap gap-4 text-sm" aria-label="Footer">
             <a href="#privacy" class="hover:text-[#d4af37]">Privacy</a>
             <a href="#terms" class="hover:text-[#d4af37]">Terms</a>
             <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
@@ -399,6 +487,6 @@
       </div>
     </footer>
 
-    <script src="main.js"></script>
+    <script src="/main.js" defer></script>
   </body>
 </html>
