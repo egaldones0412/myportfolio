@@ -66,8 +66,7 @@ form?.addEventListener('submit', async (e) => {
   submitBtn.textContent = 'Sending...';
 
   try {
-    // Simulate network request - replace with fetch to your backend/service
-    await new Promise(r => setTimeout(r, 900));
+    await new Promise(r => setTimeout(r, 900)); // simulate network
     form.reset();
     successMsg.classList.remove('hidden');
   } catch (err) {
