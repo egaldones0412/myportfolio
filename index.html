@@ -35,8 +35,7 @@
     <!-- Performance hint -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
 
-    <!-- Tailwind CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- IMPORTANT: Tailwind config must come BEFORE the CDN script -->
     <script>
       tailwind.config = {
         theme: {
@@ -56,6 +55,7 @@
         }
       }
     </script>
+    <script src="https://cdn.tailwindcss.com"></script>
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -103,7 +103,7 @@
         {
           "@type":"Question",
           "name":"Which platforms do you support?",
-            "acceptedAnswer":{
+          "acceptedAnswer":{
             "@type":"Answer",
             "text":"QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo."
           }
@@ -328,31 +328,11 @@
           <p class="mt-3 text-black/70 dark:text-white/70">From intro call to monthly delivery.</p>
         </header>
         <ol class="mt-10 grid gap-6 md:grid-cols-5">
-          <li class="rounded-3xl border border-black/10 p-6">
-            <span class="text-sm uppercase text-black/50">Step 1</span>
-            <h3 class="font-semibold">Intro Call</h3>
-            <p class="mt-2 text-sm">Scope, systems, goals.</p>
-          </li>
-          <li class="rounded-3xl border border-black/10 p-6">
-            <span class="text-sm uppercase text-black/50">Step 2</span>
-            <h3 class="font-semibold">File Review</h3>
-            <p class="mt-2 text-sm">Assess health & backlog.</p>
-          </li>
-          <li class="rounded-3xl border border-black/10 p-6">
-            <span class="text-sm uppercase text-black/50">Step 3</span>
-            <h3 class="font-semibold">Onboarding</h3>
-            <p class="mt-2 text-sm">Access, checklist, cadence.</p>
-          </li>
-          <li class="rounded-3xl border border-black/10 p-6">
-            <span class="text-sm uppercase text-black/50">Step 4</span>
-            <h3 class="font-semibold">Monthly Close</h3>
-            <p class="mt-2 text-sm">Recs, AJEs, variance.</p>
-          </li>
-          <li class="rounded-3xl border border-black/10 p-6">
-            <span class="text-sm uppercase text-black/50">Step 5</span>
-            <h3 class="font-semibold">Delivery & Review</h3>
-            <p class="mt-2 text-sm">Statements + KPIs.</p>
-          </li>
+          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 1</span><h3 class="font-semibold">Intro Call</h3><p class="mt-2 text-sm">Scope, systems, goals.</p></li>
+          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 2</span><h3 class="font-semibold">File Review</h3><p class="mt-2 text-sm">Assess health & backlog.</p></li>
+          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 3</span><h3 class="font-semibold">Onboarding</h3><p class="mt-2 text-sm">Access, checklist, cadence.</p></li>
+          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 4</span><h3 class="font-semibold">Monthly Close</h3><p class="mt-2 text-sm">Recs, AJEs, variance.</p></li>
+          <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 5</span><h3 class="font-semibold">Delivery & Review</h3><p class="mt-2 text-sm">Statements + KPIs.</p></li>
         </ol>
       </div>
     </section>
@@ -362,7 +342,7 @@
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <header class="max-w-2xl">
           <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
+          <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
         </header>
         <div class="mt-10 grid gap-6 md:grid-cols-3">
           <figure class="rounded-3xl border border-black/10 bg-surface p-6">
@@ -434,55 +414,37 @@
       </div>
     </section>
 
-    <!-- Contact (enhanced form) -->
+    <!-- Contact -->
     <section id="contact" class="py-20 border-t border-black/5">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <header class="max-w-2xl">
           <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Talk</h2>
           <p class="mt-3 text-black/70 dark:text-white/70">Tell me about your books and goals. I’ll reply within one business day.</p>
         </header>
-
         <form id="contactForm" class="mt-8 grid gap-4 md:max-w-2xl" method="post" action="" novalidate>
           <div class="hidden">
             <label>Leave this field empty
               <input type="text" name="botField" tabindex="-1" autocomplete="off" />
             </label>
           </div>
-
           <div class="grid gap-2">
             <label for="name" class="text-sm">Name</label>
-            <input id="name" name="name" type="text" required aria-required="true"
-              autocomplete="name"
-              class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent"
-              placeholder="Your name" />
+            <input id="name" name="name" type="text" required aria-required="true" autocomplete="name" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent" placeholder="Your name" />
             <p class="hidden text-xs text-red-600" data-error-for="name">Please enter your name.</p>
           </div>
-
           <div class="grid gap-2">
             <label for="email" class="text-sm">Email</label>
-            <input id="email" name="email" type="email" required aria-required="true"
-              autocomplete="email" inputmode="email"
-              class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent"
-              placeholder="you@company.com" />
+            <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" inputmode="email" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent" placeholder="you@company.com" />
             <p class="hidden text-xs text-red-600" data-error-for="email">Enter a valid email.</p>
           </div>
-
           <div class="grid gap-2">
             <label for="message" class="text-sm">Message</label>
-            <textarea id="message" name="message" rows="5" required aria-required="true" minlength="20"
-              class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent"
-              placeholder="What do you need help with?"></textarea>
+            <textarea id="message" name="message" rows="5" required aria-required="true" minlength="20" class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-accent" placeholder="What do you need help with?"></textarea>
             <p class="hidden text-xs text-red-600" data-error-for="message">Message should be at least 20 characters.</p>
           </div>
-
-            <button id="contactSubmit" type="submit"
-            class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-medium text-black shadow-elevate hover:opacity-90">
-            Send Message
-          </button>
-
+          <button id="contactSubmit" type="submit" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-medium text-black shadow-elevate hover:opacity-90">Send Message</button>
           <p id="formSuccess" class="hidden text-sm text-green-600">Thank you—your message was sent. I’ll reply soon.</p>
           <p id="formError" class="hidden text-sm text-red-600">Something went wrong. Please try again.</p>
-
           <p class="text-xs text-black/60 dark:text-white/60">By submitting, you agree to be contacted about your inquiry.</p>
         </form>
       </div>
