@@ -3,16 +3,13 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-
     <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
     <meta name="description" content="Professional bookkeeping & management reporting portfolio — accurate, reliable, on time. Full‑charge bookkeeping for U.S. & Canadian clients (IFRS/GAAP)." />
-
     <link rel="canonical" href="https://www.elgaldones.works/" />
     <meta name="robots" content="index,follow" />
     <meta name="color-scheme" content="light dark" />
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
-
     <!-- Favicons / App Icons (manifest in /icons/) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
@@ -22,7 +19,6 @@
     <link rel="shortcut icon" href="/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#0f172a">
     <meta name="theme-color" content="#0f172a">
-
     <!-- Open Graph -->
     <meta property="og:site_name" content="Edz Lilian Galdones Bookkeeping" />
     <meta property="og:title" content="Accurate, Reliable, On‑Time Bookkeeping & Reporting" />
@@ -32,17 +28,14 @@
     <meta property="og:image" content="https://www.elgaldones.works/og-image.jpg" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Accurate, Reliable, On‑Time Bookkeeping & Reporting" />
     <meta name="twitter:description" content="Full‑charge bookkeeping, cleanup, and management reporting for growing U.S. & Canadian businesses." />
     <meta name="twitter:image" content="https://www.elgaldones.works/og-image.jpg" />
-
     <!-- Performance -->
     <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
     <link rel="preconnect" href="https://formspree.io" />
-
     <!-- Tailwind config first -->
     <script>
       tailwind.config = {
@@ -60,12 +53,16 @@
       }
     </script>
     <script src="https://cdn.tailwindcss.com?v=2"></script>
-
     <link rel="stylesheet" href="/styles.css" />
-
+    <!-- Chart.js for KPI Dashboard -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Slick Carousel for Testimonials -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
     <!-- Person Schema -->
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Edz Lilian Galdones","jobTitle":"Bookkeeper","description":"Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.","email":"mailto:hello@edzbooks.com","url":"https://www.elgaldones.works/","image":"https://www.elgaldones.works/og-image.jpg","sameAs":[],"knowsAbout":["Bookkeeping","Management reporting","Financial statements","IFRS","GAAP","HST","GST","QuickBooks Online","Xero","Cleanup bookkeeping"]}
+    {"@context":"https://schema.org","@type":"Person","name":"Edz Lilian Galdones","jobTitle":"Bookkeeper","description":"Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.","email":"mailto:hello@edzbooks.com","url":"https://www.elgaldones.works/","image":"https://www.elgaldones.works/og-image.jpg","knowsAbout":["Bookkeeping","Management reporting","Financial statements","IFRS","GAAP","HST","GST","QuickBooks Online","Xero","Cleanup bookkeeping"]}
     </script>
     <!-- FAQ Schema -->
     <script type="application/ld+json">
@@ -78,10 +75,9 @@
     </script>
   </head>
   <body class="bg-surface text-ink antialiased">
-    <a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#d4af37] focus:text-[#0b1220] font-medium shadow-elevate">
+    <a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#d4af37] focus:text-[#0b1220] font-medium">
       Skip to main content
     </a>
-
     <!-- Header -->
     <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/75 border-b border-black/5">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -118,7 +114,6 @@
         </div>
       </div>
     </header>
-
     <main id="main" tabindex="-1">
       <!-- Hero -->
       <section id="hero" class="relative overflow-hidden">
@@ -167,7 +162,6 @@
           </div>
         </div>
       </section>
-
       <!-- Services -->
       <section id="services" class="py-20 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -215,7 +209,6 @@
           </div>
         </div>
       </section>
-
       <!-- Work / Case Studies -->
       <section id="work" class="py-20">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -257,7 +250,35 @@
           </div>
         </div>
       </section>
-
+      <!-- Animated KPI Dashboard -->
+      <section id="kpi-dashboard" class="py-12 border-t border-black/5">
+        <div class="mx-auto max-w-4xl px-4 md:px-6">
+          <h2 class="display text-3xl font-semibold md:text-4xl mb-4">KPI Dashboard Demo</h2>
+          <canvas id="kpiChart" width="400" height="200"></canvas>
+        </div>
+      </section>
+      <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('kpiChart')) {
+          const ctx = document.getElementById('kpiChart').getContext('2d');
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Revenue', 'Expenses', 'Profit', 'AR Days', 'Close Time'],
+              datasets: [{
+                label: 'KPI Values',
+                data: [120000, 90000, 30000, 22, 5],
+                backgroundColor: ['#d4af37','#334155','#1e293b','#0f172a','#e8c052']
+              }]
+            },
+            options: {
+              animation: { duration: 2000 },
+              scales: { y: { beginAtZero: true } }
+            }
+          });
+        }
+      });
+      </script>
       <!-- Skills & Certifications -->
       <section id="skills" class="py-20 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -277,56 +298,66 @@
           </div>
         </div>
       </section>
-
-      <!-- Software Partners (updated logo sizes) -->
-<section id="software" class="py-24 border-t border-black/5">
-  <div class="mx-auto max-w-7xl px-4 md:px-6">
-    <header class="text-center max-w-3xl mx-auto">
-      <h2 class="display text-3xl md:text-5xl font-bold tracking-tight">
-        I Work With All Major Bookkeeping Softwares
-      </h2>
-      <p class="mt-3 text-lg font-medium text-[#d4af37]">
-        Here are a few!
-      </p>
-    </header>
-
-    <div class="mt-14 grid gap-y-12 gap-x-20 sm:grid-cols-3 md:grid-cols-4 justify-items-center md:justify-items-start">
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/quickbooks.png" alt="QuickBooks Online" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/xero.png" alt="Xero" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/wave.png" alt="Wave Accounting" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/myob.png" alt="MYOB" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/zoho.png" alt="Zoho Books" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/freshbooks.png" alt="FreshBooks" class="software-logo h-16 md:h-24 w-auto object-contain bg-white p-2 rounded-lg" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/sage.png" alt="Sage" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-      </figure>
-      <figure class="flex items-center h-20">
-        <img src="/assets/logos/odoo.png" alt="Odoo" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async"
-             onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;text-xs text-black/50 dark:text-white/50&quot;>Add odoo.png</span>';">
-      </figure>
-    </div>
-
-    <div class="mt-16 text-center">
-      <a href="#contact"
-        class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-8 py-4 text-sm font-semibold tracking-wide text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
-        CLICK HERE TO SCHEDULE TIME WITH ME
-      </a>
-    </div>
-  </div>
-</section>
-
+      <!-- Certification Badges -->
+      <section id="certificates" class="py-12 border-t border-black/5">
+        <div class="mx-auto max-w-4xl px-4 md:px-6">
+          <h2 class="display text-3xl font-semibold md:text-4xl mb-4">Certifications</h2>
+          <div class="flex gap-6">
+            <a href="/xero-certificate.pdf" target="_blank">
+              <img src="/assets/xero-badge.png" alt="Xero Certified" class="h-16 w-auto rounded shadow"/>
+            </a>
+            <a href="/quickbooks-certificate.pdf" target="_blank">
+              <img src="/assets/qb-badge.png" alt="QuickBooks Certified" class="h-16 w-auto rounded shadow"/>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- Software Partners -->
+      <section id="software" class="py-24 border-t border-black/5">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+          <header class="text-center max-w-3xl mx-auto">
+            <h2 class="display text-3xl md:text-5xl font-bold tracking-tight">
+              I Work With All Major Bookkeeping Softwares
+            </h2>
+            <p class="mt-3 text-lg font-medium text-[#d4af37]">
+              Here are a few!
+            </p>
+          </header>
+          <div class="mt-14 grid gap-y-12 gap-x-20 sm:grid-cols-3 md:grid-cols-4 justify-items-center md:justify-items-start">
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/quickbooks.png" alt="QuickBooks Online" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/xero.png" alt="Xero" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/wave.png" alt="Wave Accounting" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/myob.png" alt="MYOB" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/zoho.png" alt="Zoho Books" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/freshbooks.png" alt="FreshBooks" class="software-logo h-16 md:h-24 w-auto object-contain bg-white p-2 rounded-lg" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/sage.png" alt="Sage" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
+            </figure>
+            <figure class="flex items-center h-20">
+              <img src="/assets/logos/odoo.png" alt="Odoo" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async"
+                   onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;text-xs text-black/50 dark:text-white/50&quot;>Add odoo.png</span>';">
+            </figure>
+          </div>
+          <div class="mt-16 text-center">
+            <a href="#contact"
+              class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-8 py-4 text-sm font-semibold tracking-wide text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
+              CLICK HERE TO SCHEDULE TIME WITH ME
+            </a>
+          </div>
+        </div>
+      </section>
       <!-- Process -->
       <section id="process" class="py-20">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -343,31 +374,44 @@
           </ol>
         </div>
       </section>
-
-      <!-- Testimonials -->
-      <section id="testimonials" class="py-20">
+      <!-- Testimonials Carousel/Slider -->
+      <section id="testimonials-carousel" class="py-20 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Real words from teams I support.</p>
-          </header>
-          <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-              <blockquote class="text-sm">“We went from messy books to audit‑ready in weeks. Edz is meticulous and fast.”</blockquote>
-              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">COO, Retail Co.</figcaption>
-            </figure>
-            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-              <blockquote class="text-sm">“Her management pack finally gave us the clarity we needed to make decisions.”</blockquote>
-              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">Founder, Services Co.</figcaption>
-            </figure>
-            <figure class="rounded-3xl border border-black/10 bg-surface p-6">
-              <blockquote class="text-sm">“Month‑end close is now predictable and painless.”</blockquote>
-              <figcaption class="mt-3 text-xs text-black/60 dark:text-white/60">CEO, SaaS Co.</figcaption>
-            </figure>
+          <h2 class="display text-3xl font-semibold md:text-4xl mb-4 text-center">What Clients Say</h2>
+          <div class="testimonial-slider">
+            <div>
+              <blockquote class="text-lg">“Month-end close is now predictable and painless.”</blockquote>
+              <p class="text-sm text-black/60 mt-2">CEO, SaaS Co.</p>
+            </div>
+            <div>
+              <blockquote class="text-lg">“Transformed our reporting — now we make better decisions.”</blockquote>
+              <p class="text-sm text-black/60 mt-2">COO, Retail Business</p>
+            </div>
+            <div>
+              <blockquote class="text-lg">“Edz is thorough, prompt, and a pleasure to work with!”</blockquote>
+              <p class="text-sm text-black/60 mt-2">Founder, Startup</p>
+            </div>
           </div>
         </div>
       </section>
-
+      <script>
+      $(function() {
+        $('.testimonial-slider').slick({
+          dots: true, arrows: false, autoplay: true, autoplaySpeed: 4000
+        });
+      });
+      </script>
+      <!-- Blog / Insights Section -->
+      <section id="blog" class="py-12 border-t border-black/5">
+        <div class="mx-auto max-w-4xl px-4 md:px-6">
+          <h2 class="display text-3xl font-semibold md:text-4xl mb-4">Insights & Updates</h2>
+          <article class="mb-6">
+            <h3 class="font-bold text-xl">5 Tips for Faster Month-End Close</h3>
+            <p class="text-black/70 dark:text-white/70">Practical advice from my experience helping 20+ clients...</p>
+            <a href="/blog/fast-close.html" class="underline text-brand">Read more</a>
+          </article>
+        </div>
+      </section>
       <!-- FAQ -->
       <section id="faq" class="py-20 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -395,7 +439,6 @@
           </div>
         </div>
       </section>
-
       <!-- About -->
       <section id="about" class="py-20">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -420,7 +463,6 @@
           </div>
         </div>
       </section>
-
       <!-- Contact -->
       <section id="contact" class="py-20 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -475,7 +517,6 @@
         </div>
       </section>
     </main>
-
     <footer class="py-10">
       <div class="mx-auto max-w-7xl px-4 md:px-6">
         <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
@@ -488,7 +529,6 @@
         </div>
       </div>
     </footer>
-
     <script src="/main.js" defer></script>
   </body>
 </html>
