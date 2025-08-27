@@ -1,8 +1,8 @@
-/* Easily retheme here (professional, trustworthy, elegant) */
+/* Core design tokens and minimal custom styles (moved from inline) */
 :root {
   --color-primary: #0f172a; /* slate-900 */
   --color-primary-100: #1e293b; /* slate-800 */
-  --color-primary-50: #334155; /* slate-700 */
+  --color-primary-50: #334155;  /* slate-700 */
   --color-accent: #d4af37; /* elegant gold */
   --color-surface: #ffffff;
   --color-ink: #0b1220;
@@ -14,7 +14,6 @@
   --color-accent: #e8c052;
 }
 
-/* Type tweaks */
 .display {
   letter-spacing: -0.02em;
 }
