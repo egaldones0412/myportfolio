@@ -13,7 +13,7 @@
     <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)" />
     <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
 
-    <!-- Favicons / App Icons (manifest kept in /icons/) -->
+    <!-- Favicons / App Icons (manifest in /icons/) -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -90,7 +90,7 @@
             <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand/90 text-white shadow-elevate">EG</span>
             <span class="hidden sm:block">Edz Lilian Galdones</span>
           </a>
-            <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
+          <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
             <a href="#work" class="nav-link hover:text-[#d4af37]">Work</a>
             <a href="#services" class="nav-link hover:text-[#d4af37]">Services</a>
             <a href="#software" class="nav-link hover:text-[#d4af37]">Software</a>
@@ -113,7 +113,7 @@
           <a href="#software" class="hover:text-[#d4af37]">Software</a>
           <a href="#about" class="hover:text-[#d4af37]">About</a>
           <a href="#testimonials" class="hover:text-[#d4af37]">Testimonials</a>
-            <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
+          <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
           <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
         </div>
       </div>
@@ -278,7 +278,7 @@
         </div>
       </section>
 
-      <!-- Software Partners -->
+      <!-- Software Partners (DESKTOP GRID UPDATED) -->
       <section id="software" class="py-24 border-t border-black/5">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
           <header class="text-center max-w-3xl mx-auto">
@@ -289,29 +289,30 @@
               Here are a few!
             </p>
           </header>
-          <div class="mt-14 grid gap-10 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 place-items-center">
-            <figure class="flex items-center justify-center h-16">
+          <!-- Changed grid classes below -->
+          <div class="mt-14 grid gap-y-12 gap-x-20 sm:grid-cols-3 md:grid-cols-4 justify-items-center md:justify-items-start">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/quickbooks.png" alt="QuickBooks Online" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/xero.png" alt="Xero" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/wave.png" alt="Wave Accounting" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/myob.png" alt="MYOB" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/zoho.png" alt="Zoho Books" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/freshbooks.png" alt="FreshBooks" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/sage.png" alt="Sage" class="h-12 w-auto object-contain" loading="lazy" decoding="async">
             </figure>
-            <figure class="flex items-center justify-center h-16">
+            <figure class="flex items-center h-16">
               <img src="/assets/logos/odoo.png" alt="Odoo" class="h-12 w-auto object-contain" loading="lazy" decoding="async"
                    onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;text-xs text-black/50 dark:text-white/50&quot;>Add odoo.png</span>';">
             </figure>
