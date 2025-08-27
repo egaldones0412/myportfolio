@@ -19,7 +19,7 @@
 .dark .text-accent,
 .dark .bg-accent { color: #0b1220; }
 
-/* Skip link base (classes handle reveal) */
+/* Skip link base */
 .skip-link { position: absolute; left: -999px; }
 
 /* General focus fallback */
@@ -67,4 +67,35 @@ button:focus-visible, a:focus-visible {
 /* Dark border subtle adjustment */
 .dark .border-black\/10 {
   border-color: rgba(255,255,255,0.1);
+}
+
+/* ================================================
+   Grayscale → Color Hover (Desktop Only)
+   Applies starting at md (≥768px). Mobile unaffected.
+   ================================================ */
+@media (min-width: 768px) {
+  #software img {
+    filter: grayscale(100%) brightness(0.9);
+    opacity: 0.75;
+    transition: filter .35s ease, opacity .35s ease, transform .35s ease;
+    will-change: filter, opacity;
+  }
+  #software img:hover {
+    filter: none;
+    opacity: 1;
+  }
+  /* If later they become focusable (e.g. wrapped in <a>) provide keyboard parity */
+  #software a:focus-visible img,
+  #software button:focus-visible img {
+    filter: none;
+    opacity: 1;
+  }
+  /* Optional subtle lift */
+  #software img:hover {
+    transform: translateY(-2px);
+  }
+  #software a:focus-visible img,
+  #software button:focus-visible img {
+    transform: translateY(-2px);
+  }
 }
