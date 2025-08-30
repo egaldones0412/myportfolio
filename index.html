@@ -66,6 +66,8 @@
             color: var(--color-neutral);
             font-family: 'Open Sans', sans-serif;
             background-color: var(--color-surface);
+            /* Subtle geometric background pattern */
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e7e5e2' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
         }
         .display {
             font-family: 'Montserrat', sans-serif;
@@ -129,6 +131,9 @@
             transform: scaleX(1);
             transform-origin: bottom left;
         }
+        .interactive-card {
+            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+        }
         .interactive-card:hover {
              transform: translateY(-6px);
              box-shadow: var(--tw-shadow-elevate), var(--tw-shadow-glow);
@@ -173,13 +178,6 @@
         }
 
         /* Enhanced Interactivity */
-        .logo-hover {
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
-        }
-        .logo-hover:hover {
-            filter: grayscale(0%);
-        }
         .faq-item:hover {
             background-color: #f9f7f4; /* A slightly lighter beige */
         }
@@ -268,6 +266,7 @@
             </div>
         </section>
 
+        <!-- Curved transition to white -->
         <div class="relative bg-box">
              <div class="absolute -top-16 left-0 w-full leading-none">
                 <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
@@ -284,47 +283,47 @@
                     <p class="mt-4 text-neutral">Bookkeeping and accounting services tailored to startups and small businesses in the US and Canada.</p>
                 </header>
                 <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article data-animate style="--stagger: 0.1s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                    <article data-animate style="--stagger: 0.1s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Monthly Bookkeeping</h3>
                         <p class="text-sm mt-2">Consistent and accurate recording of all financial transactions to keep your books pristine.</p>
                     </article>
-                    <article data-animate style="--stagger: 0.2s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                    <article data-animate style="--stagger: 0.2s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">AR/AP Management</h3>
                         <p class="text-sm mt-2">Managing invoices and bills to ensure timely payments and healthy cash flow.</p>
                     </article>
-                    <article data-animate style="--stagger: 0.3s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                    <article data-animate style="--stagger: 0.3s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Payroll Support</h3>
                         <p class="text-sm mt-2">Assisting with payroll processing to ensure your team is paid accurately and on time.</p>
                     </article>
-                    <article data-animate style="--stagger: 0.4s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                    <article data-animate style="--stagger: 0.4s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Financial Organization</h3>
                         <p class="text-sm mt-2">Structuring your financial data for clarity, compliance, and strategic planning.</p>
                     </article>
-                     <article data-animate style="--stagger: 0.5s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                     <article data-animate style="--stagger: 0.5s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h4M8 7a2 2 0 012-2h4a2 2 0 012 2v8a2 2 0 01-2 2H8z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Month/Year-End Close</h3>
                         <p class="text-sm mt-2">Closing your books efficiently to provide a timely and accurate snapshot of performance.</p>
                     </article>
-                     <article data-animate style="--stagger: 0.6s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                     <article data-animate style="--stagger: 0.6s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Audit & Cleanup Projects</h3>
                         <p class="text-sm mt-2">Preparing your books for audits and correcting historical errors to ensure accuracy.</p>
                     </article>
-                     <article data-animate style="--stagger: 0.7s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                     <article data-animate style="--stagger: 0.7s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">KPI & Management Reporting</h3>
                         <p class="text-sm mt-2">Creating custom reports and tracking key metrics to guide your business decisions.</p>
                     </article>
-                     <article data-animate style="--stagger: 0.8s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                     <article data-animate style="--stagger: 0.8s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Tax Compliance Support</h3>
                         <p class="text-sm mt-2">Assisting with HST, GST, and US/CA filings to keep you compliant and stress-free.</p>
                     </article>
-                     <article data-animate style="--stagger: 0.9s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate transition-all text-center">
+                     <article data-animate style="--stagger: 0.9s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
                         <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
                         <h3 class="font-semibold text-brand mt-4 display">Advisory & Process Improvement</h3>
                         <p class="text-sm mt-2">Providing insights to optimize your financial workflows and operational efficiency.</p>
@@ -346,14 +345,14 @@
                     <h2 class="display text-3xl font-semibold md:text-4xl">We Work With All Major Bookkeeping Softwares</h2>
                 </header>
                 <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 items-center" data-animate>
-                    <img src="./assets/logos/quickbooks.png" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/xero.png" alt="Xero Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/wave.png" alt="Wave Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/myob.png" alt="MYOB Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/zoho.png" alt="Zoho Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/freshbooks.png" alt="FreshBooks Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/sage.png" alt="Sage Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
-                    <img src="./assets/logos/odoo.png" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain logo-hover">
+                    <img src="./assets/logos/quickbooks.png" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/xero.png" alt="Xero Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/wave.png" alt="Wave Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/myob.png" alt="MYOB Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/zoho.png" alt="Zoho Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/freshbooks.png" alt="FreshBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/sage.png" alt="Sage Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="./assets/logos/odoo.png" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
                 </div>
                 <div class="mt-16 text-center" data-animate>
                      <a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-all hover:scale-105 shadow-elevate">
@@ -423,7 +422,12 @@
         </section>
 
         <!-- ============ About ============ -->
-        <section id="about" class="py-28">
+        <section id="about" class="py-28 bg-box relative">
+            <div class="absolute top-0 left-0 w-full leading-none">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
+                </svg>
+            </div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <div class="grid gap-12 md:grid-cols-3 items-center">
                     <div class="md:col-span-1" data-animate>
@@ -448,6 +452,11 @@
                         </ul>
                     </div>
                 </div>
+            </div>
+             <div class="absolute bottom-0 left-0 w-full leading-none">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,50 C360,100 1080,100 1440,50 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
