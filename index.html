@@ -1,576 +1,512 @@
 <!doctype html>
 <html lang="en" class="scroll-smooth">
-  <head>
+<head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
-    <meta name="description" content="Professional bookkeeping & management reporting portfolio — accurate, reliable, on time. Full‑charge bookkeeping for U.S. & Canadian clients (IFRS/GAAP)." />
-    <link rel="canonical" href="https://www.elgaldones.works/" />
-    <meta name="robots" content="index,follow" />
-    <meta name="color-scheme" content="light dark" />
-    <meta name="theme-color" content="#0f172a" media="(prefers-color-scheme: light)" />
-    <meta name="theme-color" content="#0b1220" media="(prefers-color-scheme: dark)" />
-    <!-- Favicons / App Icons (manifest in /icons/) -->
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#d4af37">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <meta name="msapplication-TileColor" content="#0f172a">
-    <meta name="theme-color" content="#0f172a">
-    <!-- Open Graph -->
-    <meta property="og:site_name" content="Edz Lilian Galdones Bookkeeping" />
-    <meta property="og:title" content="Accurate, Reliable, On‑Time Bookkeeping & Reporting" />
-    <meta property="og:description" content="Full‑charge bookkeeping, cleanup, and management reporting for growing U.S. & Canadian businesses." />
-    <meta property="og:url" content="https://www.elgaldones.works/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://www.elgaldones.works/og-image.jpg" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Accurate, Reliable, On‑Time Bookkeeping & Reporting" />
-    <meta name="twitter:description" content="Full‑charge bookkeeping, cleanup, and management reporting for growing U.S. & Canadian businesses." />
-    <meta name="twitter:image" content="https://www.elgaldones.works/og-image.jpg" />
-    <!-- Performance -->
-    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin />
-    <link rel="preconnect" href="https://formspree.io" />
-    <!-- Tailwind config first -->
+    <meta name="description" content="Professional bookkeeping that transforms messy financials into a clear roadmap for growth. Full-charge support for U.S. & Canadian businesses." />
+    <meta name="theme-color" content="#2C2C2C" />
+
+    <!-- Google Fonts: Open Sans & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- Swiper.js for Testimonial Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Tailwind Play CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            colors: {
-              brand: { DEFAULT: '#0f172a', 50: '#334155', 100: '#1e293b' },
-              accent: '#d4af37',
-              surface: '#ffffff',
-              ink: '#0b1220'
-            },
-            boxShadow: { 'elevate': '0 8px 24px rgba(2,6,23,0.12)' }
-          }
-        }
-      }
-    </script>
-    <script src="https://cdn.tailwindcss.com?v=2"></script>
-    <link rel="stylesheet" href="/styles.css" />
-    <!-- Chart.js for KPI Dashboard -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <!-- Slick Carousel for Testimonials -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-    <!-- Person Schema -->
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"Person","name":"Edz Lilian Galdones","jobTitle":"Bookkeeper","description":"Certified Xero & QuickBooks ProAdvisor providing full-charge bookkeeping, cleanup, and management reporting for U.S. & Canadian small businesses.","email":"mailto:hello@edzbooks.com","url":"https://www.elgaldones.works/","image":"https://www.elgaldones.works/og-image.jpg","knowsAbout":["Bookkeeping","Management reporting","Financial statements","IFRS","GAAP","HST","GST","QuickBooks Online","Xero","Cleanup bookkeeping"]}
-    </script>
-    <!-- FAQ Schema -->
-    <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"Do you work 100% virtually?","acceptedAnswer":{"@type":"Answer","text":"Yes — secure, remote delivery across time zones using least‑privilege access."}},
-      {"@type":"Question","name":"Which platforms do you support?","acceptedAnswer":{"@type":"Answer","text":"QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo."}},
-      {"@type":"Question","name":"Do you handle taxes?","acceptedAnswer":{"@type":"Answer","text":"I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed."}},
-      {"@type":"Question","name":"How do you price services?","acceptedAnswer":{"@type":"Answer","text":"Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project."}}
-    ]}
-    </script>
-  </head>
-  <body class="bg-surface text-ink antialiased">
-    <a href="#main" class="skip-link sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:rounded-lg focus:bg-[#d4af37] focus:text-[#0b1220] font-medium">
-      Skip to main content
-    </a>
-    <!-- Header -->
-    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/75 border-b border-black/5">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="flex h-16 items-center justify-between">
-          <a href="#hero" class="flex items-center gap-3 font-semibold focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
-            <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand/90 text-white shadow-elevate">EG</span>
-            <span class="hidden sm:block">Edz Lilian Galdones</span>
-          </a>
-          <nav class="hidden md:flex items-center gap-6 text-sm" aria-label="Primary">
-            <a href="#work" class="nav-link hover:text-[#d4af37]">Work</a>
-            <a href="#services" class="nav-link hover:text-[#d4af37]">Services</a>
-            <a href="#software" class="nav-link hover:text-[#d4af37]">Software</a>
-            <a href="#about" class="nav-link hover:text-[#d4af37]">About</a>
-            <a href="#testimonials" class="nav-link hover:text-[#d4af37]">Testimonials</a>
-            <a href="#faq" class="nav-link hover:text-[#d4af37]">FAQ</a>
-            <a href="#contact" class="nav-link hover:text-[#d4af37]">Contact</a>
-          </nav>
-          <div class="flex items-center gap-2">
-            <button id="themeToggle" aria-label="Toggle dark mode" class="rounded-xl border border-black/10 px-3 py-2 text-sm hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Theme</button>
-            <a href="#contact" class="inline-flex items-center rounded-xl bg-[#d4af37] px-4 py-2 text-sm font-medium text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Book a Free Call</a>
-            <button class="md:hidden rounded-xl border border-black/10 p-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]" id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">☰</button>
-          </div>
-        </div>
-      </div>
-      <div id="mobileMenu" class="md:hidden hidden border-t border-black/5 bg-surface" role="dialog" aria-label="Mobile navigation">
-        <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm">
-          <a href="#work" class="hover:text-[#d4af37]">Work</a>
-          <a href="#services" class="hover:text-[#d4af37]">Services</a>
-          <a href="#software" class="hover:text-[#d4af37]">Software</a>
-          <a href="#about" class="hover:text-[#d4af37]">About</a>
-          <a href="#testimonials" class="hover:text-[#d4af37]">Testimonials</a>
-          <a href="#faq" class="hover:text-[#d4af37]">FAQ</a>
-          <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
-        </div>
-      </div>
-    </header>
-    <main id="main" tabindex="-1">
-      <!-- Hero -->
-      <section id="hero" class="relative overflow-hidden">
-        <div class="mx-auto max-w-7xl px-4 md:px-6 pt-16 pb-20 md:pt-24 md:pb-28">
-          <div class="grid items-center gap-10 md:grid-cols-2">
-            <div>
-              <h1 class="display text-4xl font-bold md:text-6xl">
-                Accurate. Reliable. <span class="text-[#d4af37]">On&nbsp;Time.</span>
-              </h1>
-              <p class="mt-5 text-lg text-black/70 dark:text-white/70">
-                Bookkeeping & management reporting for growing businesses. Full‑charge support across QBO, Xero, and more — with IFRS/GAAP discipline.
-              </p>
-              <div class="mt-8 flex flex-wrap gap-3">
-                <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 text-white hover:bg-brand/90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">Book a Free Consultation</a>
-                <a href="#work" class="inline-flex items-center rounded-xl border border-black/10 px-5 py-3 hover:bg-black/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">See Case Studies</a>
-              </div>
-              <p class="mt-4 text-sm text-black/60 dark:text-white/60">4+ years experience • 20+ client files • U.S. & Canada • HST/GST • T1/T2/T4</p>
-            </div>
-            <div class="relative">
-              <div class="aspect-[4/3] w-full rounded-3xl border border-black/10 bg-gradient-to-br from-brand/90 to-brand/60 p-1 shadow-elevate">
-                <div class="h-full w-full rounded-[1.25rem] bg-surface p-6 grid grid-rows-3 gap-4">
-                  <div class="rounded-2xl border border-black/10 p-4">
-                    <div class="text-sm font-medium">Month‑End Close</div>
-                    <div class="mt-2 h-2 w-3/4 rounded-full bg-black/10"></div>
-                  </div>
-                  <div class="rounded-2xl border border-black/10 p-4">
-                    <div class="text-sm font-medium">Bank Recs • AJE • KPIs</div>
-                    <div class="mt-2 h-2 w-1/2 rounded-full bg-black/10"></div>
-                  </div>
-                  <div class="rounded-2xl border border-black/10 p-4">
-                    <div class="text-sm font-medium">Management Report</div>
-                    <div class="mt-2 h-2 w-2/3 rounded-full bg-black/10"></div>
-                  </div>
-                </div>
-              </div>
-              <div class="pointer-events-none absolute inset-x-0 -bottom-10 blur-2xl opacity-40" aria-hidden>
-                <div class="mx-auto h-32 w-3/4 rounded-full bg-[#d4af37] dark:bg-[#e8c052]"></div>
-              </div>
-            </div>
-          </div>
-          <div class="mt-12 grid grid-cols-2 md:grid-cols-4 gap-6 items-center opacity-80">
-            <div class="text-sm">Certified Xero ProAdvisor</div>
-            <div class="text-sm">Certified QuickBooks ProAdvisor</div>
-            <div class="text-sm">Intuit‑trained Bookkeeper</div>
-            <div class="text-sm">IFRS & GAAP</div>
-          </div>
-        </div>
-      </section>
-      <!-- Services -->
-      <section id="services" class="py-20 border-t border-black/5">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Flexible, month‑to‑month support. Cleanup available as a project.</p>
-          </header>
-          <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-              <h3 class="font-semibold">Monthly Bookkeeping</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Categorization, reconciliations, AJEs, financial statements (cash/accrual).</p>
-              <ul class="mt-3 list-disc pl-5 text-sm">
-                <li>Bank/CC tie‑outs</li>
-                <li>Close checklist</li>
-                <li>Deliverables review</li>
-              </ul>
-            </article>
-            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-              <h3 class="font-semibold">Catch‑Up & Cleanup</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Backlog completion and historical correction to restore accuracy.</p>
-              <ul class="mt-3 list-disc pl-5 text-sm">
-                <li>Error tracing</li>
-                <li>Balance validation</li>
-                <li>Documentation</li>
-              </ul>
-            </article>
-            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-              <h3 class="font-semibold">Management Reporting</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Decision‑ready P&L, BS, KPIs, trends and commentary.</p>
-              <ul class="mt-3 list-disc pl-5 text-sm">
-                <li>Custom KPIs</li>
-                <li>Variance insight</li>
-                <li>Review session</li>
-              </ul>
-            </article>
-            <article class="group rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate hover:-translate-y-1 transition">
-              <h3 class="font-semibold">Workflow & Advisory</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Light advisory on process, tech stack, and data hygiene.</p>
-              <ul class="mt-3 list-disc pl-5 text-sm">
-                <li>Tool alignment</li>
-                <li>Receipt capture</li>
-                <li>AR/AP structuring</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- Work / Case Studies -->
-      <section id="work" class="py-20">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Anonymized snapshots of impact delivered for clients.</p>
-          </header>
-          <div class="mt-10 grid gap-6 md:grid-cols-3">
-            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-              <div class="text-xs uppercase tracking-wide text-black/50">Cleanup • Retail</div>
-              <h3 class="mt-2 font-semibold">3 years backlogged → 45‑day turnaround</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit‑ready books.</p>
-              <ul class="mt-3 text-sm list-disc pl-5">
-                <li>Variance reduced by 98%</li>
-                <li>Monthly close set to 5 business days</li>
-                <li>Cash flow visibility restored</li>
-              </ul>
-            </article>
-            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-              <div class="text-xs uppercase tracking-wide text-black/50">Reporting • Services</div>
-              <h3 class="mt-2 font-semibold">From raw data to KPI dashboard</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
-              <ul class="mt-3 text-sm list-disc pl-5">
-                <li>Drove pricing decision on low‑margin SKU</li>
-                <li>Improved AR collections by 17%</li>
-                <li>Board‑ready monthly deck</li>
-              </ul>
-            </article>
-            <article class="rounded-3xl border border-black/10 bg-surface p-6 hover:shadow-elevate">
-              <div class="text-xs uppercase tracking-wide text-black/50">Process • SaaS</div>
-              <h3 class="mt-2 font-semibold">Close process re‑engineering</h3>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Built a close checklist, standardized AJEs, and aligned rev‑rec with GAAP.</p>
-              <ul class="mt-3 text-sm list-disc pl-5">
-                <li>Cut close time by 40%</li>
-                <li>Fewer reclasses & post‑close fixes</li>
-                <li>Audit trail hardened</li>
-              </ul>
-            </article>
-          </div>
-        </div>
-      </section>
-      <!-- Animated KPI Dashboard -->
-      <section id="kpi-dashboard" class="py-12 border-t border-black/5">
-        <div class="mx-auto max-w-4xl px-4 md:px-6">
-          <h2 class="display text-3xl font-semibold md:text-4xl mb-4">KPI Dashboard Demo</h2>
-          <canvas id="kpiChart" width="400" height="200"></canvas>
-        </div>
-      </section>
-      <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        if (document.getElementById('kpiChart')) {
-          const ctx = document.getElementById('kpiChart').getContext('2d');
-          new Chart(ctx, {
-            type: 'bar',
-            data: {
-              labels: ['Revenue', 'Expenses', 'Profit', 'AR Days', 'Close Time'],
-              datasets: [{
-                label: 'KPI Values',
-                data: [120000, 90000, 30000, 22, 5],
-                backgroundColor: ['#d4af37','#334155','#1e293b','#0f172a','#e8c052']
-              }]
-            },
-            options: {
-              animation: { duration: 2000 },
-              scales: { y: { beginAtZero: true } }
+        const defaultTheme = tailwind.defaultTheme;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
+                        'display': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                    },
+                    colors: {
+                        brand: {
+                            DEFAULT: 'var(--color-brand)',
+                        },
+                        accent: 'var(--color-accent)',
+                        surface: 'var(--color-surface)',
+                        box: 'var(--color-box)',
+                        neutral: {
+                            DEFAULT: 'var(--color-neutral)',
+                            light: 'var(--color-neutral-light)',
+                        }
+                    },
+                    boxShadow: {
+                        'elevate': '0 8px 30px rgba(44, 44, 44, 0.07)'
+                    }
+                }
             }
-          });
         }
-      });
-      </script>
-      <!-- Skills & Certifications -->
-      <section id="skills" class="py-20 border-t border-black/5">
+    </script>
+
+    <style>
+        /* Elegant & Modern Palette */
+        :root {
+            --color-surface: #EDE6DB;      /* Warm Beige */
+            --color-brand: #2C2C2C;       /* Charcoal */
+            --color-accent: #D4AF37;      /* Soft Gold */
+            --color-box: #FFFFFF;         /* White */
+            --color-neutral: #5c5c5c;      /* Lighter Charcoal for secondary text */
+            --color-neutral-light: #e7e5e2; /* Light border from beige */
+        }
+        
+        html {
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        body {
+            color: var(--color-neutral);
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--color-surface);
+        }
+        .display {
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: -0.02em;
+            color: var(--color-brand);
+        }
+
+        /* Entry & Scroll Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        [data-animate-entry] {
+            animation: fadeInUp 0.8s ease-out forwards;
+            animation-delay: var(--delay, 0s);
+        }
+        [data-animate] {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        [data-animate].in-view {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        [data-animate-width] {
+            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+            transition-delay: 0.3s;
+        }
+
+        /* Interactive UI Elements */
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--color-accent);
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+        
+        /* Swiper Carousel Customization */
+        .swiper-button-prev, .swiper-button-next {
+            color: var(--color-neutral);
+            transition: color 0.2s;
+        }
+        .swiper-button-prev:hover, .swiper-button-next:hover {
+            color: var(--color-accent);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- ============ Header ============ -->
+    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/80 border-b border-neutral-light">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">Skills & Certifications</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Platforms, frameworks, and standards I work with.</p>
-          </header>
-          <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            <div class="rounded-3xl border border-black/10 p-5"><strong>QuickBooks Online</strong><div class="text-sm text-black/70 dark:text-white/70">Certified ProAdvisor</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>Xero</strong><div class="text-sm text-black/70 dark:text-white/70">Certified Advisor</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>IFRS & GAAP</strong><div class="text-sm text-black/70 dark:text-white/70">Standards & compliance</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>HST / GST</strong><div class="text-sm text-black/70 dark:text-white/70">Canada filings</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>AR / AP</strong><div class="text-sm text-black/70 dark:text-white/70">Aging, collections, vendor mgmt</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>Management Packs</strong><div class="text-sm text-black/70 dark:text-white/70">KPIs, trends, commentary</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>Cleanup</strong><div class="text-sm text-black/70 dark:text-white/70">Backlogs & corrections</div></div>
-            <div class="rounded-3xl border border-black/10 p-5"><strong>Tools</strong><div class="text-sm text-black/70 dark:text-white/70">Zoho, Wave, MYOB, FreshBooks, Sage, Odoo</div></div>
-          </div>
-        </div>
-      </section>
-      <!-- Certification Badges -->
-      <section id="certificates" class="py-12 border-t border-black/5">
-        <div class="mx-auto max-w-4xl px-4 md:px-6">
-          <h2 class="display text-3xl font-semibold md:text-4xl mb-4">Certifications</h2>
-          <div class="flex gap-6">
-            <a href="/xero-certificate.pdf" target="_blank">
-              <img src="/assets/xero-badge.png" alt="Xero Certified" class="h-16 w-auto rounded shadow"/>
-            </a>
-            <a href="/quickbooks-certificate.pdf" target="_blank">
-              <img src="/assets/qb-badge.png" alt="QuickBooks Certified" class="h-16 w-auto rounded shadow"/>
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- Software Partners -->
-      <section id="software" class="py-24 border-t border-black/5">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="text-center max-w-3xl mx-auto">
-            <h2 class="display text-3xl md:text-5xl font-bold tracking-tight">
-              I Work With All Major Bookkeeping Softwares
-            </h2>
-            <p class="mt-3 text-lg font-medium text-[#d4af37]">
-              Here are a few!
-            </p>
-          </header>
-          <div class="mt-14 grid gap-y-12 gap-x-20 sm:grid-cols-3 md:grid-cols-4 justify-items-center md:justify-items-start">
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/quickbooks.png" alt="QuickBooks Online" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/xero.png" alt="Xero" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/wave.png" alt="Wave Accounting" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/myob.png" alt="MYOB" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/zoho.png" alt="Zoho Books" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/freshbooks.png" alt="FreshBooks" class="software-logo h-16 md:h-24 w-auto object-contain bg-white p-2 rounded-lg" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/sage.png" alt="Sage" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async">
-            </figure>
-            <figure class="flex items-center h-20">
-              <img src="/assets/logos/odoo.png" alt="Odoo" class="software-logo h-16 md:h-24 w-auto object-contain" loading="lazy" decoding="async"
-                   onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=&quot;text-xs text-black/50 dark:text-white/50&quot;>Add odoo.png</span>';">
-            </figure>
-          </div>
-          <div class="mt-16 text-center">
-            <a href="#contact"
-              class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-8 py-4 text-sm font-semibold tracking-wide text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
-              CLICK HERE TO SCHEDULE TIME WITH ME
-            </a>
-          </div>
-        </div>
-      </section>
-      <!-- Process -->
-      <section id="process" class="py-20">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">From intro call to monthly delivery.</p>
-          </header>
-          <ol class="mt-10 grid gap-6 md:grid-cols-5">
-            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 1</span><h3 class="font-semibold">Intro Call</h3><p class="mt-2 text-sm">Scope, systems, goals.</p></li>
-            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 2</span><h3 class="font-semibold">File Review</h3><p class="mt-2 text-sm">Assess health & backlog.</p></li>
-            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 3</span><h3 class="font-semibold">Onboarding</h3><p class="mt-2 text-sm">Access, checklist, cadence.</p></li>
-            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 4</span><h3 class="font-semibold">Monthly Close</h3><p class="mt-2 text-sm">Recs, AJEs, variance.</p></li>
-            <li class="rounded-3xl border border-black/10 p-6"><span class="text-sm uppercase text-black/50">Step 5</span><h3 class="font-semibold">Delivery & Review</h3><p class="mt-2 text-sm">Statements + KPIs.</p></li>
-          </ol>
-        </div>
-      </section>
-      <!-- Feedback/Testimonial Carousel Section (real feedback, one card per slide) -->
-<section id="testimonials-carousel" class="py-20 border-t border-black/5 bg-surface">
-  <div class="mx-auto max-w-7xl px-4 md:px-6">
-    <h2 class="display text-3xl font-semibold md:text-4xl mb-8 text-center">What Clients Say</h2>
-    <div class="testimonial-slider">
-      <!-- Slide 1 -->
-      <div class="flex justify-center">
-        <div class="flex flex-col items-center">
-          <div class="bg-white rounded-2xl shadow-elevate px-8 py-6 text-center max-w-xl">
-            <div class="flex justify-center mb-3">
-              <!-- Inline SVG yellow star (repeated 5x) -->
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
+            <div class="flex h-16 items-center justify-between">
+                <a href="#" class="flex items-center gap-3 font-semibold text-brand">
+                    <span class="inline-flex h-9 w-9 items-center justify-center rounded-2xl bg-brand text-white shadow-lg font-display">EG</span>
+                    <span class="hidden sm:block font-display">Edz Lilian Galdones</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                    <a href="#services" class="nav-link text-brand hover:text-accent transition-colors">Services</a>
+                    <a href="#work" class="nav-link text-brand hover:text-accent transition-colors">Work</a>
+                    <a href="#about" class="nav-link text-brand hover:text-accent transition-colors">About</a>
+                    <a href="#testimonials" class="nav-link text-brand hover:text-accent transition-colors">Testimonials</a>
+                    <a href="#faq" class="nav-link text-brand hover:text-accent transition-colors">FAQ</a>
+                    <a href="#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a href="#contact" class="hidden sm:inline-flex items-center rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-brand shadow-elevate hover:opacity-90 transition-all hover:scale-105">Book a Free Call</a>
+                    <button class="md:hidden rounded-xl border border-neutral-light p-2" id="menuBtn" aria-label="Open menu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
-            <p class="text-black/80 text-base mb-4">
-              "Working with Edz has been a game-changer for me. She stepped in when things were overwhelming and turned it all around. I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward. I’m grateful to have her on my side, and this is just the beginning of a long partnership."
-            </p>
-            <p class="font-semibold text-[#d4af37] mb-1">Danny Batimana, Founder – <span style="color:#ff9800; background: #fffbe5;">Happiness</span> Is Now Inc.</p>
-          </div>
         </div>
-      </div>
-      <!-- Slide 2 -->
-      <div class="flex justify-center">
-        <div class="flex flex-col items-center">
-          <div class="bg-white rounded-2xl shadow-elevate px-8 py-6 text-center max-w-xl">
-            <div class="flex justify-center mb-3">
-              <!-- Inline SVG yellow star (repeated 5x) -->
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-light bg-surface/95">
+            <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm font-semibold">
+                <a href="#services" class="text-brand hover:text-accent">Services</a>
+                <a href="#work" class="text-brand hover:text-accent">Work</a>
+                <a href="#about" class="text-brand hover:text-accent">About</a>
+                <a href="#testimonials" class="text-brand hover:text-accent">Testimonials</a>
+                <a href="#faq" class="text-brand hover:text-accent">FAQ</a>
+                <a href="#contact" class="text-brand hover:text-accent">Contact</a>
             </div>
-            <p class="text-black/80 text-base mb-4">
-              "Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence. Beyond her technical skills, she brings positivity and reliability that make a real difference. We’re grateful to have her support and look forward to working with her long-term."
-            </p>
-            <p class="font-semibold text-[#d4af37] mb-1">Scarlet Ngo, Managing Partner – Clarity Tax</p>
-          </div>
         </div>
-      </div>
-      <!-- Slide 3 -->
-      <div class="flex justify-center">
-        <div class="flex flex-col items-center">
-          <div class="bg-white rounded-2xl shadow-elevate px-8 py-6 text-center max-w-xl">
-            <div class="flex justify-center mb-3">
-              <!-- Inline SVG yellow star (repeated 5x) -->
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
-              <svg class="w-5 h-5" fill="#FFD700" viewBox="0 0 20 20"><polygon points="10,1 12.59,7.36 19.51,7.36 13.97,11.68 16.55,18.04 10,13.72 3.45,18.04 6.03,11.68 0.49,7.36 7.41,7.36"/></svg>
+    </header>
+
+    <main>
+        <!-- ============ Hero ============ -->
+        <section class="relative overflow-hidden py-24 md:py-32">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid items-center gap-12 md:grid-cols-2">
+                    <div class="opacity-0" data-animate-entry="fade-up" data-delay="0.2">
+                        <h1 class="display text-4xl font-bold md:text-6xl text-brand">
+                            Clarity. Control. <span class="text-accent">Confidence.</span>
+                        </h1>
+                        <p class="mt-5 text-lg text-neutral">
+                            Expert bookkeeping that transforms messy financials into a clear roadmap for growth. Full-charge support for U.S. & Canadian businesses.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4">
+                            <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-neutral transition-colors shadow-lg hover:scale-105">Book a Free Consultation</a>
+                            <a href="#work" class="inline-flex items-center rounded-xl border border-neutral-light px-5 py-3 font-semibold text-brand hover:bg-neutral-light/50 hover:border-accent transition-all hover:scale-105">See Case Studies</a>
+                        </div>
+                    </div>
+                    <div class="relative opacity-0" data-animate-entry="fade-up" data-delay="0.4">
+                        <div class="aspect-[4/3] w-full rounded-3xl border border-neutral-light bg-box p-1 shadow-elevate">
+                            <div class="h-full w-full rounded-[1.25rem] p-6 grid grid-rows-3 gap-4" data-animate>
+                                <div class="rounded-xl border border-neutral-light p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Revenue</span><span class="text-green-500">+12%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="75%"></div></div>
+                                </div>
+                                <div class="rounded-xl border border-neutral-light p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Net Profit</span><span class="text-accent">+8%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="50%"></div></div>
+                                </div>
+                                <div class="rounded-xl border border-neutral-light p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Expenses</span><span class="text-red-500">-3%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-red-500 w-0" data-animate-width="30%"></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <p class="text-black/80 text-base mb-4">
-              "Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues. I can confidently say our financial systems are in better shape because of her."
-            </p>
-            <p class="font-semibold text-[#d4af37] mb-1">Mick P., Business Owner</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<script>
-$(function() {
-  $('.testimonial-slider').slick({
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    arrows: true,
-    autoplay: true,
-    autoplaySpeed: 6000,
-    adaptiveHeight: true,
-    prevArrow: `<button type="button" class="slick-prev" aria-label="Previous" style="background:#fff;border-radius:50%;border:1px solid #d4af37;width:36px;height:36px;position:absolute;top:50%;left:-40px;transform:translateY(-50%);z-index:2;"><svg fill="#d4af37" width="24" height="24"><path d="M15 6l-6 6 6 6"/></svg></button>`,
-    nextArrow: `<button type="button" class="slick-next" aria-label="Next" style="background:#fff;border-radius:50%;border:1px solid #d4af37;width:36px;height:36px;position:absolute;top:50%;right:-40px;transform:translateY(-50%);z-index:2;"><svg fill="#d4af37" width="24" height="24"><path d="M9 6l6 6-6 6"/></svg></button>`,
-  });
-});
-</script>
-      <!-- FAQ -->
-      <section id="faq" class="py-20 border-t border-black/5">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Quick answers to common questions.</p>
-          </header>
-          <div class="mt-10 grid gap-4 md:max-w-3xl">
-            <details class="group rounded-2xl border border-black/10 p-5">
-              <summary class="cursor-pointer font-medium">Do you work 100% virtually?</summary>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Yes — secure, remote delivery across time zones using least‑privilege access.</p>
-            </details>
-            <details class="group rounded-2xl border border-black/10 p-5">
-              <summary class="cursor-pointer font-medium">Which platforms do you support?</summary>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
-            </details>
-            <details class="group rounded-2xl border border-black/10 p-5">
-              <summary class="cursor-pointer font-medium">Do you handle taxes?</summary>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
-            </details>
-            <details class="group rounded-2xl border border-black/10 p-5">
-              <summary class="cursor-pointer font-medium">How do you price services?</summary>
-              <p class="mt-2 text-sm text-black/70 dark:text-white/70">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p>
-            </details>
-          </div>
-        </div>
-      </section>
-      <!-- About -->
-      <section id="about" class="py-20">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <div class="grid gap-10 md:grid-cols-2 items-start">
-            <div>
-              <h2 class="display text-3xl font-semibold md:text-4xl">About Edz</h2>
-              <p class="mt-4 text-black/70 dark:text-white/70">I’m a Certified Xero & QuickBooks ProAdvisor with 4+ years of full‑charge bookkeeping and reporting across U.S. and Canadian clients—supporting founders, operators, and finance leads who need accuracy and on‑time close cycles.</p>
-              <ul class="mt-4 list-disc pl-5 text-sm">
-                <li>20+ client files managed</li>
-                <li>HST, GST, and tax filings support</li>
-                <li>Management reporting & KPI design</li>
-              </ul>
+        </section>
+
+        <!-- ============ Services ============ -->
+        <section id="services" class="py-24">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-3xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
+                    <p class="mt-4 text-neutral">Flexible, month‑to‑month support. Cleanup available as a project.</p>
+                </header>
+                <div class="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-2 max-w-4xl mx-auto">
+                    <article data-animate class="group rounded-3xl border border-neutral-light bg-box p-8 shadow-elevate hover:-translate-y-1.5 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--color-accent)" class="w-8 h-8 mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h15.75c.621 0 1.125.504 1.125 1.125v6.75c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 19.875v-6.75zM3 8.625c0-.621.504-1.125 1.125-1.125h15.75c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 10.875V8.625zM3 4.125c0-.621.504-1.125 1.125-1.125h15.75c.621 0 1.125.504 1.125 1.125v2.25c0 .621-.504 1.125-1.125 1.125H4.125A1.125 1.125 0 013 6.375V4.125z" /></svg>
+                        <h3 class="display text-xl text-brand">Monthly Bookkeeping</h3>
+                        <p class="mt-2 text-sm text-neutral">Categorization, reconciliations, AJEs, financial statements (cash/accrual).</p>
+                    </article>
+                    <article data-animate class="group rounded-3xl border border-neutral-light bg-box p-8 shadow-elevate hover:-translate-y-1.5 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--color-accent)" class="w-8 h-8 mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0011.667 0l3.181-3.183m-4.991-2.691L7.985 5.532a8.25 8.25 0 00-11.667 0L2.985 9.348z" /></svg>
+                        <h3 class="display text-xl text-brand">Catch-Up & Cleanup</h3>
+                        <p class="mt-2 text-sm text-neutral">Backlog completion and historical correction to restore accuracy.</p>
+                    </article>
+                    <article data-animate class="group rounded-3xl border border-neutral-light bg-box p-8 shadow-elevate hover:-translate-y-1.5 transition-transform">
+                       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--color-accent)" class="w-8 h-8 mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 6a7.5 7.5 0 100 15 7.5 7.5 0 000-15zM21 21l-5.197-5.197" /></svg>
+                        <h3 class="display text-xl text-brand">Management Reporting</h3>
+                        <p class="mt-2 text-sm text-neutral">Decision‑ready P&L, BS, KPIs, trends and commentary.</p>
+                    </article>
+                    <article data-animate class="group rounded-3xl border border-neutral-light bg-box p-8 shadow-elevate hover:-translate-y-1.5 transition-transform">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="var(--color-accent)" class="w-8 h-8 mb-4"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h12M3.75 3h16.5M3.75 3v16.5M16.5 3v11.25A2.25 2.25 0 0114.25 16.5h-8.25M16.5 3L12 7.5M12 7.5L7.5 3M12 7.5v11.25" /></svg>
+                        <h3 class="display text-xl text-brand">Workflow & Advisory</h3>
+                        <p class="mt-2 text-sm text-neutral">Light advisory on process, tech stack, and data hygiene.</p>
+                    </article>
+                </div>
             </div>
-            <div class="rounded-3xl border border-black/10 bg-surface p-6 shadow-elevate">
-              <h3 class="font-semibold">Contact Details</h3>
-              <ul class="mt-3 text-sm">
-                <li>Email: <a class="underline hover:text-[#d4af37]" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></li>
-                <li>Location: Philippines (GMT+8)</li>
-                <li>Availability: Mon–Fri</li>
-              </ul>
+        </section>
+        
+        <!-- ============ Work / Case Studies ============ -->
+        <section id="work" class="py-24 bg-box">
+             <div class="mx-auto max-w-7xl px-4 md:px-6">
+                 <header class="max-w-2xl" data-animate>
+                     <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
+                     <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
+                 </header>
+                 <div class="mt-12 grid gap-6 md:grid-cols-3">
+                     <article data-animate class="rounded-3xl border border-neutral-light bg-surface p-6 hover:shadow-xl transition-shadow hover:-translate-y-1">
+                         <div class="text-xs uppercase tracking-wide text-neutral">Cleanup • Retail</div>
+                         <h3 class="mt-2 font-semibold text-brand display text-lg">3 years backlogged → 45‑day turnaround</h3>
+                         <p class="mt-2 text-sm text-neutral">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit‑ready books.</p>
+                     </article>
+                     <article data-animate class="rounded-3xl border border-neutral-light bg-surface p-6 hover:shadow-xl transition-shadow hover:-translate-y-1">
+                         <div class="text-xs uppercase tracking-wide text-neutral">Reporting • Services</div>
+                         <h3 class="mt-2 font-semibold text-brand display text-lg">From raw data to KPI dashboard</h3>
+                         <p class="mt-2 text-sm text-neutral">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
+                     </article>
+                     <article data-animate class="rounded-3xl border border-neutral-light bg-surface p-6 hover:shadow-xl transition-shadow hover:-translate-y-1">
+                         <div class="text-xs uppercase tracking-wide text-neutral">Process • SaaS</div>
+                         <h3 class="mt-2 font-semibold text-brand display text-lg">Close process re‑engineering</h3>
+                         <p class="mt-2 text-sm text-neutral">Built a close checklist, standardized AJEs, and aligned rev‑rec with GAAP.</p>
+                     </article>
+                 </div>
+             </div>
+        </section>
+
+        <!-- ============ Process ============ -->
+        <section id="process" class="py-24">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
+                    <p class="mt-3 text-neutral">From intro call to monthly delivery.</p>
+                </header>
+                <ol class="mt-12 grid gap-6 md:grid-cols-5" data-animate>
+                    <li class="rounded-3xl border border-neutral-light bg-box p-6 text-center shadow-elevate"><span class="text-sm font-semibold uppercase text-neutral">Step 1</span><h3 class="font-semibold text-brand mt-2">Intro Call</h3><p class="mt-1 text-sm text-neutral">Scope, systems, goals</p></li>
+                    <li class="rounded-3xl border border-neutral-light bg-box p-6 text-center shadow-elevate"><span class="text-sm font-semibold uppercase text-neutral">Step 2</span><h3 class="font-semibold text-brand mt-2">File Review</h3><p class="mt-1 text-sm text-neutral">Assess health & cleanup</p></li>
+                    <li class="rounded-3xl border border-neutral-light bg-box p-6 text-center shadow-elevate"><span class="text-sm font-semibold uppercase text-neutral">Step 3</span><h3 class="font-semibold text-brand mt-2">Onboarding</h3><p class="mt-1 text-sm text-neutral">Access, checklist, KPIs</p></li>
+                    <li class="rounded-3xl border border-neutral-light bg-box p-6 text-center shadow-elevate"><span class="text-sm font-semibold uppercase text-neutral">Step 4</span><h3 class="font-semibold text-brand mt-2">Monthly Close</h3><p class="mt-1 text-sm text-neutral">Recs, AJEs, validate</p></li>
+                    <li class="rounded-3xl border border-neutral-light bg-box p-6 text-center shadow-elevate"><span class="text-sm font-semibold uppercase text-neutral">Step 5</span><h3 class="font-semibold text-brand mt-2">Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Statements + insights</p></li>
+                </ol>
             </div>
-          </div>
-        </div>
-      </section>
-      <!-- Contact -->
-      <section id="contact" class="py-20 border-t border-black/5">
-        <div class="mx-auto max-w-7xl px-4 md:px-6">
-          <header class="max-w-2xl">
-            <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Talk</h2>
-            <p class="mt-3 text-black/70 dark:text-white/70">Tell me about your books and goals. I’ll reply within one business day.</p>
-          </header>
-          <form id="contactForm"
-            class="mt-8 grid gap-4 md:max-w-2xl"
-            method="POST"
-            action="https://formspree.io/f/xblkbpav"
-            novalidate
-            data-service="formspree">
-            <div class="hidden">
-              <label>Leave this field empty
-                <input type="text" name="botField" tabindex="-1" autocomplete="off" />
-              </label>
+        </section>
+
+        <!-- ============ About ============ -->
+        <section id="about" class="py-24 bg-box">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid gap-12 md:grid-cols-3 items-center">
+                    <div class="md:col-span-1" data-animate>
+                         <!-- IMPORTANT: Replace this src with the path to your photo -->
+                         <img src="./edz-galdones.jpg" alt="Edz Lilian Galdones" class="rounded-3xl shadow-elevate w-full aspect-square object-cover">
+                    </div>
+                    <div class="md:col-span-2" data-animate>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">About Edz</h2>
+                        <p class="mt-4 text-neutral">I’m a Certified Xero & QuickBooks ProAdvisor with 4+ years of full‑charge bookkeeping and reporting across U.S. and Canadian clients—supporting founders, operators, and finance leads who need accuracy and on‑time close cycles.</p>
+                        <ul class="mt-6 space-y-4">
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span class="text-brand"><strong>20+ client files managed</strong></span>
+                            </li>
+                            <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span class="text-brand"><strong>HST, GST, and tax filings support</strong></span>
+                            </li>
+                             <li class="flex items-start">
+                                <svg class="w-6 h-6 text-accent mr-3 mt-1 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                                <span class="text-brand"><strong>Management reporting & KPI design</strong></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
-            <div class="grid gap-2">
-              <label for="name" class="text-sm">Name</label>
-              <input id="name" name="name" type="text" required aria-required="true" autocomplete="name"
-                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
-                placeholder="Your name" />
-              <p class="hidden text-xs text-red-600" data-error-for="name">Please enter your name.</p>
+        </section>
+
+        <!-- ============ Testimonials Carousel ============ -->
+        <section id="testimonials" class="py-24">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
+                    <p class="mt-3 text-neutral">Real words from teams I support.</p>
+                </header>
+                <div class="mt-20 relative" data-animate>
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <!-- Slide 1 -->
+                            <figure class="swiper-slide rounded-3xl border border-neutral-light bg-box p-8 pt-16 h-auto relative text-center shadow-elevate">
+                                <img src="https://placehold.co/100x100/2C2C2C/white?text=DB" alt="Testimonial from Danny Batimana" class="w-16 h-16 rounded-full absolute -top-8 left-1/2 -translate-x-1/2 border-4 border-box bg-brand">
+                                <div class="flex justify-center gap-1 text-accent my-4">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <blockquote class="text-brand">"Working with Edz has been a game-changer for me. She stepped in when things were overwhelming and turned it all around. I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote>
+                                <figcaption class="mt-4 text-sm font-semibold text-neutral">Danny Batimana, Founder – Happiness Is Now Inc.</figcaption>
+                            </figure>
+                            <!-- Slide 2 -->
+                            <figure class="swiper-slide rounded-3xl border border-neutral-light bg-box p-8 pt-16 h-auto relative text-center shadow-elevate">
+                                <img src="https://placehold.co/100x100/2C2C2C/white?text=SN" alt="Testimonial from Scarlet Ngo" class="w-16 h-16 rounded-full absolute -top-8 left-1/2 -translate-x-1/2 border-4 border-box bg-brand">
+                                <div class="flex justify-center gap-1 text-accent my-4">
+                                   <!-- 5 star svgs -->
+                                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <blockquote class="text-brand">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence. Beyond her technical skills, she brings positivity and reliability that make a real difference."</blockquote>
+                                <figcaption class="mt-4 text-sm font-semibold text-neutral">Scarlet Ngo, Managing Partner – Clarity Tax</figcaption>
+                            </figure>
+                            <!-- Slide 3 -->
+                            <figure class="swiper-slide rounded-3xl border border-neutral-light bg-box p-8 pt-16 h-auto relative text-center shadow-elevate">
+                               <img src="https://placehold.co/100x100/2C2C2C/white?text=MP" alt="Testimonial from Mick P." class="w-16 h-16 rounded-full absolute -top-8 left-1/2 -translate-x-1/2 border-4 border-box bg-brand">
+                                <div class="flex justify-center gap-1 text-accent my-4">
+                                   <!-- 5 star svgs -->
+                                   <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+                                </div>
+                                <blockquote class="text-brand">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote>
+                                <figcaption class="mt-4 text-sm font-semibold text-neutral">Mick P., Business Owner</figcaption>
+                            </figure>
+                        </div>
+                    </div>
+                    <div class="swiper-button-prev -left-4 hidden lg:flex"></div>
+                    <div class="swiper-button-next -right-4 hidden lg:flex"></div>
+                </div>
             </div>
-            <div class="grid gap-2">
-              <label for="email" class="text-sm">Email</label>
-              <input id="email" name="email" type="email" required aria-required="true" autocomplete="email" inputmode="email"
-                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
-                placeholder="you@company.com" />
-              <p class="hidden text-xs text-red-600" data-error-for="email">Enter a valid email.</p>
+        </section>
+
+        <!-- ============ FAQ ============ -->
+        <section id="faq" class="py-24 bg-box">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
+                    <p class="mt-3 text-neutral">Quick answers to common questions.</p>
+                </header>
+                <div class="mt-10 grid gap-4 md:max-w-3xl" data-animate>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer">
+                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
+                            Do you work 100% virtually?
+                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-3 text-sm text-neutral">Yes — secure, remote delivery across time zones using least‑privilege access.</p>
+                    </details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer">
+                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
+                            Which platforms do you support?
+                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-3 text-sm text-neutral">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
+                    </details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer">
+                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
+                            Do you handle taxes?
+                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-3 text-sm text-neutral">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
+                    </details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer">
+                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
+                            How do you price services?
+                             <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </summary>
+                        <p class="mt-3 text-sm text-neutral">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p>
+                    </details>
+                </div>
             </div>
-            <div class="grid gap-2">
-              <label for="message" class="text-sm">Message</label>
-              <textarea id="message" name="message" rows="5" required aria-required="true" minlength="20"
-                class="rounded-xl border border-black/10 bg-white/70 p-3 outline-none focus:ring-2 focus:ring-[#d4af37]"
-                placeholder="What do you need help with?"></textarea>
-              <p class="hidden text-xs text-red-600" data-error-for="message">Message should be at least 20 characters.</p>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="py-24 bg-brand text-white">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-animate>
+                        <h2 class="display text-3xl font-semibold md:text-4xl text-white">Let’s Talk</h2>
+                        <p class="mt-3 text-slate-300">Tell me about your books and goals. I’ll reply within one business day.</p>
+                        <div class="mt-6 text-sm text-slate-300">
+                           <p>Email: <a class="underline hover:text-accent" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></p>
+                           <p>Location: Philippines (GMT+8) • Serving clients globally</p>
+                        </div>
+                    </div>
+                    <form class="grid gap-4 bg-box rounded-2xl p-8 shadow-elevate" data-animate>
+                        <div class="grid gap-2">
+                            <label for="name" class="text-sm font-semibold text-neutral">Name</label>
+                            <input id="name" type="text" class="rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none focus:ring-2 focus:ring-accent" placeholder="Your name" />
+                        </div>
+                        <div class="grid gap-2">
+                            <label for="email" class="text-sm font-semibold text-neutral">Email</label>
+                            <input id="email" type="email" class="rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none focus:ring-2 focus:ring-accent" placeholder="you@company.com" />
+                        </div>
+                        <div class="grid gap-2">
+                            <label for="message" class="text-sm font-semibold text-neutral">Message</label>
+                            <textarea id="message" rows="4" class="rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none focus:ring-2 focus:ring-accent" placeholder="What do you need help with?"></textarea>
+                        </div>
+                        <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-brand shadow-lg hover:opacity-90 transition-all hover:scale-105">Send Message</button>
+                    </form>
+                </div>
             </div>
-            <button id="contactSubmit" type="submit"
-              class="inline-flex items-center justify-center rounded-xl bg-[#d4af37] px-5 py-3 font-medium text-[#0b1220] shadow-elevate hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[#d4af37]">
-              Send Message
-            </button>
-            <p id="formSuccess" class="hidden text-sm text-green-600" role="status" aria-live="polite">
-              Thank you—your message was sent. I’ll reply soon.
-            </p>
-            <p id="formError" class="hidden text-sm text-red-600" role="alert" aria-live="assertive">
-              Something went wrong. Please try again.
-            </p>
-            <p class="text-xs text-black/60 dark:text-white/60">By submitting, you agree to be contacted about your inquiry.</p>
-          </form>
-        </div>
-      </section>
+        </section>
     </main>
+
+    <!-- ============ Footer ============ -->
     <footer class="py-10">
-      <div class="mx-auto max-w-7xl px-4 md:px-6">
-        <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
-          <div class="text-sm">© <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div>
-          <nav class="flex flex-wrap gap-4 text-sm" aria-label="Footer">
-            <a href="#privacy" class="hover:text-[#d4af37]">Privacy</a>
-            <a href="#terms" class="hover:text-[#d4af37]">Terms</a>
-            <a href="#contact" class="hover:text-[#d4af37]">Contact</a>
-          </nav>
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="text-sm text-neutral">&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div>
+                <nav class="flex flex-wrap gap-6 text-sm font-semibold">
+                    <a href="#" class="text-brand hover:text-accent transition-colors">Privacy</a>
+                    <a href="#" class="text-brand hover:text-accent transition-colors">Terms</a>
+                    <a href="#contact" class="text-brand hover:text-accent transition-colors">Contact</a>
+                </nav>
+            </div>
         </div>
-      </div>
     </footer>
-    <script src="/main.js" defer></script>
-  </body>
+
+    <!-- Core Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <!-- Site Logic -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Year ---
+            document.getElementById('year').textContent = new Date().getFullYear();
+            
+            // --- Mobile menu ---
+            const mbtn = document.getElementById('menuBtn');
+            const mmenu = document.getElementById('mobileMenu');
+            const mobileLinks = mmenu.querySelectorAll('a');
+            const toggleMenu = () => mmenu.classList.toggle('hidden');
+            mbtn?.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', () => {
+                if (!mmenu.classList.contains('hidden')) {
+                    toggleMenu();
+                }
+            }));
+
+
+            // --- Entry Animation ---
+            const entryElements = document.querySelectorAll('[data-animate-entry]');
+            entryElements.forEach(el => {
+                const delay = el.dataset.delay || '0';
+                el.style.setProperty('--delay', `${delay}s`);
+            });
+
+            // --- Scroll Animations ---
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        const progressBars = entry.target.querySelectorAll('[data-animate-width]');
+                        progressBars.forEach(bar => {
+                            bar.style.width = bar.dataset.animateWidth;
+                        });
+                        observer.unobserve(entry.target); // Animate only once
+                    }
+                });
+            }, { threshold: 0.1 });
+            const animatedElements = document.querySelectorAll('[data-animate]');
+            animatedElements.forEach(el => observer.observe(el));
+
+            // --- Testimonial Carousel ---
+            const swiper = new Swiper('.testimonial-swiper', {
+                loop: true,
+                slidesPerView: 1,
+                spaceBetween: 24,
+                autoplay: { delay: 6000, disableOnInteraction: false },
+                breakpoints: {
+                    768: { slidesPerView: 2 },
+                    1024: { slidesPerView: 3 },
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+        });
+    </script>
+</body>
 </html>
+
