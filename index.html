@@ -78,7 +78,13 @@
         
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -4px; left: 0; background-color: var(--color-accent); transform-origin: bottom right; transition: transform 0.25s ease-out; }
-        .nav-link:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+        .nav-link:hover::after, .nav-link.active::after { 
+            transform: scaleX(1);
+            transform-origin: bottom left;
+         }
+        .nav-link.active {
+            color: var(--color-accent);
+        }
         
         .interactive-card { transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out; }
         .interactive-card:hover { transform: translateY(-8px); box-shadow: var(--tw-shadow-elevate), var(--tw-shadow-glow); border-color: var(--color-accent); }
@@ -481,14 +487,14 @@
                 </div>
              </div>
             <div class="section-divider">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-neutral-light)">
                     <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
 
         <!-- ============ Process ============ -->
-        <section id="process" class="py-28 bg-surface relative">
+        <section id="process" class="py-28 bg-neutral-light relative">
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <header class="max-w-2xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
@@ -535,14 +541,14 @@
                 </div>
             </div>
             <div class="section-divider">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-neutral-light)">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
                     <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
 
         <!-- ============ About ============ -->
-        <section id="about" class="py-28 bg-neutral-light relative">
+        <section id="about" class="py-28 bg-surface relative">
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <div class="grid gap-12 md:grid-cols-2 items-center">
                     <div class="md:col-span-1" data-animate><img src="./assets/me.png" alt="Headshot of Edz Lilian Galdones" loading="lazy" class="rounded-3xl shadow-elevate w-full aspect-square object-cover"></div>
@@ -551,21 +557,21 @@
                         <p class="mt-4 text-brand font-semibold">I’m not just here to balance books — I’m here to give you the clarity and confidence to grow your business.</p>
                         <p class="mt-4 text-neutral text-sm">I started my bookkeeping career helping small businesses bring order to messy, stressful financials. Over the last 4+ years, I’ve managed 20+ client accounts across the U.S. and Canada — from retail and professional services to SaaS startups.</p>
                         <p class="mt-2 text-neutral text-sm">As a Certified QuickBooks ProAdvisor and Xero ProAdvisor, I specialize in full-charge bookkeeping, management reporting, and tax compliance under IFRS and GAAP standards. Whether it’s reconciling three years of backlogs or designing KPI dashboards that drive decisions, I deliver accurate, reliable results — always on time.</p>
-                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified Xero ProAdvisor</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified QuickBooks ProAdvisor</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> 4+ Years Experience</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> HST, GST & Tax Support</div></div>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"><div class="flex items-center p-3 bg-neutral-light rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified Xero ProAdvisor</div><div class="flex items-center p-3 bg-neutral-light rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified QuickBooks ProAdvisor</div><div class="flex items-center p-3 bg-neutral-light rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> 4+ Years Experience</div><div class="flex items-center p-3 bg-neutral-light rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> HST, GST & Tax Support</div></div>
                          <button type="button" class="open-modal-button mt-8 inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-opacity-90 transition-transform shadow-lg hover:scale-105">Let’s Work Together</button>
                     </div>
                 </div>
             </div>
             <div class="section-divider">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-neutral-light)">
                     <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
 
         <!-- ============ Testimonials Carousel ============ -->
-        <section id="testimonials" class="py-28 relative overflow-hidden bg-surface">
-            <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+        <section id="testimonials" class="py-28 relative overflow-hidden bg-neutral-light">
+             <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
                 <header class="max-w-2xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
                     <p class="mt-3 text-neutral">Real words from teams I support.</p>
@@ -573,9 +579,9 @@
                 <div class="mt-16" data-animate>
                     <div class="swiper testimonial-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-neutral-light p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/danny.jpg" loading="lazy" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Danny Batimana</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-neutral-light p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/scarlet.jpeg" loading="lazy" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Scarlet Ngo</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-neutral-light p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/mick.jpeg" loading="lazy" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/danny.jpg" loading="lazy" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Danny Batimana</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/scarlet.jpeg" loading="lazy" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Scarlet Ngo</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/mick.jpeg" loading="lazy" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption></figure></div>
                         </div>
                         <div class="swiper-pagination"></div>
                         <div class="swiper-button-next"></div>
@@ -601,29 +607,29 @@
                     <details class="faq-item group rounded-2xl border border-gray-200 bg-surface p-6 cursor-pointer transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do you price services?<span class="text-accent transition-transform transform rotate-0 group-open:rotate-45"><svg class="w-5 h-5 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="w-5 h-5 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></span></summary><p class="mt-4 text-sm text-neutral pt-4 border-t border-gray-200">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p></details>
                 </div>
             </div>
-            <div class="section-divider">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-brand)">
-                     <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
         </section>
 
         <!-- ============ Contact ============ -->
-        <section id="contact" class="py-28 bg-brand text-white relative">
-            <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <section id="contact" class="py-28 bg-neutral-light relative">
+             <div class="section-divider rotate-180">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+            <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-animate>
-                        <h2 class="display text-3xl font-semibold md:text-4xl text-white">Let’s Get Started</h2>
-                        <p class="mt-3 text-slate-300 max-w-lg">Ready for financial clarity? Send me a message about your business goals, and I’ll get back to you within one business day.</p>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Get Started</h2>
+                        <p class="mt-3 text-neutral max-w-lg">Ready for financial clarity? Send me a message about your business goals, and I’ll get back to you within one business day.</p>
                         <div class="mt-8 space-y-4">
-                            <a href="mailto:info@elgaldones.works" class="flex items-center gap-4 text-slate-300 hover:text-accent transition-colors">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <a href="mailto:info@elgaldones.works" class="flex items-center gap-4 text-neutral hover:text-accent transition-colors">
+                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-gray-200 text-brand">
                                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
                                 </span>
                                 <span>info@elgaldones.works</span>
                             </a>
-                            <a href="#" class="flex items-center gap-4 text-slate-300 hover:text-accent transition-colors">
-                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                            <a href="#" class="flex items-center gap-4 text-neutral hover:text-accent transition-colors">
+                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-gray-200 text-brand">
                                     <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                                 </span>
                                 <span>Connect on LinkedIn</span>
@@ -636,17 +642,17 @@
                                 <div class="relative">
                                     <label for="name" class="sr-only">Name</label>
                                     <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
-                                    <input id="name" name="name" type="text" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="Your name" required />
+                                    <input id="name" name="name" type="text" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="Your name" required />
                                 </div>
                                 <div class="relative">
                                     <label for="email" class="sr-only">Email</label>
                                         <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-                                    <input id="email" name="email" type="email" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="you@company.com" required />
+                                    <input id="email" name="email" type="email" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="you@company.com" required />
                                 </div>
                                 <div class="relative">
                                     <label for="message" class="sr-only">Message</label>
                                     <svg class="w-5 h-5 text-gray-400 absolute top-5 left-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" /></svg>
-                                    <textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea>
+                                    <textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea>
                                 </div>
                             </div>
                             <button id="submit-button" type="submit" class="send-button mt-6 w-full inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition-transform hover:scale-105">
@@ -671,24 +677,19 @@
     </main>
 
     <!-- ============ Footer ============ -->
-    <footer class="bg-brand text-slate-300 relative">
-        <div class="section-divider rotate-180">
-            <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-neutral-light)">
-                <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
-            </svg>
-        </div>
-        <div class="mx-auto max-w-7xl px-4 md:px-6 pt-24 pb-12">
+    <footer class="bg-brand text-slate-300 relative pt-16">
+        <div class="mx-auto max-w-7xl px-4 md:px-6 pb-12">
             <div class="grid md:grid-cols-4 gap-8">
                 <!-- Column 1: Brand & Info -->
                 <div class="md:col-span-1">
                     <h3 class="display text-xl font-bold text-white">Edz Lilian Galdones</h3>
                     <p class="text-sm mt-2 text-slate-400">Your partner in financial clarity and business growth.</p>
-                    <div class="mt-4" id="footer-local-time">Location: Philippines • Serving clients globally</div>
+                    <div class="mt-4 text-sm" id="footer-local-time">Location: Philippines • Serving clients globally</div>
                 </div>
 
                 <!-- Column 2: Quick Links -->
                 <div>
-                    <h4 class="font-semibold text-white tracking-wider">Quick Links</h4>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Quick Links</h4>
                     <ul class="mt-4 space-y-2 text-sm">
                         <li><a href="#services" class="hover:text-accent transition-colors">Services</a></li>
                         <li><a href="#work" class="hover:text-accent transition-colors">Case Studies</a></li>
@@ -699,7 +700,7 @@
 
                 <!-- Column 3: Get in Touch -->
                 <div>
-                    <h4 class="font-semibold text-white tracking-wider">Get in Touch</h4>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Get in Touch</h4>
                     <ul class="mt-4 space-y-3 text-sm">
                         <li class="flex items-center gap-2">
                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
@@ -714,7 +715,7 @@
 
                 <!-- Column 4: Socials -->
                 <div>
-                    <h4 class="font-semibold text-white tracking-wider">Connect</h4>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Connect</h4>
                     <div class="flex items-center gap-4 mt-4">
                         <a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile">
                             <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
