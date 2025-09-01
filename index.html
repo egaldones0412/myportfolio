@@ -92,12 +92,22 @@
         .faq-item:hover { background-color: #f9f7f4; }
         .form-input:focus { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-accent); border-color: var(--color-accent); }
         
-        .timeline-item { position: relative; }
-        .timeline-item:not(:last-child) { padding-bottom: 2.5rem; }
-        .timeline-item:not(:last-child)::before { content: ''; position: absolute; left: 1.5rem; top: 3.5rem; width: 2px; height: calc(100% - 2rem); background-color: var(--color-neutral-light); transition: background-color 0.3s; }
-        .timeline-item:hover:not(:last-child)::before { background-color: var(--color-accent); }
-        .timeline-item .timeline-icon { transition: transform 0.3s, color 0.3s, background-color 0.3s; }
-        .timeline-item:hover .timeline-icon { transform: scale(1.1); color: var(--color-box); background-color: var(--color-accent); }
+        .timeline-item { position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .timeline-item:hover { transform: translateY(-5px); box-shadow: var(--tw-shadow-elevate); }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 2rem; 
+            top: 4.5rem; 
+            bottom: -2.5rem; 
+            width: 2px;
+            background-image: linear-gradient(to bottom, var(--color-accent) 40%, transparent 50%);
+            background-size: 100% 10px;
+            opacity: 0.3;
+            transition: opacity 0.3s;
+        }
+        .timeline-item:hover::after { opacity: 0.8; }
+
 
         .send-button:hover .paper-plane-icon { transform: rotate(10deg) translateX(3px) translateY(-3px); }
 
@@ -264,7 +274,7 @@
         <section id="software" class="py-28 bg-surface relative">
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <header class="max-w-3xl mx-auto text-center" data-animate>
-                    <h2 class="display text-3xl font-semibold md:text-4xl">We Work With All Major Bookkeeping Softwares</h2>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">I With All Major Bookkeeping Softwares</h2>
                 </header>
                 <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 items-center" data-animate>
                     <img src="./assets/logos/quickbooks.png" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
@@ -297,29 +307,71 @@
                     <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
                 </header>
                 <div class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+                    <!-- Card 1 -->
                     <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                        <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company — From Chaos to Audit-Ready</h3>
-                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>3 years of unreconciled accounts</li><li>Inconsistent COGS reporting</li><li>No process for timely monthly close</li></ul></div>
-                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Rebuilt full ledger & corrected COGS</li><li>Implemented structured monthly close</li><li>Delivered accurate, audit-ready books</li></ul></div>
+                        <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company</h3>
+                        <p class="text-sm text-neutral mt-1">From Chaos to Audit-Ready</p>
+                        <div class="mt-4 space-y-4 text-sm flex-grow">
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>3 years of unreconciled accounts</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Inconsistent COGS reporting</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Rebuilt full ledger & corrected COGS</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Delivered accurate, audit-ready books</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Monthly close achieved within 5 business days</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Books accepted without issue in audit</li></ul></div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Monthly close achieved within 5 business days</li></ul></div>
                     </article>
+                    <!-- Card 2 -->
                     <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                        <h3 class="font-semibold text-brand display text-lg">🛠 Service Business — Turning Data Into Decisions</h3>
-                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Raw numbers but no management insights</li><li>Difficult to track KPIs or measure growth</li><li>Delays in AR collection</li></ul></div>
-                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Built monthly KPI dashboards & reports</li><li>Structured AR monitoring</li><li>Clear financial packs for leadership</li></ul></div>
+                        <h3 class="font-semibold text-brand display text-lg">🛠 Service Business</h3>
+                        <p class="text-sm text-neutral mt-1">Turning Data Into Decisions</p>
+                         <div class="mt-4 space-y-4 text-sm flex-grow">
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>No management insights from raw numbers</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Delays in AR collection</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Built monthly KPI dashboards & reports</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Structured AR monitoring process</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pricing strategy improved with data-driven insights</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span class="font-bold text-accent mr-1">+17%</span> AR collections increased</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Leadership gained confidence in financial planning</li></ul></div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="font-bold text-green-600 mr-1">+17%</span> increase in AR collections</li><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Leadership gained confidence in planning</li></ul></div>
                     </article>
+                    <!-- Card 3 -->
                     <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                        <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup — Streamlining Month-End Close</h3>
-                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Disorganized month-end checklist</li><li>Revenue recognition not GAAP compliant</li><li>Closing process took 10+ days</li></ul></div>
-                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Designed standardized closing checklist</li><li>Aligned revenue recognition with GAAP</li><li>Automated journal entries</li></ul></div>
+                        <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup</h3>
+                        <p class="text-sm text-neutral mt-1">Streamlining Month-End Close</p>
+                        <div class="mt-4 space-y-4 text-sm flex-grow">
+                           <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Closing process took 10+ days</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Revenue recognition not GAAP compliant</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aligned revenue recognition with GAAP</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Automated journal entries</li>
+                                </ul>
+                            </div>
                         </div>
-                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Month-end close time reduced by <span class="font-bold text-accent ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Reliable financials delivered faster to investors</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Stronger compliance & audit readiness</li></ul></div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Month-end close time reduced by <span class="font-bold text-green-600 ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-green-600 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Faster, reliable financials for investors</li></ul></div>
                     </article>
                 </div>
              </div>
@@ -337,13 +389,43 @@
                     <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
                     <p class="mt-3 text-neutral">From intro call to monthly delivery, clarity is built-in at every step.</p>
                 </header>
-                <div class="mt-16 max-w-2xl mx-auto">
-                    <div data-animate class="space-y-0">
-                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.1s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">1</div><div><h3 class="font-semibold text-brand mt-2">Intro Call</h3><p class="mt-1 text-sm text-neutral">We discuss your scope, systems, and goals to ensure we're a perfect fit.</p></div></div>
-                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.2s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">2</div><div><h3 class="font-semibold text-brand mt-2">File Review</h3><p class="mt-1 text-sm text-neutral">I assess the health of your books and identify any cleanup needs. <em class="text-xs block mt-1 text-neutral/80">"This gave us peace of mind knowing our books were accurate."</em></p></div></div>
-                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.3s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">3</div><div><h3 class="font-semibold text-brand mt-2">Onboarding</h3><p class="mt-1 text-sm text-neutral">Seamlessly get set up with secure access, a clear checklist, and defined KPIs.</p></div></div>
-                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.4s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">4</div><div><h3 class="font-semibold text-brand mt-2">Monthly Close</h3><p class="mt-1 text-sm text-neutral">I handle all reconciliations, adjustments, and validations for a timely close.</p></div></div>
-                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.5s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">5</div><div><h3 class="font-semibold text-brand mt-2">Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Receive your financial statements and actionable insights to guide your decisions.</p></div></div>
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <div class="space-y-10">
+                        <!-- Process Item 1 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.1s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow"><h3 class="font-semibold text-brand text-lg display">Step 1: Intro Call</h3><p class="mt-1 text-sm text-neutral">We discuss your scope, systems, and goals to ensure we're a perfect fit.</p></div>
+                        </div>
+                        <!-- Process Item 2 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.2s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" /><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow"><h3 class="font-semibold text-brand text-lg display">Step 2: File Review</h3><p class="mt-1 text-sm text-neutral">I assess the health of your books and identify any cleanup needs. <em class="text-xs block mt-1 text-neutral/80">"This gave us peace of mind knowing our books were accurate."</em></p></div>
+                        </div>
+                        <!-- Process Item 3 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.3s;">
+                           <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow"><h3 class="font-semibold text-brand text-lg display">Step 3: Onboarding</h3><p class="mt-1 text-sm text-neutral">Seamlessly get set up with secure access, a clear checklist, and defined KPIs.</p></div>
+                        </div>
+                        <!-- Process Item 4 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.4s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow"><h3 class="font-semibold text-brand text-lg display">Step 4: Monthly Close</h3><p class="mt-1 text-sm text-neutral">I handle all reconciliations, adjustments, and validations for a timely close.</p></div>
+                        </div>
+                        <!-- Process Item 5 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.5s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow"><h3 class="font-semibold text-brand text-lg display">Step 5: Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Receive your financial statements and actionable insights to guide your decisions.</p></div>
+                        </div>
                     </div>
                 </div>
             </div>
