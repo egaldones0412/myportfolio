@@ -14,7 +14,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
-    <!-- Favicons / App Icons (manifest in /icons/) -->
+    <!-- Favicons / App Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
@@ -23,10 +23,11 @@
     <link rel="shortcut icon" href="/icons/favicon.ico">
     <meta name="msapplication-TileColor" content="#0f172a">
     <meta name="theme-color" content="#0f172a">
+
     <!-- Swiper.js for Testimonial Carousel -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <!-- Tailwind Play CDN -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         const defaultTheme = tailwind.defaultTheme;
@@ -38,9 +39,7 @@
                         'display': ['Montserrat', ...defaultTheme.fontFamily.sans],
                     },
                     colors: {
-                        brand: {
-                            DEFAULT: 'var(--color-brand)',
-                        },
+                        brand: { DEFAULT: 'var(--color-brand)' },
                         accent: 'var(--color-accent)',
                         surface: 'var(--color-surface)',
                         box: 'var(--color-box)',
@@ -59,152 +58,63 @@
     </script>
 
     <style>
-        /* Elegant & Modern Palette */
         :root {
-            --color-surface: #EDE6DB;      /* Warm Beige */
-            --color-brand: #2C2C2C;       /* Charcoal */
-            --color-accent: #D4AF37;      /* Soft Gold */
-            --color-box: #FFFFFF;         /* White */
-            --color-neutral: #5c5c5c;      /* Lighter Charcoal for secondary text */
-            --color-neutral-light: #e7e5e2; /* Light border from beige */
+            --color-surface: #EDE6DB; --color-brand: #2C2C2C; --color-accent: #D4AF37;
+            --color-box: #FFFFFF; --color-neutral: #5c5c5c; --color-neutral-light: #e7e5e2;
         }
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { color: var(--color-neutral); font-family: 'Open Sans', sans-serif; background-color: var(--color-surface); }
+        .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; color: var(--color-brand); }
         
-        html {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        body {
-            color: var(--color-neutral);
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--color-surface);
-            /* Subtle geometric background pattern */
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23e7e5e2' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        .display {
-            font-family: 'Montserrat', sans-serif;
-            letter-spacing: -0.02em;
-            color: var(--color-brand);
-        }
+        /* Animated Background Container */
+        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
 
-        /* Hero Background Gradient Animation */
-        .animated-gradient {
-            background: linear-gradient(-45deg, #ede6db, #f5f1ea, #e9e2d7, #ede6db);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
-        }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
-        /* Entry & Scroll Animations */
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        [data-animate-entry] {
-            animation: fadeInUp 0.8s ease-out forwards;
-            animation-delay: var(--delay, 0s);
-        }
-        [data-animate] {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-            transition-delay: var(--stagger, 0s);
-        }
-        [data-animate].in-view {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        [data-animate-width] {
-            transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
-            transition-delay: 0.3s;
-        }
-
-        /* Interactive UI Elements */
-        .nav-link {
-            position: relative;
-        }
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            transform: scaleX(0);
-            height: 2px;
-            bottom: -4px;
-            left: 0;
-            background-color: var(--color-accent);
-            transform-origin: bottom right;
-            transition: transform 0.25s ease-out;
-        }
-        .nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        .interactive-card {
-            transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
-        }
-        .interactive-card:hover {
-             transform: translateY(-6px);
-             box-shadow: var(--tw-shadow-elevate), var(--tw-shadow-glow);
-        }
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        [data-animate-entry] { animation: fadeInUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
+        [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--stagger, 0s); }
+        [data-animate].in-view { opacity: 1; transform: translateY(0); }
+        [data-animate-width] { transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1); transition-delay: 0.3s; }
         
-        /* Swiper Carousel Customization */
-        .swiper-button-prev, .swiper-button-next {
-            color: var(--color-neutral);
-            transition: color 0.2s, transform 0.2s;
-        }
-        .swiper-button-prev:hover, .swiper-button-next:hover {
-            color: var(--color-accent);
-            transform: scale(1.1);
-        }
-        .testimonial-swiper {
-             padding-top: 60px; 
-             padding-bottom: 40px; 
-             overflow: visible; 
-        }
-        .swiper-pagination-bullet {
-            background-color: var(--color-neutral);
-            opacity: 0.3;
-        }
-        .swiper-pagination-bullet-active {
-            background-color: var(--color-brand);
-            opacity: 1;
-        }
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -4px; left: 0; background-color: var(--color-accent); transform-origin: bottom right; transition: transform 0.25s ease-out; }
+        .nav-link:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+        
+        .interactive-card { transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out; }
+        .interactive-card:hover { transform: translateY(-8px); box-shadow: var(--tw-shadow-elevate), var(--tw-shadow-glow); border-color: var(--color-accent); }
+        .interactive-card:hover .service-icon { transform: scale(1.1) rotate(-5deg); color: var(--color-accent); }
 
-        /* Scroll to Top Button */
-        #scrollTopBtn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 50;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-        #scrollTopBtn.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .swiper-button-prev, .swiper-button-next { color: var(--color-neutral); transition: color 0.2s, transform 0.2s; }
+        .swiper-button-prev:hover, .swiper-button-next:hover { color: var(--color-accent); transform: scale(1.1); }
+        .testimonial-swiper { padding-top: 60px; padding-bottom: 40px; overflow: visible; }
+        .swiper-pagination-bullet { background-color: var(--color-neutral); opacity: 0.3; }
+        .swiper-pagination-bullet-active { background-color: var(--color-brand); opacity: 1; }
+        
+        #scrollTopBtn { position: fixed; bottom: 20px; right: 20px; z-index: 50; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; }
+        #scrollTopBtn.visible { opacity: 1; transform: translateY(0); }
+        
+        .faq-item:hover { background-color: #f9f7f4; }
+        .form-input:focus { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-accent); border-color: var(--color-accent); }
+        
+        .timeline-item { position: relative; }
+        .timeline-item:not(:last-child) { padding-bottom: 2.5rem; }
+        .timeline-item:not(:last-child)::before { content: ''; position: absolute; left: 1.5rem; top: 3.5rem; width: 2px; height: calc(100% - 2rem); background-color: var(--color-neutral-light); transition: background-color 0.3s; }
+        .timeline-item:hover:not(:last-child)::before { background-color: var(--color-accent); }
+        .timeline-item .timeline-icon { transition: transform 0.3s, color 0.3s, background-color 0.3s; }
+        .timeline-item:hover .timeline-icon { transform: scale(1.1); color: var(--color-box); background-color: var(--color-accent); }
 
-        /* Enhanced Interactivity */
-        .faq-item:hover {
-            background-color: #f9f7f4; /* A slightly lighter beige */
-        }
-        .form-input:focus {
-            box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-accent);
-            border-color: var(--color-accent);
-        }
+        .section-divider { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
     </style>
 </head>
 <body class="antialiased">
+    <!-- Animated Background -->
+    <div id="particles-js"></div>
+
     <!-- ============ Header ============ -->
-    <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-surface/80 border-b border-neutral-light">
+    <header class="sticky top-0 z-40 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/80 border-b border-neutral-light/50">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="flex h-16 items-center justify-between">
                 <a href="#" class="flex items-center gap-3 font-semibold text-brand">
-                    <img src="./assets/me.png"class="inline-flex h-9 w-9 items-center justify-center rounded-2xl</span>
+                    <img src="./assets/me.png" alt="Edz Lilian Galdones" class="inline-flex h-9 w-9 items-center justify-center rounded-2xl">
                     <span class="hidden sm:block font-display">Edz Lilian Galdones</span>
                 </a>
                 <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
@@ -216,11 +126,11 @@
                     <a href="#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-3">
-                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-brand shadow-elevate hover:opacity-90 transition-all hover:scale-105">
+                    <a href="#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-brand shadow-glow hover:opacity-90 transition-all hover:scale-105">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
                         Book a Free Call
                     </a>
-                    <button class="md:hidden rounded-xl border border-neutral-light p-2" id="menuBtn" aria-label="Open menu">
+                    <button class="md:hidden rounded-xl border border-neutral-light p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
                 </div>
@@ -228,255 +138,193 @@
         </div>
         <div id="mobileMenu" class="md:hidden hidden border-t border-neutral-light bg-surface/95">
             <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm font-semibold">
-                <a href="#services" class="text-brand hover:text-accent">Services</a>
-                <a href="#work" class="text-brand hover:text-accent">Work</a>
-                <a href="#about" class="text-brand hover:text-accent">About</a>
-                <a href="#testimonials" class="text-brand hover:text-accent">Testimonials</a>
-                <a href="#faq" class="text-brand hover:text-accent">FAQ</a>
-                <a href="#contact" class="text-brand hover:text-accent">Contact</a>
+                <a href="#services" class="text-brand hover:text-accent">Services</a> <a href="#work" class="text-brand hover:text-accent">Work</a>
+                <a href="#about" class="text-brand hover:text-accent">About</a> <a href="#testimonials" class="text-brand hover:text-accent">Testimonials</a>
+                <a href="#faq" class="text-brand hover:text-accent">FAQ</a> <a href="#contact" class="text-brand hover:text-accent">Contact</a>
             </div>
         </div>
     </header>
 
     <main>
         <!-- ============ Hero ============ -->
-        <section class="relative overflow-hidden pt-24 md:pt-32 pb-12 md:pb-20 animated-gradient">
-            <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <section class="relative overflow-hidden pt-24 md:pt-32 pb-28 md:pb-36 bg-surface">
+            <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
                 <div class="grid items-center gap-12 md:grid-cols-2">
-                    <div class="opacity-0" data-animate-entry="fade-up" data-delay="0.2">
-                        <h1 class="display text-5xl font-bold md:text-6xl text-brand">
-                            Clarity. Control. <span class="text-accent">Confidence.</span>
-                        </h1>
-                        <p class="mt-5 text-lg text-neutral">
-                            Expert bookkeeping that transforms messy financials into a clear roadmap for growth. Full-charge support for U.S. & Canadian businesses.
+                    <div class="opacity-0 text-center md:text-left" data-animate-entry="fade-up" data-delay="0.2">
+                        <h1 class="display text-5xl font-bold md:text-6xl text-brand">Clarity. Control. <span class="text-accent">Confidence.</span></h1>
+                        <p class="mt-5 text-lg text-neutral max-w-xl mx-auto md:mx-0">
+                           Turn messy books into a clear financial roadmap. I help U.S. and Canadian businesses gain full visibility of their numbers—so you can make smarter decisions and grow with peace of mind.
                         </p>
-                        <div class="mt-8 flex flex-wrap gap-4">
-                            <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-neutral transition-colors shadow-lg hover:scale-105">Book a Free Consultation</a>
+                        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                            <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-neutral transition-transform shadow-lg hover:scale-105">Book a Free Consultation</a>
                             <a href="#work" class="inline-flex items-center rounded-xl border border-neutral-light bg-box/50 px-5 py-3 font-semibold text-brand hover:bg-box hover:border-accent transition-all hover:scale-105">See Case Studies</a>
                         </div>
                     </div>
                     <div class="relative opacity-0" data-animate-entry="fade-up" data-delay="0.4">
-                        <div class="aspect-[4/3] w-full rounded-3xl border border-neutral-light bg-box p-1 shadow-elevate">
-                            <div class="h-full w-full rounded-[1.25rem] p-6 grid grid-rows-3 gap-4" data-animate>
+                        <div class="rounded-3xl border border-neutral-light bg-box/50 backdrop-blur-sm p-1 shadow-elevate">
+                            <div class="h-full w-full rounded-[1.25rem] p-6 space-y-4" data-animate>
+                                <p class="text-sm font-semibold text-center text-brand">Proven Results for Clients Like You</p>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Revenue</span><span class="text-green-500">+12%</span></div>
-                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="75%"></div></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>AR Collections</span><span class="text-green-500">+17%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="65%"></div></div>
                                 </div>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Net Profit</span><span class="text-accent">+8%</span></div>
-                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="50%"></div></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Month-End Close Time</span><span class="text-green-500">-40%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="40%"></div></div>
                                 </div>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Expenses</span><span class="text-red-500">-3%</span></div>
-                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-red-500 w-0" data-animate-width="30%"></div></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Audit Readiness</span><span class="text-green-500">100%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="100%"></div></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1440 120V0L0 120H1440Z" fill="white"/></svg>
+            </div>
         </section>
 
-        <!-- Curved transition to white -->
-        <div class="relative bg-box">
-             <div class="absolute -top-16 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C240,100 480,0 720,50 C960,100 1200,0 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
-        </div>
 
         <!-- ============ Services ============ -->
-        <section id="services" class="py-28 bg-box">
+        <section id="services" class="py-28 bg-box relative">
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                  <header class="max-w-3xl mx-auto text-center" data-animate>
-                    <h2 class="display text-3xl font-semibold md:text-4xl">Services</h2>
-                    <p class="mt-4 text-neutral">Bookkeeping and accounting services tailored to startups and small businesses in the US and Canada.</p>
-                </header>
-                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article data-animate style="--stagger: 0.1s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Monthly Bookkeeping</h3>
-                        <p class="text-sm mt-2">Consistent and accurate recording of all financial transactions to keep your books pristine.</p>
-                    </article>
-                    <article data-animate style="--stagger: 0.2s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">AR/AP Management</h3>
-                        <p class="text-sm mt-2">Managing invoices and bills to ensure timely payments and healthy cash flow.</p>
-                    </article>
-                    <article data-animate style="--stagger: 0.3s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Payroll Support</h3>
-                        <p class="text-sm mt-2">Assisting with payroll processing to ensure your team is paid accurately and on time.</p>
-                    </article>
-                    <article data-animate style="--stagger: 0.4s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Financial Organization</h3>
-                        <p class="text-sm mt-2">Structuring your financial data for clarity, compliance, and strategic planning.</p>
-                    </article>
-                     <article data-animate style="--stagger: 0.5s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8 7v8a2 2 0 002 2h4M8 7a2 2 0 012-2h4a2 2 0 012 2v8a2 2 0 01-2 2H8z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Month/Year-End Close</h3>
-                        <p class="text-sm mt-2">Closing your books efficiently to provide a timely and accurate snapshot of performance.</p>
-                    </article>
-                     <article data-animate style="--stagger: 0.6s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Audit & Cleanup Projects</h3>
-                        <p class="text-sm mt-2">Preparing your books for audits and correcting historical errors to ensure accuracy.</p>
-                    </article>
-                     <article data-animate style="--stagger: 0.7s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">KPI & Management Reporting</h3>
-                        <p class="text-sm mt-2">Creating custom reports and tracking key metrics to guide your business decisions.</p>
-                    </article>
-                     <article data-animate style="--stagger: 0.8s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Tax Compliance Support</h3>
-                        <p class="text-sm mt-2">Assisting with HST, GST, and US/CA filings to keep you compliant and stress-free.</p>
-                    </article>
-                     <article data-animate style="--stagger: 0.9s;" class="interactive-card group rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                        <div class="inline-block p-3 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" /></svg></div>
-                        <h3 class="font-semibold text-brand mt-4 display">Advisory & Process Improvement</h3>
-                        <p class="text-sm mt-2">Providing insights to optimize your financial workflows and operational efficiency.</p>
-                    </article>
-                </div>
-                 <p class="mt-16 text-center text-neutral" data-animate>Every business is unique. Let's discuss a customized plan that fits your needs.</p>
+                     <h2 class="display text-3xl font-semibold md:text-4xl">Services That Bring Your Numbers to Life</h2>
+                     <p class="mt-4 text-neutral">From daily bookkeeping to strategic reporting, I provide tailored solutions designed to keep your finances accurate, compliant, and insightful.</p>
+                 </header>
+                 <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                     <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                         <h3 class="font-semibold text-brand display mt-4">Core Bookkeeping Essentials</h3>
+                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                            <li>Monthly Reconciliations</li>
+                            <li>Journal Entries & Corrections</li>
+                            <li>Month/Year-End Closing</li>
+                         </ul>
+                     </article>
+                     <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
+                         <h3 class="font-semibold text-brand display mt-4">Cleanup & Compliance</h3>
+                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                            <li>Catch-Up & Backlog Cleanup</li>
+                            <li>Tax Support (HST, GST)</li>
+                            <li>Audit-Ready Financials</li>
+                         </ul>
+                     </article>
+                     <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div>
+                         <h3 class="font-semibold text-brand display mt-4">Growth & Insights</h3>
+                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                           <li>KPI Dashboards & Reporting</li>
+                           <li>Cash Flow Management</li>
+                           <li>Process Improvement</li>
+                         </ul>
+                     </article>
+                 </div>
+                 <div class="mt-16 text-center" data-animate><a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Get a Custom Plan</a></div>
             </div>
+             <div class="section-divider rotate-180"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120C1181.35 44.8346 722.235 44.8347 246.032 104.298L0 120V0Z" fill="var(--color-surface)"/></svg></div>
         </section>
 
         <!-- ============ Software Section ============ -->
-        <section id="software" class="py-28 bg-box relative">
-             <div class="absolute top-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
-                </svg>
-            </div>
-             <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <section id="software" class="py-28 bg-surface">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
                  <header class="max-w-3xl mx-auto text-center" data-animate>
-                    <h2 class="display text-3xl font-semibold md:text-4xl">We Work With All Major Bookkeeping Softwares</h2>
-                </header>
-                <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 items-center" data-animate>
-                    <img src="./assets/logos/quickbooks.png" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/xero.png" alt="Xero Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/wave.png" alt="Wave Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/myob.png" alt="MYOB Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/zoho.png" alt="Zoho Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/freshbooks.png" alt="FreshBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/sage.png" alt="Sage Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                    <img src="./assets/logos/odoo.png" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
-                </div>
-                <div class="mt-16 text-center" data-animate>
-                     <a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-all hover:scale-105 shadow-elevate">
-                        CLICK HERE TO SCHEDULE TIME WITH ME
-                    </a>
-                </div>
-             </div>
-             <div class="absolute bottom-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,100 1080,100 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
+                     <h2 class="display text-3xl font-semibold md:text-4xl">We Work With All Major Bookkeeping Software</h2>
+                 </header>
+                 <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-x-8 gap-y-12 items-center" data-animate>
+                     <img src="./assets/logos/quickbooks.png" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/xero.png" alt="Xero Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/wave.png" alt="Wave Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/myob.png" alt="MYOB Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/zoho.png" alt="Zoho Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/freshbooks.png" alt="FreshBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/sage.png" alt="Sage Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                     <img src="./assets/logos/odoo.png" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110 opacity-70 hover:opacity-100">
+                 </div>
             </div>
         </section>
         
         <!-- ============ Work / Case Studies ============ -->
-        <section id="work" class="py-28">
-             <div class="mx-auto max-w-7xl px-4 md:px-6">
+        <section id="work" class="py-28 bg-box relative">
+             <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0C1181.35 75.1654 722.235 75.1653 246.032 15.702L0 0V120Z" fill="var(--color-surface)"/></svg></div>
+              <div class="mx-auto max-w-7xl px-4 md:px-6">
                  <header class="max-w-2xl" data-animate>
-                     <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
-                     <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
+                      <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
+                      <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
                  </header>
-                 <div class="mt-16 grid gap-8 md:grid-cols-3">
-                     <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-box p-6 shadow-elevate transition-all">
-                         <div class="text-xs uppercase tracking-wide text-neutral">Cleanup • Retail</div>
-                         <h3 class="mt-2 font-semibold text-brand display text-lg">3 years backlogged → 45‑day turnaround</h3>
-                         <p class="mt-2 text-sm text-neutral">Rebuilt ledgers, reconciled 8 accounts, corrected inventory COGS, delivered audit‑ready books.</p>
-                     </article>
-                     <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-box p-6 shadow-elevate transition-all">
-                         <div class="text-xs uppercase tracking-wide text-neutral">Reporting • Services</div>
-                         <h3 class="mt-2 font-semibold text-brand display text-lg">From raw data to KPI dashboard</h3>
-                         <p class="mt-2 text-sm text-neutral">Designed monthly management pack with KPIs, trends, and commentary for leadership.</p>
-                     </article>
-                     <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-box p-6 shadow-elevate transition-all">
-                         <div class="text-xs uppercase tracking-wide text-neutral">Process • SaaS</div>
-                         <h3 class="mt-2 font-semibold text-brand display text-lg">Close process re‑engineering</h3>
-                         <p class="mt-2 text-sm text-neutral">Built a close checklist, standardized AJEs, and aligned rev‑rec with GAAP.</p>
-                     </article>
+                 <div class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+                      <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                          <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company — From Chaos to Audit-Ready</h3>
+                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>3 years of unreconciled accounts</li><li>Inconsistent COGS reporting</li><li>No process for timely monthly close</li></ul></div>
+                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Rebuilt full ledger & corrected COGS</li><li>Implemented structured monthly close</li><li>Delivered accurate, audit-ready books</li></ul></div>
+                          </div>
+                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Monthly close achieved within 5 business days</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Books accepted without issue in audit</li></ul></div>
+                      </article>
+                      <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                          <h3 class="font-semibold text-brand display text-lg">🛠 Service Business — Turning Data Into Decisions</h3>
+                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Raw numbers but no management insights</li><li>Difficult to track KPIs or measure growth</li><li>Delays in AR collection</li></ul></div>
+                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Built monthly KPI dashboards & reports</li><li>Structured AR monitoring</li><li>Clear financial packs for leadership</li></ul></div>
+                          </div>
+                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pricing strategy improved with data-driven insights</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span class="font-bold text-green-600 mr-1">+17%</span> AR collections increased</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Leadership gained confidence in financial planning</li></ul></div>
+                      </article>
+                      <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                          <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup — Streamlining Month-End Close</h3>
+                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Disorganized month-end checklist</li><li>Revenue recognition not GAAP compliant</li><li>Closing process took 10+ days</li></ul></div>
+                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Designed standardized closing checklist</li><li>Aligned revenue recognition with GAAP</li><li>Automated journal entries</li></ul></div>
+                          </div>
+                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Month-end close time reduced by <span class="font-bold text-green-600 ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Reliable financials delivered faster to investors</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Stronger compliance & audit readiness</li></ul></div>
+                      </article>
                  </div>
-             </div>
+              </div>
         </section>
 
         <!-- ============ Process ============ -->
-        <section id="process" class="py-28 bg-box relative">
-            <div class="absolute top-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
-                </svg>
-            </div>
+        <section id="process" class="py-28 bg-surface relative">
+            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1440 0H0V120C258.648 44.8346 717.765 44.8347 1193.97 104.298L1440 120V0Z" fill="var(--color-box)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <header class="max-w-2xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
-                    <p class="mt-3 text-neutral">From intro call to monthly delivery.</p>
+                    <p class="mt-3 text-neutral">From intro call to monthly delivery, clarity is built-in at every step.</p>
                 </header>
-                <ol class="mt-16 grid gap-6 md:grid-cols-5">
-                    <li data-animate style="--stagger: 0.1s;" class="rounded-3xl border border-neutral-light bg-surface p-6 text-center shadow-elevate transition-transform hover:scale-105"><span class="text-sm font-semibold uppercase text-neutral">Step 1</span><h3 class="font-semibold text-brand mt-2">Intro Call</h3><p class="mt-1 text-sm text-neutral">Scope, systems, goals</p></li>
-                    <li data-animate style="--stagger: 0.2s;" class="rounded-3xl border border-neutral-light bg-surface p-6 text-center shadow-elevate transition-transform hover:scale-105"><span class="text-sm font-semibold uppercase text-neutral">Step 2</span><h3 class="font-semibold text-brand mt-2">File Review</h3><p class="mt-1 text-sm text-neutral">Assess health & cleanup</p></li>
-                    <li data-animate style="--stagger: 0.3s;" class="rounded-3xl border border-neutral-light bg-surface p-6 text-center shadow-elevate transition-transform hover:scale-105"><span class="text-sm font-semibold uppercase text-neutral">Step 3</span><h3 class="font-semibold text-brand mt-2">Onboarding</h3><p class="mt-1 text-sm text-neutral">Access, checklist, KPIs</p></li>
-                    <li data-animate style="--stagger: 0.4s;" class="rounded-3xl border border-neutral-light bg-surface p-6 text-center shadow-elevate transition-transform hover:scale-105"><span class="text-sm font-semibold uppercase text-neutral">Step 4</span><h3 class="font-semibold text-brand mt-2">Monthly Close</h3><p class="mt-1 text-sm text-neutral">Recs, AJEs, validate</p></li>
-                    <li data-animate style="--stagger: 0.5s;" class="rounded-3xl border border-neutral-light bg-surface p-6 text-center shadow-elevate transition-transform hover:scale-105"><span class="text-sm font-semibold uppercase text-neutral">Step 5</span><h3 class="font-semibold text-brand mt-2">Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Statements + insights</p></li>
-                </ol>
+                <div class="mt-16 max-w-2xl mx-auto">
+                    <div data-animate class="space-y-0">
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.1s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">1</div><div><h3 class="font-semibold text-brand mt-2">Intro Call</h3><p class="mt-1 text-sm text-neutral">We discuss your scope, systems, and goals to ensure we're a perfect fit.</p></div></div>
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.2s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">2</div><div><h3 class="font-semibold text-brand mt-2">File Review</h3><p class="mt-1 text-sm text-neutral">I assess the health of your books and identify any cleanup needs. <em class="text-xs block mt-1 text-neutral/80">"This gave us peace of mind knowing our books were accurate."</em></p></div></div>
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.3s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">3</div><div><h3 class="font-semibold text-brand mt-2">Onboarding</h3><p class="mt-1 text-sm text-neutral">Seamlessly get set up with secure access, a clear checklist, and defined KPIs.</p></div></div>
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.4s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">4</div><div><h3 class="font-semibold text-brand mt-2">Monthly Close</h3><p class="mt-1 text-sm text-neutral">I handle all reconciliations, adjustments, and validations for a timely close.</p></div></div>
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.5s;"><div class="timeline-icon flex-shrink-0 w-12 h-12 rounded-full bg-accent/20 text-accent flex items-center justify-center font-bold text-lg mr-6">5</div><div><h3 class="font-semibold text-brand mt-2">Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Receive your financial statements and actionable insights to guide your decisions.</p></div></div>
+                    </div>
+                </div>
             </div>
-            <div class="absolute bottom-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,100 1080,100 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <div class="section-divider rotate-180"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120L0 0Z" fill="white"/></svg></div>
         </section>
 
         <!-- ============ About ============ -->
         <section id="about" class="py-28 bg-box relative">
-            <div class="absolute top-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
-                </svg>
-            </div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
-                <div class="grid gap-12 md:grid-cols-3 items-center">
+                <div class="grid gap-12 md:grid-cols-2 items-center">
+                    <div class="md:col-span-1" data-animate><img src="./assets/me.png" alt="Headshot of Edz Lilian Galdones" loading="lazy" class="rounded-3xl shadow-elevate w-full aspect-square object-cover"></div>
                     <div class="md:col-span-1" data-animate>
-                         <img src="./assets/me.png" alt="Edz Lilian Galdones"class="rounded-3xl shadow-elevate w-full aspect-square object-cover">
-                    </div>
-                    <div class="md:col-span-2" data-animate>
-                        <h2 class="display text-3xl font-semibold md:text-4xl">About Edz</h2>
-                        <p class="mt-4 text-neutral">I’m a Certified Xero & QuickBooks ProAdvisor with 4+ years of full‑charge bookkeeping and reporting across U.S. and Canadian clients—supporting founders, operators, and finance leads who need accuracy and on‑time close cycles.</p>
-                        <ul class="mt-8 space-y-6">
-                            <li class="flex items-start opacity-0" data-animate-entry="fade-up" data-delay="0.3">
-                                <div class="flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg></div>
-                                <div class="ml-4"><strong class="text-brand">20+ Client Files Managed</strong><p class="text-sm text-neutral">Proven experience across diverse industries including retail, SaaS, and professional services.</p></div>
-                            </li>
-                            <li class="flex items-start opacity-0" data-animate-entry="fade-up" data-delay="0.4">
-                                <div class="flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                                <div class="ml-4"><strong class="text-brand">Tax Filings Support</strong><p class="text-sm text-neutral">Expert coordination for HST, GST, and collaboration with your tax CPA for seamless filings.</p></div>
-                            </li>
-                             <li class="flex items-start opacity-0" data-animate-entry="fade-up" data-delay="0.5">
-                                <div class="flex-shrink-0"><svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path stroke-linecap="round" stroke-linejoin="round" d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div>
-                                <div class="ml-4"><strong class="text-brand">Management Reporting & KPI Design</strong><p class="text-sm text-neutral">Transforming raw data into actionable insights and custom dashboards that drive decisions.</p></div>
-                            </li>
-                        </ul>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">Meet Edz Lilian Galdones</h2>
+                        <p class="mt-4 text-brand font-semibold">I’m not just here to balance books — I’m here to give you the clarity and confidence to grow your business.</p>
+                        <p class="mt-4 text-neutral text-sm">I started my bookkeeping career helping small businesses bring order to messy, stressful financials. Over the last 4+ years, I’ve managed 20+ client accounts across the U.S. and Canada — from retail and professional services to SaaS startups.</p>
+                        <p class="mt-2 text-neutral text-sm">As a Certified QuickBooks ProAdvisor and Xero ProAdvisor, I specialize in full-charge bookkeeping, management reporting, and tax compliance under IFRS and GAAP standards. Whether it’s reconciling three years of backlogs or designing KPI dashboards that drive decisions, I deliver accurate, reliable results — always on time.</p>
+                        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm"><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified Xero ProAdvisor</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> Certified QuickBooks ProAdvisor</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> 4+ Years Experience</div><div class="flex items-center p-3 bg-surface rounded-lg"><svg class="w-5 h-5 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg> HST, GST & Tax Support</div></div>
+                         <a href="#contact" class="mt-8 inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-neutral transition-transform shadow-lg hover:scale-105">Let’s Work Together</a>
                     </div>
                 </div>
             </div>
-             <div class="absolute bottom-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,100 1080,100 1440,50 L1440,100 L0,100 Z"></path>
-                </svg>
-            </div>
+            <div class="section-divider"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120L0 0Z" fill="var(--color-surface)"/></svg></div>
         </section>
 
         <!-- ============ Testimonials Carousel ============ -->
-        <section id="testimonials" class="py-28 relative overflow-hidden">
-             <!-- Abstract background shape -->
-            <div class="absolute inset-0 z-0 opacity-50">
-                <div class="absolute -top-1/2 -left-1/4 w-full h-[200%] bg-box/50 rounded-full blur-3xl"></div>
-            </div>
+        <section id="testimonials" class="py-28 relative overflow-hidden bg-surface">
             <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
                 <header class="max-w-2xl" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
@@ -485,60 +333,9 @@
                 <div class="mt-16" data-animate>
                     <div class="swiper testimonial-swiper">
                         <div class="swiper-wrapper">
-                            <!-- Slide 1 -->
-                            <div class="swiper-slide">
-                                <div class="flex flex-col items-center">
-                                    <div class="w-20 h-20 rounded-full bg-accent p-1 shadow-lg mb-4">
-                                        <img src="./assets/clients/danny.jpg" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-full h-full rounded-full object-cover">
-                                    </div>
-                                    <figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate">
-                                        <h3 class="font-semibold text-brand display text-lg">Danny Batimana</h3>
-                                        <div class="flex justify-center gap-1 text-accent my-3">
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                        </div>
-                                        <blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer for me. She stepped in when things were overwhelming and turned it all around. I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote>
-                                        <figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                             <!-- Slide 2 -->
-                            <div class="swiper-slide">
-                                <div class="flex flex-col items-center">
-                                    <div class="w-20 h-20 rounded-full bg-accent p-1 shadow-lg mb-4">
-                                        <img src="./assets/clients/scarlet.jpeg" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-full h-full rounded-full object-cover">
-                                    </div>
-                                    <figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate">
-                                        <h3 class="font-semibold text-brand display text-lg">Scarlet Ngo</h3>
-                                        <div class="flex justify-center gap-1 text-accent my-3">
-                                            <!-- 5 star svgs -->
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                        </div>
-                                        <blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence. Beyond her technical skills, she brings positivity and reliability that make a real difference."</blockquote>
-                                        <figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
-                             <!-- Slide 3 -->
-                            <div class="swiper-slide">
-                                <div class="flex flex-col items-center">
-                                    <div class="w-20 h-20 rounded-full bg-accent p-1 shadow-lg mb-4">
-                                        <img src="./assets/clients/mick.jpeg" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-full h-full rounded-full object-cover">
-                                    </div>
-                                    <figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate">
-                                        <h3 class="font-semibold text-brand display text-lg">Mick P.</h3>
-                                        <div class="flex justify-center gap-1 text-accent my-3">
-                                            <!-- 5 star svgs -->
-                                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
-                                        </div>
-                                        <blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote>
-                                        <figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption>
-                                    </figure>
-                                </div>
-                            </div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/danny.jpg" loading="lazy" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Danny Batimana</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/scarlet.jpeg" loading="lazy" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Scarlet Ngo</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/mick.jpeg" loading="lazy" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption></figure></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -548,190 +345,108 @@
 
         <!-- ============ FAQ ============ -->
         <section id="faq" class="py-28 bg-box relative">
-             <div class="absolute top-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
-                </svg>
-            </div>
+            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0L0 120Z" fill="var(--color-surface)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
-                <header class="max-w-2xl" data-animate>
-                    <h2 class="display text-3xl font-semibold md:text-4xl">FAQ</h2>
-                    <p class="mt-3 text-neutral">Quick answers to common questions.</p>
-                </header>
+                <header class="max-w-2xl" data-animate><h2 class="display text-3xl font-semibold md:text-4xl">Frequently Asked Questions</h2><p class="mt-3 text-neutral">Quick answers to common questions.</p></header>
                 <div class="mt-12 grid gap-4 md:max-w-3xl" data-animate>
-                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors">
-                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
-                            Do you work 100% virtually?
-                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">Yes — secure, remote delivery across time zones using least‑privilege access.</p>
-                    </details>
-                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors">
-                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
-                            Which platforms do you support?
-                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">QuickBooks Online, Xero, Zoho Books, Wave, MYOB, FreshBooks, Sage, and Odoo.</p>
-                    </details>
-                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors">
-                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
-                            Do you handle taxes?
-                            <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">I prepare books and filings support (e.g., HST/GST) and coordinate with your tax CPA where needed.</p>
-                    </details>
-                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors">
-                        <summary class="font-semibold text-brand list-none flex justify-between items-center">
-                            How do you price services?
-                             <svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                        </summary>
-                        <p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p>
-                    </details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do I know my financial data will be secure?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">I take data security seriously. I use secure, encrypted platforms for all file sharing and communication, and adhere to strict confidentiality agreements. Access to your financial software is granted on a least-privilege basis to ensure maximum protection.</p></details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">What happens if I already have an accountant?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">I often collaborate with existing accountants and CPAs. My role is to handle the detailed, day-to-day bookkeeping and monthly reporting, which ensures your accountant has clean, accurate, and timely data for tax planning and strategic advisory. This teamwork approach saves you time and money.</p></details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">Do you work 100% virtually?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">Yes — secure, remote delivery across time zones using least‑privilege access.</p></details>
+                    <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do you price services?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p></details>
                 </div>
             </div>
         </section>
 
         <!-- ============ Contact ============ -->
         <section id="contact" class="py-28 bg-brand text-white relative">
-             <div class="absolute top-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-box)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
-                </svg>
-            </div>
+            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0L0 120Z" fill="var(--color-box)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <div data-animate>
-                        <h2 class="display text-3xl font-semibold md:text-4xl text-white">Let’s Talk</h2>
-                        <p class="mt-3 text-slate-300">Tell me about your books and goals. I’ll reply within one business day.</p>
-                        <div class="mt-6 text-sm text-slate-300">
-                           <p>Email: <a class="underline hover:text-accent" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></p>
-                           <p>Location: Philippines (GMT+8) • Serving clients globally</p>
-                        </div>
-                    </div>
-                    <form class="grid gap-4 bg-box rounded-2xl p-8 shadow-elevate" data-animate>
-                        <div class="grid gap-2">
-                            <label for="name" class="text-sm font-semibold text-neutral">Name</label>
-                            <input id="name" type="text" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="Your name" />
-                        </div>
-                        <div class="grid gap-2">
-                            <label for="email" class="text-sm font-semibold text-neutral">Email</label>
-                            <input id="email" type="email" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="you@company.com" />
-                        </div>
-                        <div class="grid gap-2">
-                            <label for="message" class="text-sm font-semibold text-neutral">Message</label>
-                            <textarea id="message" rows="4" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="What do you need help with?"></textarea>
-                        </div>
-                        <button type="submit" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-brand shadow-lg hover:opacity-90 transition-all hover:scale-105">Send Message</button>
-                    </form>
+                    <div data-animate><h2 class="display text-3xl font-semibold md:text-4xl text-white">Let’s Talk</h2><p class="mt-3 text-slate-300">Tell me about your books and goals. I’ll reply within one business day.</p><div class="mt-6 text-sm text-slate-300 space-y-2"><p>Email: <a class="underline hover:text-accent" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></p><p id="local-time">Location: Philippines • Serving clients globally</p></div></div>
+                    <form name="contact" method="POST" data-netlify="true" class="grid gap-4 bg-box rounded-2xl p-8 shadow-elevate" data-animate><input type="hidden" name="form-name" value="contact" /><div class="grid gap-2"><label for="name" class="text-sm font-semibold text-neutral">Name</label><input id="name" name="name" type="text" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="Your name" required /></div><div class="grid gap-2"><label for="email" class="text-sm font-semibold text-neutral">Email</label><input id="email" name="email" type="email" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="you@company.com" required /></div><div class="grid gap-2"><label for="message" class="text-sm font-semibold text-neutral">Message</label><textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea></div><button type="submit" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-brand shadow-lg hover:opacity-90 transition-transform hover:scale-105">Send Message</button></form>
                 </div>
             </div>
         </section>
     </main>
 
     <!-- ============ Footer ============ -->
-    <footer class="py-10">
+    <footer class="py-10 bg-brand text-slate-400">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-sm text-neutral">&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div>
-                <nav class="flex flex-wrap gap-6 text-sm font-semibold">
-                    <a href="#" class="text-brand hover:text-accent transition-colors">Privacy</a>
-                    <a href="#" class="text-brand hover:text-accent transition-colors">Terms</a>
-                    <a href="#contact" class="text-brand hover:text-accent transition-colors">Contact</a>
-                </nav>
+                <div class="text-center md:text-left"><div class="text-sm">&copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.</div><div class="text-xs mt-1">Trusted by 20+ U.S. and Canadian businesses.</div></div>
+                <div class="flex items-center gap-6"><a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a></div>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollTopBtn" class="rounded-full bg-accent text-brand p-3 shadow-lg hover:scale-110 transition-all" aria-label="Scroll to top">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" />
-        </svg>
-    </button>
-
+    <button id="scrollTopBtn" class="rounded-full bg-accent text-brand p-3 shadow-lg hover:scale-110 transition-transform" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg></button>
+    
+    <!-- Particles.js for Animated Background -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 
     <!-- Core Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    
-    <!-- Site Logic -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Year ---
+            // --- Particles.js Initialization ---
+            particlesJS("particles-js", {
+                "particles": {
+                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
+                    "color": { "value": "#d4af37" },
+                    "shape": { "type": "circle" },
+                    "opacity": { "value": 0.3, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
+                    "size": { "value": 3, "random": true, "anim": { "enable": false } },
+                    "line_linked": { "enable": true, "distance": 150, "color": "#5c5c5c", "opacity": 0.2, "width": 1 },
+                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
+                },
+                "interactivity": {
+                    "detect_on": "canvas",
+                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
+                    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.3 } } }
+                },
+                "retina_detect": true
+            });
+
+            // --- Standard Site Logic ---
             document.getElementById('year').textContent = new Date().getFullYear();
-            
-            // --- Mobile menu ---
             const mbtn = document.getElementById('menuBtn');
             const mmenu = document.getElementById('mobileMenu');
             const mobileLinks = mmenu.querySelectorAll('a');
-            const toggleMenu = () => mmenu.classList.toggle('hidden');
+            const toggleMenu = () => { const isHidden = mmenu.classList.toggle('hidden'); mbtn.setAttribute('aria-expanded', !isHidden); };
             mbtn?.addEventListener('click', toggleMenu);
-            mobileLinks.forEach(link => link.addEventListener('click', () => {
-                if (!mmenu.classList.contains('hidden')) {
-                    toggleMenu();
-                }
-            }));
-
-            // --- Scroll to Top Button ---
+            mobileLinks.forEach(link => link.addEventListener('click', () => { if (!mmenu.classList.contains('hidden')) toggleMenu(); }));
             const scrollTopBtn = document.getElementById('scrollTopBtn');
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > 300) {
-                    scrollTopBtn.classList.add('visible');
-                } else {
-                    scrollTopBtn.classList.remove('visible');
-                }
-            });
-            scrollTopBtn.addEventListener('click', () => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            });
-
-
-            // --- Entry & Staggered Scroll Animations ---
+            window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('visible', window.scrollY > 300); });
+            scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            const localTimeEl = document.getElementById('local-time');
+            if(localTimeEl) {
+                const updateTime = () => {
+                    const now = new Date();
+                    const options = { timeZone: 'Asia/Manila', hour: 'numeric', minute: 'numeric', hour12: true };
+                    const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
+                    localTimeEl.innerHTML = `Location: Philippines • My local time: <span class="font-semibold text-white">${timeString} (PHT)</span>`;
+                };
+                updateTime();
+                setInterval(updateTime, 60000);
+            }
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Animate the parent container first
                         entry.target.classList.add('in-view');
-
-                        // Then animate staggered children if they exist
-                        const staggeredChildren = entry.target.querySelectorAll('[data-animate]');
-                        staggeredChildren.forEach(child => {
-                             child.classList.add('in-view');
-                        });
-                        
                         const progressBars = entry.target.querySelectorAll('[data-animate-width]');
-                        progressBars.forEach(bar => {
-                            bar.style.width = bar.dataset.animateWidth;
-                        });
-                        observer.unobserve(entry.target); // Animate only once
+                        progressBars.forEach(bar => { bar.style.width = bar.dataset.animateWidth; });
+                        observer.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.1 });
-
-            // Observe all parent containers marked for animation
-            document.querySelectorAll('[data-animate], [data-animate-entry]').forEach(el => {
-                 // If it's a child meant for staggering, don't observe it directly
-                if (el.closest('[data-animate] > [data-animate]')) return;
-                observer.observe(el);
-            });
-
-
-            // --- Testimonial Carousel ---
-            const swiper = new Swiper('.testimonial-swiper', {
-                loop: true,
-                slidesPerView: 1,
-                spaceBetween: 40,
-                centeredSlides: true,
+            document.querySelectorAll('[data-animate], [data-animate-entry]').forEach(el => observer.observe(el));
+            new Swiper('.testimonial-swiper', {
+                loop: true, slidesPerView: 1, spaceBetween: 40, centeredSlides: true,
                 autoplay: { delay: 6000, disableOnInteraction: false },
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
+                pagination: { el: '.swiper-pagination', clickable: true },
             });
         });
     </script>
 </body>
 </html>
+
