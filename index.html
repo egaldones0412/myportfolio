@@ -66,9 +66,6 @@
         body { color: var(--color-neutral); font-family: 'Open Sans', sans-serif; background-color: var(--color-surface); }
         .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; color: var(--color-brand); }
         
-        /* Animated Background Container */
-        #particles-js { position: fixed; width: 100%; height: 100%; top: 0; left: 0; z-index: -1; }
-
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
         [data-animate-entry] { animation: fadeInUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
         [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--stagger, 0s); }
@@ -102,13 +99,12 @@
         .timeline-item .timeline-icon { transition: transform 0.3s, color 0.3s, background-color 0.3s; }
         .timeline-item:hover .timeline-icon { transform: scale(1.1); color: var(--color-box); background-color: var(--color-accent); }
 
+        .send-button:hover .paper-plane-icon { transform: rotate(10deg) translateX(3px) translateY(-3px); }
+
         .section-divider { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
     </style>
 </head>
 <body class="antialiased">
-    <!-- Animated Background -->
-    <div id="particles-js"></div>
-
     <!-- ============ Header ============ -->
     <header class="sticky top-0 z-40 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/80 border-b border-neutral-light/50">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
@@ -153,7 +149,7 @@
                     <div class="opacity-0 text-center md:text-left" data-animate-entry="fade-up" data-delay="0.2">
                         <h1 class="display text-5xl font-bold md:text-6xl text-brand">Clarity. Control. <span class="text-accent">Confidence.</span></h1>
                         <p class="mt-5 text-lg text-neutral max-w-xl mx-auto md:mx-0">
-                           Turn messy books into a clear financial roadmap. I help U.S. and Canadian businesses gain full visibility of their numbers—so you can make smarter decisions and grow with peace of mind.
+                            Turn messy books into a clear financial roadmap. I help U.S. and Canadian businesses gain full visibility of their numbers—so you can make smarter decisions and grow with peace of mind.
                         </p>
                         <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
                             <a href="#contact" class="inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-neutral transition-transform shadow-lg hover:scale-105">Book a Free Consultation</a>
@@ -165,16 +161,16 @@
                             <div class="h-full w-full rounded-[1.25rem] p-6 space-y-4" data-animate>
                                 <p class="text-sm font-semibold text-center text-brand">Proven Results for Clients Like You</p>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>AR Collections</span><span class="text-green-500">+17%</span></div>
-                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="65%"></div></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>AR Collections</span><span class="text-accent">+17%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="65%"></div></div>
                                 </div>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Month-End Close Time</span><span class="text-green-500">-40%</span></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Month-End Close Time</span><span class="text-accent">-40%</span></div>
                                     <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="40%"></div></div>
                                 </div>
                                 <div class="rounded-xl border border-neutral-light p-4">
-                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Audit Readiness</span><span class="text-green-500">100%</span></div>
-                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-green-500 w-0" data-animate-width="100%"></div></div>
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Audit Readiness</span><span class="text-accent">100%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light/50"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="100%"></div></div>
                                 </div>
                             </div>
                         </div>
@@ -182,7 +178,9 @@
                 </div>
             </div>
             <div class="section-divider">
-                <svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1440 120V0L0 120H1440Z" fill="white"/></svg>
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-box)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
@@ -190,53 +188,82 @@
         <!-- ============ Services ============ -->
         <section id="services" class="py-28 bg-box relative">
             <div class="mx-auto max-w-7xl px-4 md:px-6">
-                 <header class="max-w-3xl mx-auto text-center" data-animate>
-                     <h2 class="display text-3xl font-semibold md:text-4xl">Services That Bring Your Numbers to Life</h2>
-                     <p class="mt-4 text-neutral">From daily bookkeeping to strategic reporting, I provide tailored solutions designed to keep your finances accurate, compliant, and insightful.</p>
-                 </header>
-                 <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                     <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                         <h3 class="font-semibold text-brand display mt-4">Core Bookkeeping Essentials</h3>
-                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                <header class="max-w-3xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Services That Bring Your Numbers to Life</h2>
+                    <p class="mt-4 text-neutral">From daily bookkeeping to strategic reporting, I provide tailored solutions designed to keep your finances accurate, compliant, and insightful.</p>
+                </header>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#B89B31;" />
+                                        <stop offset="100%" style="stop-color:#D4AF37;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Core Bookkeeping Essentials</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
                             <li>Monthly Reconciliations</li>
                             <li>Journal Entries & Corrections</li>
                             <li>Month/Year-End Closing</li>
-                         </ul>
-                     </article>
-                     <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></div>
-                         <h3 class="font-semibold text-brand display mt-4">Cleanup & Compliance</h3>
-                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                        </ul>
+                    </article>
+                    <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient-2)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#B89B31;" />
+                                        <stop offset="100%" style="stop-color:#D4AF37;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Cleanup & Compliance</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
                             <li>Catch-Up & Backlog Cleanup</li>
                             <li>Tax Support (HST, GST)</li>
                             <li>Audit-Ready Financials</li>
-                         </ul>
-                     </article>
-                     <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
-                         <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform"><svg class="w-8 h-8 text-brand" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" /></svg></div>
-                         <h3 class="font-semibold text-brand display mt-4">Growth & Insights</h3>
-                         <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                        </ul>
+                    </article>
+                    <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient-3)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#B89B31;" />
+                                        <stop offset="100%" style="stop-color:#D4AF37;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Growth & Insights</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
                            <li>KPI Dashboards & Reporting</li>
                            <li>Cash Flow Management</li>
                            <li>Process Improvement</li>
-                         </ul>
-                     </article>
-                 </div>
-                 <div class="mt-16 text-center" data-animate><a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Get a Custom Plan</a></div>
+                        </ul>
+                    </article>
+                </div>
+                <div class="mt-16 text-center" data-animate><a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Get a Custom Plan</a></div>
             </div>
-             <div class="section-divider rotate-180"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120C1181.35 44.8346 722.235 44.8347 246.032 104.298L0 120V0Z" fill="var(--color-surface)"/></svg></div>
-        </section>
-
-          <!-- ============ Software Section ============ -->
-        <section id="software" class="py-28 bg-box relative">
-             <div class="absolute top-0 left-0 w-full leading-none">
+            <div class="section-divider">
                 <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,0 1080,0 1440,50 L1440,0 L0,0 Z"></path>
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
-             <div class="mx-auto max-w-7xl px-4 md:px-6">
-                 <header class="max-w-3xl mx-auto text-center" data-animate>
+        </section>
+
+        <!-- ============ Software Section ============ -->
+        <section id="software" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-3xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">We Work With All Major Bookkeeping Softwares</h2>
                 </header>
                 <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 items-center" data-animate>
@@ -250,58 +277,61 @@
                     <img src="./assets/logos/odoo.png" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
                 </div>
                 <div class="mt-16 text-center" data-animate>
-                     <a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-all hover:scale-105 shadow-elevate">
+                    <a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-brand hover:opacity-90 transition-all hover:scale-105 shadow-elevate">
                         CLICK HERE TO SCHEDULE TIME WITH ME
                     </a>
                 </div>
-             </div>
-             <div class="absolute bottom-0 left-0 w-full leading-none">
-                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
-                    <path d="M0,50 C360,100 1080,100 1440,50 L1440,100 L0,100 Z"></path>
+            </div>
+            <div class="section-divider">
+                 <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-box)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
                 </svg>
             </div>
         </section>
         
         <!-- ============ Work / Case Studies ============ -->
         <section id="work" class="py-28 bg-box relative">
-             <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0C1181.35 75.1654 722.235 75.1653 246.032 15.702L0 0V120Z" fill="var(--color-surface)"/></svg></div>
-              <div class="mx-auto max-w-7xl px-4 md:px-6">
-                 <header class="max-w-2xl" data-animate>
-                      <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
-                      <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
-                 </header>
-                 <div class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
-                      <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                          <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company — From Chaos to Audit-Ready</h3>
-                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>3 years of unreconciled accounts</li><li>Inconsistent COGS reporting</li><li>No process for timely monthly close</li></ul></div>
-                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Rebuilt full ledger & corrected COGS</li><li>Implemented structured monthly close</li><li>Delivered accurate, audit-ready books</li></ul></div>
-                          </div>
-                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Monthly close achieved within 5 business days</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Books accepted without issue in audit</li></ul></div>
-                      </article>
-                      <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                          <h3 class="font-semibold text-brand display text-lg">🛠 Service Business — Turning Data Into Decisions</h3>
-                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Raw numbers but no management insights</li><li>Difficult to track KPIs or measure growth</li><li>Delays in AR collection</li></ul></div>
-                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Built monthly KPI dashboards & reports</li><li>Structured AR monitoring</li><li>Clear financial packs for leadership</li></ul></div>
-                          </div>
-                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pricing strategy improved with data-driven insights</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span class="font-bold text-green-600 mr-1">+17%</span> AR collections increased</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Leadership gained confidence in financial planning</li></ul></div>
-                      </article>
-                      <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
-                          <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup — Streamlining Month-End Close</h3>
-                          <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
-                              <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Disorganized month-end checklist</li><li>Revenue recognition not GAAP compliant</li><li>Closing process took 10+ days</li></ul></div>
-                              <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Designed standardized closing checklist</li><li>Aligned revenue recognition with GAAP</li><li>Automated journal entries</li></ul></div>
-                          </div>
-                          <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Month-end close time reduced by <span class="font-bold text-green-600 ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Reliable financials delivered faster to investors</li><li class="flex items-center"><svg class="w-4 h-4 text-green-500 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Stronger compliance & audit readiness</li></ul></div>
-                      </article>
-                 </div>
-              </div>
+             <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
+                    <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
+                </header>
+                <div class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+                    <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company — From Chaos to Audit-Ready</h3>
+                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>3 years of unreconciled accounts</li><li>Inconsistent COGS reporting</li><li>No process for timely monthly close</li></ul></div>
+                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Rebuilt full ledger & corrected COGS</li><li>Implemented structured monthly close</li><li>Delivered accurate, audit-ready books</li></ul></div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Monthly close achieved within 5 business days</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Books accepted without issue in audit</li></ul></div>
+                    </article>
+                    <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">🛠 Service Business — Turning Data Into Decisions</h3>
+                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Raw numbers but no management insights</li><li>Difficult to track KPIs or measure growth</li><li>Delays in AR collection</li></ul></div>
+                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Built monthly KPI dashboards & reports</li><li>Structured AR monitoring</li><li>Clear financial packs for leadership</li></ul></div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Pricing strategy improved with data-driven insights</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span class="font-bold text-accent mr-1">+17%</span> AR collections increased</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Leadership gained confidence in financial planning</li></ul></div>
+                    </article>
+                    <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-neutral-light bg-surface p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup — Streamlining Month-End Close</h3>
+                        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm flex-grow">
+                            <div><h4 class="font-semibold text-brand">Before:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Disorganized month-end checklist</li><li>Revenue recognition not GAAP compliant</li><li>Closing process took 10+ days</li></ul></div>
+                            <div><h4 class="font-semibold text-brand">After:</h4><ul class="mt-2 list-disc list-inside text-neutral text-xs"><li>Designed standardized closing checklist</li><li>Aligned revenue recognition with GAAP</li><li>Automated journal entries</li></ul></div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-neutral-light"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Month-end close time reduced by <span class="font-bold text-accent ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Reliable financials delivered faster to investors</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>Stronger compliance & audit readiness</li></ul></div>
+                    </article>
+                </div>
+             </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
         </section>
 
         <!-- ============ Process ============ -->
         <section id="process" class="py-28 bg-surface relative">
-            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1440 0H0V120C258.648 44.8346 717.765 44.8347 1193.97 104.298L1440 120V0Z" fill="var(--color-box)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <header class="max-w-2xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
@@ -317,7 +347,11 @@
                     </div>
                 </div>
             </div>
-            <div class="section-divider rotate-180"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120L0 0Z" fill="white"/></svg></div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-box)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
         </section>
 
         <!-- ============ About ============ -->
@@ -335,34 +369,44 @@
                     </div>
                 </div>
             </div>
-            <div class="section-divider"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 0H1440V120L0 0Z" fill="var(--color-surface)"/></svg></div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
         </section>
 
         <!-- ============ Testimonials Carousel ============ -->
         <section id="testimonials" class="py-28 relative overflow-hidden bg-surface">
             <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
-                <header class="max-w-2xl" data-animate>
+                <header class="max-w-2xl mx-auto text-center" data-animate>
                     <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
                     <p class="mt-3 text-neutral">Real words from teams I support.</p>
                 </header>
                 <div class="mt-16" data-animate>
                     <div class="swiper testimonial-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/danny.jpg" loading="lazy" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Danny Batimana</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/scarlet.jpeg" loading="lazy" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Scarlet Ngo</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
-                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box/50 backdrop-blur-sm p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/mick.jpeg" loading="lazy" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-box"><h3 class="font-semibold text-brand display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/danny.jpg" loading="lazy" alt="Testimonial from Danny Batimana" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=DB';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Danny Batimana</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/scarlet.jpeg" loading="lazy" alt="Testimonial from Scarlet Ngo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=SN';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Scarlet Ngo</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-box p-8 text-center shadow-elevate mx-auto"><img src="./assets/clients/mick.jpeg" loading="lazy" alt="Testimonial from Mick P." onerror="this.onerror=null;this.src='https://placehold.co/100x100/2C2C2C/white?text=MP';" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Business Owner</figcaption></figure></div>
                         </div>
                         <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
                     </div>
                 </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-box)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
             </div>
         </section>
 
         <!-- ============ FAQ ============ -->
         <section id="faq" class="py-28 bg-box relative">
-            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0L0 120Z" fill="var(--color-surface)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
-                <header class="max-w-2xl" data-animate><h2 class="display text-3xl font-semibold md:text-4xl">Frequently Asked Questions</h2><p class="mt-3 text-neutral">Quick answers to common questions.</p></header>
+                <header class="max-w-2xl mx-auto text-center" data-animate><h2 class="display text-3xl font-semibold md:text-4xl">Frequently Asked Questions</h2><p class="mt-3 text-neutral">Quick answers to common questions.</p></header>
                 <div class="mt-12 grid gap-4 md:max-w-3xl" data-animate>
                     <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do I know my financial data will be secure?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">I take data security seriously. I use secure, encrypted platforms for all file sharing and communication, and adhere to strict confidentiality agreements. Access to your financial software is granted on a least-privilege basis to ensure maximum protection.</p></details>
                     <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">What happens if I already have an accountant?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">I often collaborate with existing accountants and CPAs. My role is to handle the detailed, day-to-day bookkeeping and monthly reporting, which ensures your accountant has clean, accurate, and timely data for tax planning and strategic advisory. This teamwork approach saves you time and money.</p></details>
@@ -370,15 +414,26 @@
                     <details class="group rounded-2xl border border-neutral-light bg-surface p-5 cursor-pointer faq-item transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do you price services?<svg class="w-5 h-5 transition-transform transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></summary><p class="mt-3 text-sm text-neutral pt-3 border-t border-neutral-light">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p></details>
                 </div>
             </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-brand)">
+                     <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
         </section>
 
         <!-- ============ Contact ============ -->
         <section id="contact" class="py-28 bg-brand text-white relative">
-            <div class="absolute top-0 left-0 w-full leading-none"><svg viewBox="0 0 1440 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 120H1440V0L0 120Z" fill="var(--color-box)"/></svg></div>
             <div class="mx-auto max-w-7xl px-4 md:px-6">
                 <div class="grid md:grid-cols-2 gap-12 items-center">
                     <div data-animate><h2 class="display text-3xl font-semibold md:text-4xl text-white">Let’s Talk</h2><p class="mt-3 text-slate-300">Tell me about your books and goals. I’ll reply within one business day.</p><div class="mt-6 text-sm text-slate-300 space-y-2"><p>Email: <a class="underline hover:text-accent" href="mailto:hello@edzbooks.com">hello@edzbooks.com</a></p><p id="local-time">Location: Philippines • Serving clients globally</p></div></div>
-                    <form name="contact" method="POST" data-netlify="true" class="grid gap-4 bg-box rounded-2xl p-8 shadow-elevate" data-animate><input type="hidden" name="form-name" value="contact" /><div class="grid gap-2"><label for="name" class="text-sm font-semibold text-neutral">Name</label><input id="name" name="name" type="text" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="Your name" required /></div><div class="grid gap-2"><label for="email" class="text-sm font-semibold text-neutral">Email</label><input id="email" name="email" type="email" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="you@company.com" required /></div><div class="grid gap-2"><label for="message" class="text-sm font-semibold text-neutral">Message</label><textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea></div><button type="submit" class="inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-brand shadow-lg hover:opacity-90 transition-transform hover:scale-105">Send Message</button></form>
+                    <form name="contact" method="POST" data-netlify="true" class="grid gap-4 bg-box rounded-2xl p-8 shadow-elevate" data-animate><input type="hidden" name="form-name" value="contact" /><div class="grid gap-2"><label for="name" class="text-sm font-semibold text-neutral">Name</label><input id="name" name="name" type="text" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="Your name" required /></div><div class="grid gap-2"><label for="email" class="text-sm font-semibold text-neutral">Email</label><input id="email" name="email" type="email" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="you@company.com" required /></div><div class="grid gap-2"><label for="message" class="text-sm font-semibold text-neutral">Message</label><textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-neutral-light bg-surface/50 p-3 text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea></div>
+                        <button type="submit" class="send-button inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-brand shadow-lg hover:opacity-90 transition-transform hover:scale-105">
+                            Send Message
+                            <svg xmlns="http://www.w3.org/2000/svg" class="paper-plane-icon w-4 h-4 ml-2 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                            </svg>
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -396,32 +451,10 @@
 
     <button id="scrollTopBtn" class="rounded-full bg-accent text-brand p-3 shadow-lg hover:scale-110 transition-transform" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg></button>
     
-    <!-- Particles.js for Animated Background -->
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-
     <!-- Core Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // --- Particles.js Initialization ---
-            particlesJS("particles-js", {
-                "particles": {
-                    "number": { "value": 60, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": "#d4af37" },
-                    "shape": { "type": "circle" },
-                    "opacity": { "value": 0.3, "random": true, "anim": { "enable": true, "speed": 1, "opacity_min": 0.1, "sync": false } },
-                    "size": { "value": 3, "random": true, "anim": { "enable": false } },
-                    "line_linked": { "enable": true, "distance": 150, "color": "#5c5c5c", "opacity": 0.2, "width": 1 },
-                    "move": { "enable": true, "speed": 1, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": false }, "resize": true },
-                    "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 0.3 } } }
-                },
-                "retina_detect": true
-            });
-
             // --- Standard Site Logic ---
             document.getElementById('year').textContent = new Date().getFullYear();
             const mbtn = document.getElementById('menuBtn');
@@ -459,9 +492,15 @@
                 loop: true, slidesPerView: 1, spaceBetween: 40, centeredSlides: true,
                 autoplay: { delay: 6000, disableOnInteraction: false },
                 pagination: { el: '.swiper-pagination', clickable: true },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
             });
         });
     </script>
 </body>
 </html>
+
+
 
