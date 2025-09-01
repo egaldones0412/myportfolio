@@ -536,28 +536,40 @@
                             </a>
                         </div>
                     </div>
-                    <form action="https://formspree.io/f/xvgqywoz" method="POST" class="grid gap-y-6 bg-box rounded-2xl p-8 shadow-elevate" data-animate>
-                        <div class="relative">
-                            <label for="name" class="sr-only">Name</label>
-                            <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
-                            <input id="name" name="name" type="text" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="Your name" required />
+                    <form id="contact-form" action="https://formspree.io/f/xvgqywoz" method="POST" class="bg-box rounded-2xl p-8 shadow-elevate min-h-[400px] flex flex-col justify-center" data-animate>
+                        <div id="form-content">
+                            <div class="grid gap-y-6">
+                                <div class="relative">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                                    <input id="name" name="name" type="text" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="Your name" required />
+                                </div>
+                                <div class="relative">
+                                    <label for="email" class="sr-only">Email</label>
+                                        <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                                    <input id="email" name="email" type="email" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="you@company.com" required />
+                                </div>
+                                <div class="relative">
+                                    <label for="message" class="sr-only">Message</label>
+                                    <svg class="w-5 h-5 text-gray-400 absolute top-5 left-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" /></svg>
+                                    <textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea>
+                                </div>
+                            </div>
+                            <button id="submit-button" type="submit" class="send-button mt-6 w-full inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition-transform hover:scale-105">
+                                Send Message
+                                <svg xmlns="http://www.w3.org/2000/svg" class="paper-plane-icon w-4 h-4 ml-2 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                </svg>
+                            </button>
+                            <p id="form-status" class="text-center text-sm text-red-500 mt-4 h-4"></p>
                         </div>
-                        <div class="relative">
-                            <label for="email" class="sr-only">Email</label>
-                             <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
-                            <input id="email" name="email" type="email" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="you@company.com" required />
-                        </div>
-                        <div class="relative">
-                            <label for="message" class="sr-only">Message</label>
-                            <svg class="w-5 h-5 text-gray-400 absolute top-5 left-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" /></svg>
-                            <textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-gray-200 bg-neutral-light/50 py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea>
-                        </div>
-                        <button type="submit" class="send-button inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition-transform hover:scale-105">
-                            Send Message
-                            <svg xmlns="http://www.w3.org/2000/svg" class="paper-plane-icon w-4 h-4 ml-2 transition-transform" viewBox="0 0 20 20" fill="currentColor">
-                                <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                        <div id="form-success" class="hidden text-center py-8">
+                            <svg class="w-16 h-16 mx-auto text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
                             </svg>
-                        </button>
+                            <h3 class="text-xl font-semibold text-brand mt-4">Message Sent!</h3>
+                            <p class="text-neutral mt-2">Thank you for reaching out. I'll get back to you within 24 hours.</p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -622,6 +634,54 @@
                     prevEl: '.swiper-button-prev',
                 },
             });
+
+            // --- Formspree AJAX Submission ---
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const data = new FormData(form);
+                    const action = form.action;
+                    const formContent = document.getElementById('form-content');
+                    const successMessage = document.getElementById('form-success');
+                    const statusMessage = document.getElementById('form-status');
+                    const submitButton = document.getElementById('submit-button');
+
+                    statusMessage.textContent = 'Sending...';
+                    statusMessage.style.color = 'var(--color-neutral)';
+                    submitButton.disabled = true;
+
+                    fetch(action, {
+                        method: 'POST',
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            statusMessage.textContent = '';
+                            if (formContent) formContent.style.display = 'none';
+                            if (successMessage) successMessage.classList.remove('hidden');
+                            form.reset();
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    statusMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    statusMessage.textContent = 'Oops! There was a problem submitting your form.';
+                                }
+                                statusMessage.style.color = 'red';
+                                submitButton.disabled = false;
+                            })
+                        }
+                    }).catch(error => {
+                        statusMessage.textContent = 'Oops! There was a problem submitting your form.';
+                        statusMessage.style.color = 'red';
+                        submitButton.disabled = false;
+                    });
+                });
+            }
         });
     </script>
 </body>
