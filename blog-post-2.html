@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Decoding Your Cash Flow Statement: A Simple Guide • Edz Lilian Galdones</title>
+    <meta name="description" content="Learn how to read the one report that reveals the true health of your business operations." />
+    <meta name="theme-color" content="#14324F" />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://www.elgaldones.works/blog-post-2.html" />
+
+    <!-- Google Fonts: Open Sans & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const defaultTheme = tailwind.defaultTheme;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
+                        'display': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                    },
+                    colors: {
+                        brand: { DEFAULT: 'var(--color-brand)' },
+                        accent: 'var(--color-accent)',
+                        surface: 'var(--color-surface)',
+                        box: 'var(--color-box)',
+                        neutral: {
+                            DEFAULT: 'var(--color-neutral)',
+                            light: 'var(--color-neutral-light)',
+                        }
+                    },
+                    boxShadow: {
+                        'elevate': '0 8px 30px rgba(20, 50, 79, 0.07)',
+                        'glow': '0 0 20px rgba(44, 160, 28, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-surface: #FFFFFF;
+            --color-brand: #14324F;
+            --color-accent: #2CA01C;
+            --color-box: #FFFFFF;
+            --color-neutral: #000000;
+            --color-neutral-light: #EAF6F7;
+        }
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { color: var(--color-neutral); font-family: 'Open Sans', sans-serif; background-color: var(--color-surface); }
+        .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; color: var(--color-brand); }
+        
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -4px; left: 0; background-color: var(--color-accent); transform-origin: bottom right; transition: transform 0.25s ease-out; }
+        .nav-link:hover::after, .nav-link.active::after { 
+            transform: scaleX(1);
+            transform-origin: bottom left;
+         }
+        .nav-link.active { color: var(--color-accent); }
+
+        .prose {
+            --tw-prose-body: var(--color-neutral);
+            --tw-prose-headings: var(--color-brand);
+            --tw-prose-lead: var(--color-neutral);
+            --tw-prose-links: var(--color-accent);
+            --tw-prose-bold: var(--color-brand);
+            --tw-prose-counters: var(--color-accent);
+            --tw-prose-bullets: var(--color-accent);
+            --tw-prose-hr: #e5e7eb;
+            --tw-prose-quotes: var(--color-brand);
+            --tw-prose-quote-borders: var(--color-accent);
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- ============ Header ============ -->
+    <header class="sticky top-0 z-40 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/80 border-b border-gray-200">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+            <div class="flex h-16 items-center justify-between">
+                <a href="./portfolio.html" class="flex items-center gap-3 font-semibold text-brand">
+                    <img src="https://placehold.co/36x28/14324F/ffffff?text=ELG" alt="Edz Lilian Galdones Logo" class="inline-flex h-7 w-9 items-center justify-center rounded-lg bg-surface">
+                    <span class="hidden sm:block font-display">Edz Lilian Galdones</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                    <a href="./portfolio.html#services" class="nav-link text-brand hover:text-accent transition-colors">Services</a>
+                    <a href="./portfolio.html#work" class="nav-link text-brand hover:text-accent transition-colors">Work</a>
+                    <a href="./portfolio.html#testimonials" class="nav-link text-brand hover:text-accent transition-colors">Testimonials</a>
+                    <a href="./portfolio.html#process" class="nav-link text-brand hover:text-accent transition-colors">Process</a>
+                    <a href="./portfolio.html#about" class="nav-link text-brand hover:text-accent transition-colors">About</a>
+                    <a href="./blog.html" class="nav-link text-brand hover:text-accent transition-colors active">Resources</a>
+                    <a href="./portfolio.html#faq" class="nav-link text-brand hover:text-accent transition-colors">FAQ</a>
+                    <a href="./portfolio.html#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a href="./portfolio.html#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow hover:opacity-90 transition-all hover:scale-105">
+                        Book a Free Call
+                    </a>
+                    <button class="md:hidden rounded-xl border border-gray-200 p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-surface/95">
+            <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm font-semibold">
+                 <a href="./portfolio.html#services" class="text-brand hover:text-accent">Services</a>
+                 <a href="./portfolio.html#work" class="text-brand hover:text-accent">Work</a>
+                 <a href="./portfolio.html#testimonials" class="text-brand hover:text-accent">Testimonials</a>
+                 <a href="./portfolio.html#process" class="text-brand hover:text-accent">Process</a>
+                 <a href="./portfolio.html#about" class="text-brand hover:text-accent">About</a>
+                 <a href="./blog.html" class="text-accent font-bold">Resources</a>
+                 <a href="./portfolio.html#faq" class="text-brand hover:text-accent">FAQ</a>
+                 <a href="./portfolio.html#contact" class="text-brand hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="py-24 sm:py-32">
+            <div class="mx-auto max-w-3xl px-4 md:px-6">
+                <header class="text-center">
+                    <a href="./blog.html" class="text-sm font-semibold text-accent hover:underline">&larr; Back to Resources</a>
+                    <h1 class="display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">Decoding Your Cash Flow Statement: A Simple Guide</h1>
+                    <p class="mt-6 text-lg leading-8 text-neutral">Authored by Edz Lilian Galdones on <time datetime="2025-09-02">September 2, 2025</time></p>
+                </header>
+                <div class="prose prose-lg mx-auto mt-16">
+                    <p class="lead">Profit is great, but cash is king. You can have a profitable business on paper and still go bankrupt because you ran out of cash. This is why the Statement of Cash Flows is arguably the most critical financial report for any business owner. It shows you where your cash came from, where it went, and its net change over a period.</p>
+                    <p>Let's break it down into its three core components.</p>
+                    
+                    <h3>1. Cash Flow from Operating Activities</h3>
+                    <p>This is the lifeblood of your business. It represents the cash generated from your primary business operations—selling your products or services. It starts with your net income and then adjusts for non-cash items (like depreciation) and changes in working capital (like accounts receivable and inventory). A healthy, positive number here means your core business is successfully generating more cash than it consumes.</p>
+                    <blockquote><strong>What to look for:</strong> Is this number consistently positive and growing? A negative operating cash flow is a major warning sign that your business model may not be sustainable.</blockquote>
+
+                    <h3>2. Cash Flow from Investing Activities</h3>
+                    <p>This section tracks the cash used to buy or sell long-term assets. Think of things like purchasing new equipment, buying a property, or even investing in other companies. For a growing company, this number is often negative, which isn't necessarily a bad thing—it shows you're investing in assets to fuel future growth. Conversely, if you sell off a major asset, you'll see a positive cash inflow here.</p>
+                     <blockquote><strong>What to look for:</strong> Are you making strategic investments in your business's future? Or are you selling off assets just to cover operational shortfalls? The context is key.</blockquote>
+
+                    <h3>3. Cash Flow from Financing Activities</h3>
+                    <p>This part of the statement shows how you're funding your business with outside capital. It includes cash inflows from taking out loans or issuing stock, and cash outflows from repaying debt, paying dividends, or buying back stock. For a startup, you'll likely see a positive inflow here from investor funding or a bank loan.</p>
+                    <blockquote><strong>What to look for:</strong> How are you balancing debt and equity? Are you heavily reliant on loans to stay afloat, or are you in a strong enough position to pay down debt or reward shareholders?</blockquote>
+
+                    <h3>Putting It All Together: The Bottom Line</h3>
+                    <p>The final line on the statement, "Net Increase/Decrease in Cash," tells you the story. It's the sum of the cash flows from all three activities. This number should directly correspond to the change in your cash balance on your Balance Sheet from the beginning to the end of the period.</p>
+                    
+                    <hr class="my-12">
+                    
+                    <div class="text-center bg-neutral-light p-8 rounded-2xl">
+                        <h2 class="display text-2xl font-bold">Unlock True Financial Insight</h2>
+                        <p class="mt-4">Understanding your Statement of Cash Flows is non-negotiable for smart decision-making. It helps you anticipate shortages, plan for growth, and speak confidently to investors.</p>
+                        <a href="./portfolio.html#contact" class="mt-6 inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-white shadow-glow hover:opacity-90 transition-transform hover:scale-105">Get a Custom Financial Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </main>
+    
+    <!-- ============ Footer ============ -->
+    <footer class="bg-brand text-slate-300 relative pt-16">
+        <div class="mx-auto max-w-7xl px-4 md:px-6 pb-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div class="md:col-span-1">
+                    <h3 class="display text-xl font-bold text-white">Edz Lilian Galdones</h3>
+                    <p class="text-sm mt-2 text-slate-400">Your partner in financial clarity.</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="./portfolio.html#services" class="hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="./portfolio.html#work" class="hover:text-accent transition-colors">Case Studies</a></li>
+                        <li><a href="./blog.html" class="hover:text-accent transition-colors">Resources</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Get in Touch</h4>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li><a href="mailto:info@elgaldones.works" class="hover:text-accent transition-colors">info@elgaldones.works</a></li>
+                        <li><a href="./portfolio.html#contact" class="hover:text-accent transition-colors">Book a Call</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Connect</h4>
+                    <div class="flex items-center gap-4 mt-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
+                &copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved. <a href="./portfolio.html" class="hover:text-accent">Back to Main Portfolio</a>.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mbtn = document.getElementById('menuBtn');
+        const mmenu = document.getElementById('mobileMenu');
+        const mobileLinks = mmenu.querySelectorAll('a');
+        const toggleMenu = () => { mmenu.classList.toggle('hidden'); mbtn.setAttribute('aria-expanded', mmenu.classList.contains('hidden') ? 'false' : 'true'); };
+        mbtn?.addEventListener('click', toggleMenu);
+        mobileLinks.forEach(link => link.addEventListener('click', () => { if (!mmenu.classList.contains('hidden')) toggleMenu(); }));
+    </script>
+</body>
+</html>
+
