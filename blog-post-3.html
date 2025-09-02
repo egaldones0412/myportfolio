@@ -3,17 +3,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>How Clean Bookkeeping Makes Tax Time Stress-Free • Edz Lilian Galdones</title>
-    <meta name="description" content="Discover how year-round financial discipline can save you time, money, and headaches when it's time to file." />
+    <title>Edz Lilian Galdones • Bookkeeping Portfolio</title>
+    <meta name="description" content="Professional bookkeeping that transforms messy financials into a clear roadmap for growth. Full-charge support for U.S. & Canadian businesses." />
     <meta name="theme-color" content="#14324F" />
+    <link rel="canonical" href="https://www.elgaldones.works/" />
     <meta name="robots" content="index,follow" />
-    <link rel="canonical" href="https://www.elgaldones.works/blog-post-3.html" />
 
     <!-- Google Fonts: Open Sans & Montserrat -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
     
+    <!-- Favicons / App Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#2CA01C">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#14324F">
+    <meta name="theme-color" content="#14324F">
+
+    <!-- Swiper.js for Testimonial Carousel -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -46,16 +59,22 @@
 
     <style>
         :root {
-            --color-surface: #FFFFFF;
-            --color-brand: #14324F;
-            --color-accent: #2CA01C;
+            --color-surface: #FFFFFF;    /* White */
+            --color-brand: #14324F;      /* Dark Blue */
+            --color-accent: #2CA01C;     /* Green Accent */
             --color-box: #FFFFFF;
-            --color-neutral: #000000;
-            --color-neutral-light: #EAF6F7;
+            --color-neutral: #000000;      /* Dark Gray/Black for Body */
+            --color-neutral-light: #EAF6F7; /* Light Background */
         }
         html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
         body { color: var(--color-neutral); font-family: 'Open Sans', sans-serif; background-color: var(--color-surface); }
         .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; color: var(--color-brand); }
+        
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        [data-animate-entry] { animation: fadeInUp 0.8s ease-out forwards; animation-delay: var(--delay, 0s); }
+        [data-animate] { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease-out, transform 0.6s ease-out; transition-delay: var(--stagger, 0s); }
+        [data-animate].in-view { opacity: 1; transform: translateY(0); }
+        [data-animate-width] { transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1); transition-delay: 0.3s; }
         
         .nav-link { position: relative; }
         .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -4px; left: 0; background-color: var(--color-accent); transform-origin: bottom right; transition: transform 0.25s ease-out; }
@@ -63,20 +82,126 @@
             transform: scaleX(1);
             transform-origin: bottom left;
          }
-        .nav-link.active { color: var(--color-accent); }
-
-        .prose {
-            --tw-prose-body: var(--color-neutral);
-            --tw-prose-headings: var(--color-brand);
-            --tw-prose-lead: var(--color-neutral);
-            --tw-prose-links: var(--color-accent);
-            --tw-prose-bold: var(--color-brand);
-            --tw-prose-counters: var(--color-accent);
-            --tw-prose-bullets: var(--color-accent);
-            --tw-prose-hr: #e5e7eb;
-            --tw-prose-quotes: var(--color-brand);
-            --tw-prose-quote-borders: var(--color-accent);
+        .nav-link.active {
+            color: var(--color-accent);
         }
+        
+        .interactive-card { transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out; }
+        .interactive-card:hover { transform: translateY(-8px); box-shadow: var(--tw-shadow-elevate), var(--tw-shadow-glow); border-color: var(--color-accent); }
+        .interactive-card:hover .service-icon { transform: scale(1.1) rotate(-5deg); color: var(--color-accent); }
+
+        .swiper-button-prev, .swiper-button-next { color: var(--color-neutral); transition: color 0.2s, transform 0.2s; }
+        .swiper-button-prev:hover, .swiper-button-next:hover { color: var(--color-accent); transform: scale(1.1); }
+        .testimonial-swiper { padding-top: 60px; padding-bottom: 40px; overflow: visible; }
+        .swiper-pagination-bullet { background-color: var(--color-neutral); opacity: 0.3; }
+        .swiper-pagination-bullet-active { background-color: var(--color-brand); opacity: 1; }
+        
+        #scrollTopBtn { position: fixed; bottom: 20px; right: 20px; z-index: 50; opacity: 0; transform: translateY(20px); transition: opacity 0.3s, transform 0.3s; }
+        #scrollTopBtn.visible { opacity: 1; transform: translateY(0); }
+        
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary { list-style: none; }
+        .faq-item .icon-plus { display: block; }
+        .faq-item .icon-minus { display: none; }
+        .faq-item[open] .icon-plus { display: none; }
+        .faq-item[open] .icon-minus { display: block; }
+        .faq-item:hover { border-color: var(--color-accent); }
+
+        .form-input:focus { box-shadow: 0 0 0 2px var(--color-surface), 0 0 0 4px var(--color-accent); border-color: var(--color-accent); }
+        
+        .timeline-item { position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .timeline-item:hover { transform: translateY(-5px); box-shadow: var(--tw-shadow-elevate); }
+        .timeline-item:not(:last-child)::after {
+            content: '';
+            position: absolute;
+            left: 2rem; 
+            top: 4.5rem; 
+            bottom: -2.5rem; 
+            width: 2px;
+            background-image: linear-gradient(to bottom, var(--color-accent) 40%, transparent 50%);
+            background-size: 100% 10px;
+            opacity: 0.3;
+            transition: opacity 0.3s;
+        }
+        .timeline-item:hover::after { opacity: 0.8; }
+
+
+        .send-button:hover .paper-plane-icon { transform: rotate(10deg) translateX(3px) translateY(-3px); }
+
+        .section-divider { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+
+        /* Calendly Modal Styles */
+        #calendly-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none; /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        #calendly-modal-overlay.visible {
+            display: flex;
+            opacity: 1;
+        }
+        #calendly-modal {
+            background-color: white;
+            border-radius: 16px;
+            width: 90%;
+            max-width: 1000px;
+            height: 90%;
+            max-height: 700px;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+            overflow: hidden;
+        }
+         #calendly-modal-overlay.visible #calendly-modal {
+            transform: scale(1);
+        }
+
+        #calendly-close-btn {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: rgba(0,0,0,0.3);
+            color: white;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1001;
+        }
+        #calendly-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: var(--color-brand);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
     </style>
 </head>
 <body class="antialiased">
@@ -84,24 +209,25 @@
     <header class="sticky top-0 z-40 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/80 border-b border-gray-200">
         <div class="mx-auto max-w-7xl px-4 md:px-6">
             <div class="flex h-16 items-center justify-between">
-                <a href="./portfolio.html" class="flex items-center gap-3 font-semibold text-brand">
+                <a href="#" class="flex items-center gap-3 font-semibold text-brand">
                     <img src="https://placehold.co/36x28/14324F/ffffff?text=ELG" alt="Edz Lilian Galdones Logo" class="inline-flex h-7 w-9 items-center justify-center rounded-lg bg-surface">
                     <span class="hidden sm:block font-display">Edz Lilian Galdones</span>
                 </a>
                 <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
-                    <a href="./portfolio.html#services" class="nav-link text-brand hover:text-accent transition-colors">Services</a>
-                    <a href="./portfolio.html#work" class="nav-link text-brand hover:text-accent transition-colors">Work</a>
-                    <a href="./portfolio.html#testimonials" class="nav-link text-brand hover:text-accent transition-colors">Testimonials</a>
-                    <a href="./portfolio.html#process" class="nav-link text-brand hover:text-accent transition-colors">Process</a>
-                    <a href="./portfolio.html#about" class="nav-link text-brand hover:text-accent transition-colors">About</a>
-                    <a href="./blog.html" class="nav-link text-brand hover:text-accent transition-colors active">Resources</a>
-                    <a href="./portfolio.html#faq" class="nav-link text-brand hover:text-accent transition-colors">FAQ</a>
-                    <a href="./portfolio.html#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
+                    <a href="#services" class="nav-link text-brand hover:text-accent transition-colors">Services</a>
+                    <a href="#work" class="nav-link text-brand hover:text-accent transition-colors">Work</a>
+                    <a href="#testimonials" class="nav-link text-brand hover:text-accent transition-colors">Testimonials</a>
+                    <a href="#process" class="nav-link text-brand hover:text-accent transition-colors">Process</a>
+                    <a href="#about" class="nav-link text-brand hover:text-accent transition-colors">About</a>
+                    <a href="./blog.html" class="nav-link text-brand hover:text-accent transition-colors">Resources</a>
+                    <a href="#faq" class="nav-link text-brand hover:text-accent transition-colors">FAQ</a>
+                    <a href="#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
                 </nav>
                 <div class="flex items-center gap-3">
-                    <a href="./portfolio.html#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow hover:opacity-90 transition-all hover:scale-105">
+                    <button type="button" class="open-modal-button hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow hover:opacity-90 transition-all hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
                         Book a Free Call
-                    </a>
+                    </button>
                     <button class="md:hidden rounded-xl border border-gray-200 p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                     </button>
@@ -110,98 +236,758 @@
         </div>
         <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-surface/95">
             <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm font-semibold">
-                 <a href="./portfolio.html#services" class="text-brand hover:text-accent">Services</a>
-                 <a href="./portfolio.html#work" class="text-brand hover:text-accent">Work</a>
-                 <a href="./portfolio.html#testimonials" class="text-brand hover:text-accent">Testimonials</a>
-                 <a href="./portfolio.html#process" class="text-brand hover:text-accent">Process</a>
-                 <a href="./portfolio.html#about" class="text-brand hover:text-accent">About</a>
-                 <a href="./blog.html" class="text-accent font-bold">Resources</a>
-                 <a href="./portfolio.html#faq" class="text-brand hover:text-accent">FAQ</a>
-                 <a href="./portfolio.html#contact" class="text-brand hover:text-accent">Contact</a>
+                <a href="#services" class="text-brand hover:text-accent">Services</a>
+                <a href="#work" class="text-brand hover:text-accent">Work</a>
+                <a href="#testimonials" class="text-brand hover:text-accent">Testimonials</a>
+                <a href="#process" class="text-brand hover:text-accent">Process</a>
+                <a href="#about" class="text-brand hover:text-accent">About</a>
+                <a href="./blog.html" class="text-brand hover:text-accent">Resources</a>
+                <a href="#faq" class="text-brand hover:text-accent">FAQ</a>
+                <a href="#contact" class="text-brand hover:text-accent">Contact</a>
             </div>
         </div>
     </header>
 
     <main>
-        <article class="py-24 sm:py-32">
-            <div class="mx-auto max-w-3xl px-4 md:px-6">
-                <header class="text-center">
-                    <a href="./blog.html" class="text-sm font-semibold text-accent hover:underline">&larr; Back to Resources</a>
-                    <h1 class="display mt-4 text-4xl font-bold tracking-tight sm:text-5xl">How Clean Bookkeeping Makes Tax Time Stress-Free</h1>
-                    <p class="mt-6 text-lg leading-8 text-neutral">Authored by Edz Lilian Galdones on <time datetime="2025-09-02">September 2, 2025</time></p>
-                </header>
-                <div class="prose prose-lg mx-auto mt-16">
-                    <p class="lead">For many business owners, tax season is synonymous with long nights, frantic searches for documents, and a looming sense of uncertainty. But it doesn't have to be that way. The secret to a painless tax season isn't a last-minute scramble—it's consistent, clean bookkeeping throughout the year.</p>
-                    <p>Think of it as the difference between cramming for an exam versus studying a little bit every day. One is stressful and prone to error; the other is calm, organized, and leads to a much better outcome.</p>
-
-                    <h3>Maximizing Deductions and Minimizing Errors</h3>
-                    <p>When your expenses are meticulously tracked and categorized every month, you ensure that no eligible deduction is missed. Did you buy a new piece of software? Pay for a business lunch? Subscribe to an industry journal? These small expenses add up. Clean books provide a clear, complete record, allowing you and your CPA to confidently claim every deduction you're entitled to, potentially saving you thousands of dollars.</p>
-
-                    <h3>Creating an Audit-Ready Trail</h3>
-                    <p>An audit is unlikely for most small businesses, but the risk is never zero. The best defense is a good offense. With clean books, every number on your tax return is backed by a clear, traceable transaction. Your bank statements are reconciled, major purchases are documented, and your income is properly recorded. Should the tax authorities ever come knocking, you can provide them with organized, professional records that satisfy their inquiries quickly and painlessly.</p>
-                    
-                    <h3>Saving Time and Money on Tax Prep</h3>
-                    <p>Accountants and tax preparers typically charge by the hour. If you hand them a shoebox full of crumpled receipts and unsorted bank statements, you are paying for their time to do basic bookkeeping work—at a premium rate. When you provide them with a clean, reconciled set of books, they can focus immediately on high-level tax strategy and filing. This not only results in a lower bill from your CPA but also frees them up to provide more valuable advice.</p>
-                    
-                    <h3>Enabling Proactive Tax Planning</h3>
-                    <p>Perhaps the biggest benefit of clean books is the ability to plan ahead. When you have a clear picture of your profitability month-to-month, you can work with your accountant to make strategic decisions *before* the year ends. You can forecast your tax liability and avoid surprises. You might decide to make a large equipment purchase before December 31st to lower your taxable income or adjust your estimated tax payments to avoid penalties. This proactive approach is only possible with up-to-date, reliable financial data.</p>
-                    
-                    <hr class="my-12">
-                    
-                    <div class="text-center bg-neutral-light p-8 rounded-2xl">
-                        <h2 class="display text-2xl font-bold">Make Next Tax Season Your Easiest Yet</h2>
-                        <p class="mt-4">Clean bookkeeping transforms tax time from a reactive, stressful event into a proactive, strategic checkpoint. It's an investment in peace of mind.</p>
-                        <a href="./portfolio.html#contact" class="mt-6 inline-flex items-center rounded-xl bg-accent px-6 py-3 font-semibold text-white shadow-glow hover:opacity-90 transition-transform hover:scale-105">Get Your Books Tax-Ready Today</a>
+        <!-- ============ Hero ============ -->
+        <section id="hero" class="relative overflow-hidden pt-24 md:pt-32 pb-28 md:pb-36 bg-surface">
+            <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+                <div class="grid items-center gap-12 md:grid-cols-2">
+                    <div class="opacity-0 text-center md:text-left" data-animate-entry="fade-up" data-delay="0.2">
+                        <h1 class="display text-5xl font-bold md:text-6xl text-brand">Clarity. Control. <span class="text-accent">Confidence.</span></h1>
+                        <p class="mt-5 text-lg text-neutral max-w-xl mx-auto md:mx-0">
+                            Full-charge bookkeeping for US & Canadian small businesses. I deliver audit-ready books, 5-day closes, and management dashboards that drive decisions.
+                        </p>
+                        <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
+                            <button type="button" class="open-modal-button inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-opacity-90 transition-transform shadow-lg hover:scale-105">Book a 15-min Fit Call</button>
+                            <a href="#work" class="inline-flex items-center rounded-xl border border-gray-200 bg-box/50 px-5 py-3 font-semibold text-brand hover:bg-box hover:border-accent transition-all hover:scale-105">See 3 Real Case Studies</a>
+                        </div>
+                    </div>
+                    <div class="relative opacity-0" data-animate-entry="fade-up" data-delay="0.4">
+                        <div class="rounded-3xl border border-gray-200 bg-box p-1 shadow-elevate">
+                            <div class="h-full w-full rounded-[1.25rem] p-6 space-y-4" data-animate>
+                                <p class="text-sm font-semibold text-center text-brand">Proven Results for Clients Like You</p>
+                                <div class="rounded-xl border border-gray-200 p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>AR Collections</span><span class="text-accent">+17%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="65%"></div></div>
+                                </div>
+                                <div class="rounded-xl border border-gray-200 p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Month-End Close Time</span><span class="text-accent">-40%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="40%"></div></div>
+                                </div>
+                                <div class="rounded-xl border border-gray-200 p-4">
+                                    <div class="flex justify-between items-center text-sm font-semibold text-brand"><span>Audit Readiness</span><span class="text-accent">100%</span></div>
+                                    <div class="mt-3 h-2 rounded-full bg-neutral-light"><div class="h-2 rounded-full bg-accent w-0" data-animate-width="100%"></div></div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </article>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+
+        <!-- ============ Services ============ -->
+        <section id="services" class="py-28 bg-neutral-light relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-3xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Services That Bring Your Numbers to Life</h2>
+                    <p class="mt-4 text-neutral">From daily bookkeeping to strategic reporting, I provide tailored solutions designed to keep your finances accurate, compliant, and insightful.</p>
+                </header>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-gray-200 bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#2CA01C;" />
+                                        <stop offset="100%" style="stop-color:#32B428;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 6v.01M12 18v-2m0-4a2 2 0 00-2 2v2a2 2 0 002 2zM12 18V9.01M12 18h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Core Bookkeeping Essentials</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                            <li>Monthly Reconciliations</li>
+                            <li>Journal Entries & Corrections</li>
+                            <li>Month/Year-End Closing</li>
+                        </ul>
+                    </article>
+                    <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-gray-200 bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient-2)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient-2" x1="0%" y1="0%" x2="100%" y2="100%">
+                                       <stop offset="0%" style="stop-color:#2CA01C;" />
+                                       <stop offset="100%" style="stop-color:#32B428;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Cleanup & Compliance</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                            <li>Catch-Up & Backlog Cleanup</li>
+                            <li>Tax Support (HST, GST)</li>
+                            <li>Audit-Ready Financials</li>
+                        </ul>
+                    </article>
+                    <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-gray-200 bg-surface p-8 shadow-elevate text-center">
+                        <div class="service-icon inline-block p-4 bg-accent/10 rounded-full transition-transform">
+                            <svg class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="url(#icon-gradient-3)" stroke-width="2">
+                                <defs>
+                                    <linearGradient id="icon-gradient-3" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" style="stop-color:#2CA01C;" />
+                                        <stop offset="100%" style="stop-color:#32B428;" />
+                                    </linearGradient>
+                                </defs>
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" /><path d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-brand display mt-4">Growth & Insights</h3>
+                        <ul class="mt-4 space-y-2 text-sm text-neutral list-none">
+                           <li>KPI Dashboards & Reporting</li>
+                           <li>Cash Flow Management</li>
+                           <li>Process Improvement</li>
+                        </ul>
+                    </article>
+                </div>
+                <div class="mt-16 text-center" data-animate><a href="#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-white hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Get a Custom Plan</a></div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,0 C480,50,960,50,1440,0 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Who I Help ============ -->
+        <section id="who-i-help" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                 <header class="max-w-3xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Specializing in Your Success</h2>
+                    <p class="mt-4 text-neutral">I partner with ambitious founders who need a reliable financial expert in their corner. My ideal clients are:</p>
+                </header>
+                <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                    <div data-animate style="--stagger: 0.1s;">
+                        <div class="inline-block p-4 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75a2.25 2.25 0 0 0-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3" /></svg></div>
+                        <h3 class="mt-4 display font-semibold text-lg">SaaS & Tech Startups</h3>
+                        <p class="mt-2 text-sm text-neutral">Managing recurring revenue, GAAP compliance, and investor-ready reporting.</p>
+                    </div>
+                     <div data-animate style="--stagger: 0.2s;">
+                        <div class="inline-block p-4 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" /></svg></div>
+                        <h3 class="mt-4 display font-semibold text-lg">Creative & Service Agencies</h3>
+                        <p class="mt-2 text-sm text-neutral">Tracking project profitability, managing client retainers, and optimizing cash flow.</p>
+                    </div>
+                     <div data-animate style="--stagger: 0.3s;">
+                        <div class="inline-block p-4 bg-accent/10 rounded-full"><svg class="w-8 h-8 text-accent" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="m20.25 7.5-.625 10.632a2.25 2.25 0 0 1-2.247 2.118H6.622a2.25 2.25 0 0 1-2.247-2.118L3.75 7.5M10 11.25h4M3.375 7.5h17.25c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125Z" /></svg></div>
+                        <h3 class="mt-4 display font-semibold text-lg">E-Commerce Businesses</h3>
+                        <p class="mt-2 text-sm text-neutral">Handling inventory, COGS, sales tax compliance, and multi-platform revenue streams.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+        
+        <!-- ============ Work / Case Studies ============ -->
+        <section id="work" class="py-28 bg-neutral-light relative">
+             <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Selected Work</h2>
+                    <p class="mt-3 text-neutral">Anonymized snapshots of impact delivered for clients.</p>
+                </header>
+                <div class="mt-16 grid gap-8 md:grid-cols-1 lg:grid-cols-3">
+                    <!-- Card 1 -->
+                    <article data-animate style="--stagger: 0.1s;" class="interactive-card rounded-3xl border border-gray-200 bg-surface p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">🛒 Retail Company</h3>
+                        <p class="text-sm text-neutral mt-1">From Chaos to Audit-Ready</p>
+                        <div class="mt-4 space-y-4 text-sm flex-grow">
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>3 years of unreconciled accounts</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Inconsistent COGS reporting</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Rebuilt full ledger & corrected COGS</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Delivered accurate, audit-ready books</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>3 years of backlog cleared in 45 days</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Monthly close achieved within 5 business days</li></ul></div>
+                    </article>
+                    <!-- Card 2 -->
+                    <article data-animate style="--stagger: 0.2s;" class="interactive-card rounded-3xl border border-gray-200 bg-box p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">🛠 Service Business</h3>
+                        <p class="text-sm text-neutral mt-1">Turning Data Into Decisions</p>
+                         <div class="mt-4 space-y-4 text-sm flex-grow">
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>No management insights from raw numbers</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Delays in AR collection</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Built monthly KPI dashboards & reports</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Structured AR monitoring process</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg><span class="font-bold text-accent mr-1">+17%</span> increase in AR collections</li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Leadership gained confidence in planning</li></ul></div>
+                    </article>
+                    <!-- Card 3 -->
+                    <article data-animate style="--stagger: 0.3s;" class="interactive-card rounded-3xl border border-gray-200 bg-box p-6 shadow-elevate flex flex-col">
+                        <h3 class="font-semibold text-brand display text-lg">💻 SaaS Startup</h3>
+                        <p class="text-sm text-neutral mt-1">Streamlining Month-End Close</p>
+                        <div class="mt-4 space-y-4 text-sm flex-grow">
+                           <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Challenge</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Closing process took 10+ days</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-red-500/70 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"/></svg>Revenue recognition not GAAP compliant</li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-brand/80 text-xs uppercase tracking-wider">The Solution</h4>
+                                <ul class="mt-2 space-y-1.5 text-neutral">
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Aligned revenue recognition with GAAP</li>
+                                    <li class="flex items-start"><svg class="w-4 h-4 text-accent mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Automated journal entries</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-200"><h4 class="font-semibold text-brand">Results:</h4><ul class="mt-2 space-y-1 text-sm text-neutral"><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Month-end close time reduced by <span class="font-bold text-accent ml-1">40%</span></li><li class="flex items-center"><svg class="w-4 h-4 text-accent mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>Faster, reliable financials for investors</li></ul></div>
+                    </article>
+                </div>
+             </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,0 C480,50,960,50,1440,0 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Sample Deliverables ============ -->
+        <section id="deliverables" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-animate>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">From Raw Data to Actionable Insights</h2>
+                        <p class="mt-4 text-neutral">My goal isn't just to give you numbers; it's to provide you with a clear, visual story of your business's financial health. I transform complex data into intuitive, at-a-glance dashboards that empower you to make smarter, faster decisions.</p>
+                        <ul class="mt-6 space-y-3 text-neutral">
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Track key performance indicators (KPIs) like revenue, expenses, and profitability in real-time.</span></li>
+                            <li class="flex items-start"><svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Visualize cash flow trends to anticipate needs and opportunities.</span></li>
+                             <li class="flex items-start"><svg class="w-5 h-5 text-accent mr-3 mt-1 flex-shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg><span>Receive a clear, concise monthly report package you can actually use.</span></li>
+                        </ul>
+                    </div>
+                     <div data-animate style="--stagger: 0.2s;">
+                        <img src="https://placehold.co/600x450/EAF6F7/14324F?text=Sample+KPI+Dashboard" alt="A clean, professional-looking sample of a financial KPI dashboard for a small business." class="rounded-2xl shadow-elevate w-full">
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+
+        <!-- ============ Testimonials Carousel ============ -->
+        <section id="testimonials" class="py-28 relative overflow-hidden bg-neutral-light">
+             <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+                <header class="max-w-2xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">What Clients Say</h2>
+                    <p class="mt-3 text-neutral">Real words from teams I support.</p>
+                </header>
+                <div class="mt-16" data-animate>
+                    <div class="swiper testimonial-swiper">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-surface p-8 text-center shadow-elevate mx-auto"><img src="https://placehold.co/80x80/2CA01C/FFFFFF?text=DB" loading="lazy" alt="Testimonial from Danny Batimana" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Danny V.B.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Working with Edz has been a game-changer... I honestly feel like she saved me — her dedication and expertise gave me peace of mind and the confidence to move forward."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Founder – Happiness Is Now Inc.</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-surface p-8 text-center shadow-elevate mx-auto"><img src="https://placehold.co/80x80/2CA01C/FFFFFF?text=SN" loading="lazy" alt="Testimonial from Scarlet Ngo" class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Scarlet N.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Edz has been such a valuable part of our team. Her accuracy, consistency, and dedication have helped us get through an incredibly busy tax season with confidence."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Managing Partner – Clarity Tax</figcaption></figure></div>
+                            <div class="swiper-slide"><figure class="w-full max-w-2xl rounded-3xl bg-surface p-8 text-center shadow-elevate mx-auto"><img src="https://placehold.co/80x80/2CA01C/FFFFFF?text=MP" loading="lazy" alt="Testimonial from Mick P." class="w-20 h-20 rounded-full object-cover mx-auto -mt-20 mb-4 border-4 border-accent"><h3 class="font-semibold text-accent display text-lg">Mick P.</h3><div class="flex justify-center gap-1 text-accent my-3"><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg><svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg></div><blockquote class="text-neutral text-sm italic">"Thanks to Edz, our QuickBooks management reports were corrected and successfully accepted by the Hong Kong institution. She was proactive, quick to respond, and meticulous in solving the issues."</blockquote><figcaption class="mt-4 text-xs font-semibold text-brand tracking-wider uppercase">Co-Founder - Rise Up Media Limited</figcaption></figure></div>
+                        </div>
+                        <div class="swiper-pagination"></div>
+                        <div class="swiper-button-next"></div>
+                        <div class="swiper-button-prev"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,0 C480,50,960,50,1440,0 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Process ============ -->
+        <section id="process" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Simple, Transparent Process</h2>
+                    <p class="mt-3 text-neutral">From intro call to monthly delivery, clarity is built-in at every step.</p>
+                </header>
+                <div class="mt-16 max-w-3xl mx-auto">
+                    <div class="space-y-10">
+                        <!-- Process Item 1 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.1s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md border border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow border border-gray-200"><h3 class="font-semibold text-brand text-lg display">Step 1: Intro Call</h3><p class="mt-1 text-sm text-neutral">We discuss your scope, systems, and goals to ensure we're a perfect fit.</p></div>
+                        </div>
+                        <!-- Process Item 2 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.2s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md border border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z" /><path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow border border-gray-200"><h3 class="font-semibold text-brand text-lg display">Step 2: File Review</h3><p class="mt-1 text-sm text-neutral">I assess the health of your books and identify any cleanup needs. <em class="text-xs block mt-1 text-gray-400">"This gave us peace of mind knowing our books were accurate."</em></p></div>
+                        </div>
+                        <!-- Process Item 3 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.3s;">
+                           <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md border border-gray-200">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z" /><path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow border border-gray-200"><h3 class="font-semibold text-brand text-lg display">Step 3: Onboarding</h3><p class="mt-1 text-sm text-neutral">Seamlessly get set up with secure access, a clear checklist, and defined KPIs.</p></div>
+                        </div>
+                        <!-- Process Item 4 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.4s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md border border-gray-200">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow border border-gray-200"><h3 class="font-semibold text-brand text-lg display">Step 4: Monthly Close</h3><p class="mt-1 text-sm text-neutral">I handle all reconciliations, adjustments, and validations for a timely close.</p></div>
+                        </div>
+                        <!-- Process Item 5 -->
+                        <div class="timeline-item flex items-start" data-animate style="--stagger: 0.5s;">
+                            <div class="flex-shrink-0 w-16 h-16 rounded-full bg-box text-accent flex items-center justify-center font-bold text-2xl mr-6 shadow-md border border-gray-200">
+                               <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor"><path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" /></svg>
+                            </div>
+                            <div class="bg-box rounded-2xl p-6 flex-grow border border-gray-200"><h3 class="font-semibold text-brand text-lg display">Step 5: Delivery & Review</h3><p class="mt-1 text-sm text-neutral">Receive your financial statements and actionable insights to guide your decisions.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ About ============ -->
+        <section id="about" class="py-28 bg-neutral-light relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid gap-12 md:grid-cols-2 items-center">
+                    <div class="md:col-span-1" data-animate><img src="https://placehold.co/550x550/FFFFFF/14324F?text=Edz" alt="Headshot of Edz Lilian Galdones" loading="lazy" class="rounded-3xl shadow-elevate w-full aspect-square object-cover"></div>
+                    <div class="md:col-span-1" data-animate>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">Meet Edz Lilian Galdones</h2>
+                        <p class="mt-4 text-brand font-semibold">I’m not just here to balance books — I’m here to give you the clarity and confidence to grow your business.</p>
+                        <p class="mt-4 text-neutral text-sm">I started my bookkeeping career helping small businesses bring order to messy, stressful financials. Over the last 4+ years, I’ve managed 20+ client accounts across the U.S. and Canada — from retail and professional services to SaaS startups.</p>
+                        <p class="mt-2 text-neutral text-sm">As a Certified QuickBooks ProAdvisor and Xero ProAdvisor, I specialize in full-charge bookkeeping, management reporting, and tax compliance under IFRS and GAAP standards. Whether it’s reconciling three years of backlogs or designing KPI dashboards that drive decisions, I deliver accurate, reliable results — always on time.</p>
+                        
+                        <div class="mt-12 pt-8 border-t border-gray-300">
+                             <h3 class="display text-2xl font-semibold">Certified & Trusted</h3>
+                             <p class="mt-3 text-neutral text-sm">As a certified QuickBooks ProAdvisor and Xero Advisor, I adhere to the highest standards of professional excellence and integrity, ensuring your books are always accurate and compliant.</p>
+                             <div class="flex items-center gap-8 mt-6">
+                                 <a href="#" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-110">
+                                     <img src="https://placehold.co/150x150/EAF6F7/14324F?text=QuickBooks+ProAdvisor" alt="QuickBooks ProAdvisor Badge" class="h-28 w-28 object-contain">
+                                 </a>
+                                 <a href="#" target="_blank" rel="noopener noreferrer" class="transition-transform hover:scale-110">
+                                     <img src="https://placehold.co/150x150/EAF6F7/14324F?text=Xero+Certified+Advisor" alt="Xero Certified Advisor Badge" class="h-28 w-28 object-contain">
+                                 </a>
+                             </div>
+                        </div>
+
+                       <button type="button" class="open-modal-button mt-12 inline-flex items-center rounded-xl bg-brand px-5 py-3 font-semibold text-white hover:bg-opacity-90 transition-transform shadow-lg hover:scale-105">Let’s Work Together</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,0 C480,50,960,50,1440,0 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Software Section ============ -->
+        <section id="software" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-3xl mx-auto text-center" data-animate>
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Expertise Across All Major Platforms</h2>
+                </header>
+                <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-x-8 gap-y-12 items-center" data-animate>
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=QuickBooks" alt="QuickBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=Xero" alt="Xero Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=Wave" alt="Wave Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=MYOB" alt="MYOB Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=Zoho" alt="Zoho Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=FreshBooks" alt="FreshBooks Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=Sage" alt="Sage Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                    <img src="https://placehold.co/200x80/FFFFFF/14324F?text=Odoo" alt="Odoo Logo" class="mx-auto h-12 w-auto object-contain transition-transform hover:scale-110">
+                </div>
+            </div>
+            <div class="section-divider">
+                 <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Resources ============ -->
+        <section id="resources" class="py-28 bg-neutral-light relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="text-center">
+                    <h2 class="display text-3xl font-semibold md:text-4xl">Insights from the Ledger</h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-neutral">I believe in empowering founders with financial knowledge. Explore my articles for actionable advice on building a more profitable and stable business.</p>
+                    <div class="mt-8">
+                        <a href="./blog.html" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-white hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Explore All Resources</a>
+                    </div>
+                </div>
+            </div>
+            <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,0 C480,50,960,50,1440,0 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ FAQ ============ -->
+        <section id="faq" class="py-28 bg-surface relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <header class="max-w-2xl mx-auto text-center" data-animate><h2 class="display text-3xl font-semibold md:text-4xl">Frequently Asked Questions</h2><p class="mt-3 text-neutral">Quick answers to common questions.</p></header>
+                <div class="mt-16 grid gap-6 md:grid-cols-2" data-animate>
+                    <details class="faq-item group rounded-2xl border border-gray-200 bg-surface p-6 cursor-pointer transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do I know my financial data will be secure?<span class="text-accent transition-transform transform rotate-0 group-open:rotate-45"><svg class="w-5 h-5 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="w-5 h-5 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></span></summary><p class="mt-4 text-sm text-neutral pt-4 border-t border-gray-200">I take data security seriously. I use secure, encrypted platforms for all file sharing and communication, and adhere to strict confidentiality agreements. Access to your financial software is granted on a least-privilege basis to ensure maximum protection.</p></details>
+                    <details class="faq-item group rounded-2xl border border-gray-200 bg-surface p-6 cursor-pointer transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">What happens if I already have an accountant?<span class="text-accent transition-transform transform rotate-0 group-open:rotate-45"><svg class="w-5 h-5 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="w-5 h-5 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></span></summary><p class="mt-4 text-sm text-neutral pt-4 border-t border-gray-200">I often collaborate with existing accountants and CPAs. My role is to handle the detailed, day-to-day bookkeeping and monthly reporting, which ensures your accountant has clean, accurate, and timely data for tax planning and strategic advisory. This teamwork approach saves you time and money.</p></details>
+                    <details class="faq-item group rounded-2xl border border-gray-200 bg-surface p-6 cursor-pointer transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">Do you work 100% virtually?<span class="text-accent transition-transform transform rotate-0 group-open:rotate-45"><svg class="w-5 h-5 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="w-5 h-5 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></span></summary><p class="mt-4 text-sm text-neutral pt-4 border-t border-gray-200">Yes — secure, remote delivery across time zones using least‑privilege access.</p></details>
+                    <details class="faq-item group rounded-2xl border border-gray-200 bg-surface p-6 cursor-pointer transition-colors"><summary class="font-semibold text-brand list-none flex justify-between items-center">How do you price services?<span class="text-accent transition-transform transform rotate-0 group-open:rotate-45"><svg class="w-5 h-5 icon-plus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg><svg class="w-5 h-5 icon-minus" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"></path></svg></span></summary><p class="mt-4 text-sm text-neutral pt-4 border-t border-gray-200">Simple monthly tiers based on volume and complexity. Cleanup is quoted as a project.</p></details>
+                </div>
+            </div>
+             <div class="section-divider">
+                <svg viewBox="0 0 1440 50" class="w-full h-auto" fill="var(--color-neutral-light)">
+                    <path d="M0,50 C480,0,960,0,1440,50 L1440,50 L0,50 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Contact ============ -->
+        <section id="contact" class="py-28 bg-neutral-light relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6 relative z-10">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div data-animate>
+                        <h2 class="display text-3xl font-semibold md:text-4xl">Let’s Work Together</h2>
+                        <p class="mt-3 text-neutral max-w-lg">Ready for stress-free books and audit-ready clarity? I’d love to partner with you.</p>
+                        <p class="mt-2 text-neutral max-w-lg">📩 Fill out the form below and I’ll personally get back to you within 1 business day.</p>
+                        <div class="mt-8 space-y-4">
+                            <a href="mailto:info@elgaldones.works" class="flex items-center gap-4 text-neutral hover:text-accent transition-colors">
+                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-light flex items-center justify-center border border-gray-200 text-brand">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                                </span>
+                                <span>info@elgaldones.works</span>
+                            </a>
+                            <a href="#" class="flex items-center gap-4 text-neutral hover:text-accent transition-colors">
+                                <span class="flex-shrink-0 w-10 h-10 rounded-full bg-neutral-light flex items-center justify-center border border-gray-200 text-brand">
+                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                                </span>
+                                <span>Connect on LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    <form id="contact-form" action="https://formspree.io/f/xvgqywoz" method="POST" class="bg-neutral-light rounded-2xl p-8 shadow-elevate min-h-[400px] flex flex-col justify-center" data-animate>
+                        <div id="form-content">
+                            <div class="grid gap-y-6">
+                                <div class="relative">
+                                    <label for="name" class="sr-only">Name</label>
+                                    <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd" /></svg>
+                                    <input id="name" name="name" type="text" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="Your name" required />
+                                </div>
+                                <div class="relative">
+                                    <label for="email" class="sr-only">Email</label>
+                                        <svg class="w-5 h-5 text-gray-400 absolute top-1/2 left-4 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                                    <input id="email" name="email" type="email" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="you@company.com" required />
+                                </div>
+                                <div class="relative">
+                                    <label for="message" class="sr-only">Message</label>
+                                    <svg class="w-5 h-5 text-gray-400 absolute top-5 left-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zM7 8H5v2h2V8zm2 0h2v2H9V8zm6 0h-2v2h2V8z" clip-rule="evenodd" /></svg>
+                                    <textarea id="message" name="message" rows="4" class="form-input rounded-xl border border-gray-200 bg-surface py-3 pl-11 pr-4 w-full text-brand outline-none transition-all" placeholder="What do you need help with?" required></textarea>
+                                </div>
+                            </div>
+                            <button id="submit-button" type="submit" class="send-button mt-6 w-full inline-flex items-center justify-center rounded-xl bg-accent px-5 py-3 font-semibold text-white shadow-lg hover:opacity-90 transition-transform hover:scale-105">
+                                Let’s Be Partners
+                                <svg xmlns="http://www.w3.org/2000/svg" class="paper-plane-icon w-4 h-4 ml-2 transition-transform" viewBox="0 0 20 20" fill="currentColor">
+                                    <path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" />
+                                </svg>
+                            </button>
+                            <p id="form-status" class="text-center text-sm text-red-500 mt-4 h-4"></p>
+                            <div class="flex items-center text-xs text-gray-400 mt-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                                  <path fill-rule="evenodd" d="M18 8a6 6 0 11-12 0 6 6 0 0112 0zM7 8a.75.75 0 01.75.75v2.5a.75.75 0 01-1.5 0v-2.5A.75.75 0 017 8zm4.75.75a.75.75 0 00-1.5 0v4.5a.75.75 0 001.5 0v-4.5z" clip-rule="evenodd" />
+                                </svg>
+                                Your information is safe with me.
+                            </div>
+                        </div>
+                        <div id="form-success" class="hidden text-center py-8">
+                            <svg class="w-16 h-16 mx-auto text-accent" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                            <h3 class="text-xl font-semibold text-brand mt-4">Thank you for reaching out!</h3>
+                            <p class="text-neutral mt-2">Your message means a lot — I’ll review your goals and personally get back to you within one business day. Together, we’ll build the clarity, confidence, and control your business deserves.</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-    
+
     <!-- ============ Footer ============ -->
     <footer class="bg-brand text-slate-300 relative pt-16">
         <div class="mx-auto max-w-7xl px-4 md:px-6 pb-12">
             <div class="grid md:grid-cols-4 gap-8">
+                <!-- Column 1: Brand & Info -->
                 <div class="md:col-span-1">
                     <h3 class="display text-xl font-bold text-white">Edz Lilian Galdones</h3>
-                    <p class="text-sm mt-2 text-slate-400">Your partner in financial clarity.</p>
+                    <p class="text-sm mt-2 text-slate-400">Your partner in financial clarity and business growth.</p>
+                    <div class="mt-4 text-sm" id="footer-local-time">Location: Philippines • Serving clients globally</div>
                 </div>
+
+                <!-- Column 2: Quick Links -->
                 <div>
                     <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Quick Links</h4>
                     <ul class="mt-4 space-y-2 text-sm">
-                        <li><a href="./portfolio.html#services" class="hover:text-accent transition-colors">Services</a></li>
-                        <li><a href="./portfolio.html#work" class="hover:text-accent transition-colors">Case Studies</a></li>
+                        <li><a href="#services" class="hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="#work" class="hover:text-accent transition-colors">Case Studies</a></li>
+                        <li><a href="#about" class="hover:text-accent transition-colors">About Me</a></li>
                         <li><a href="./blog.html" class="hover:text-accent transition-colors">Resources</a></li>
+                        <li><a href="#faq" class="hover:text-accent transition-colors">FAQ</a></li>
                     </ul>
                 </div>
+
+                <!-- Column 3: Get in Touch -->
                 <div>
                     <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Get in Touch</h4>
                     <ul class="mt-4 space-y-3 text-sm">
-                        <li><a href="mailto:info@elgaldones.works" class="hover:text-accent transition-colors">info@elgaldones.works</a></li>
-                        <li><a href="./portfolio.html#contact" class="hover:text-accent transition-colors">Book a Call</a></li>
+                        <li class="flex items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                           <a href="mailto:info@elgaldones.works" class="hover:text-accent transition-colors">info@elgaldones.works</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                           <button type="button" class="open-modal-button hover:text-accent transition-colors">Book a Call</button>
+                        </li>
                     </ul>
                 </div>
+
+                <!-- Column 4: Socials -->
                 <div>
                     <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Connect</h4>
                     <div class="flex items-center gap-4 mt-4">
-                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile"><svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
                     </div>
                 </div>
             </div>
             <div class="mt-12 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
-                &copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved. <a href="./portfolio.html" class="hover:text-accent">Back to Main Portfolio</a>.
+                &copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved.
             </div>
         </div>
     </footer>
+
+
+    <button id="scrollTopBtn" class="rounded-full bg-accent text-white p-3 shadow-lg hover:scale-110 transition-transform" aria-label="Scroll to top"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg></button>
+    
+    <!-- Calendly Modal -->
+    <div id="calendly-modal-overlay">
+        <div id="calendly-modal">
+            <button id="calendly-close-btn" aria-label="Close scheduler">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div id="calendly-spinner" class="loading-spinner"></div>
+            <iframe id="calendly-iframe" src="" frameborder="0"></iframe>
+        </div>
+    </div>
+
+    <!-- Core Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-        const mbtn = document.getElementById('menuBtn');
-        const mmenu = document.getElementById('mobileMenu');
-        const mobileLinks = mmenu.querySelectorAll('a');
-        const toggleMenu = () => { mmenu.classList.toggle('hidden'); mbtn.setAttribute('aria-expanded', mmenu.classList.contains('hidden') ? 'false' : 'true'); };
-        mbtn?.addEventListener('click', toggleMenu);
-        mobileLinks.forEach(link => link.addEventListener('click', () => { if (!mmenu.classList.contains('hidden')) toggleMenu(); }));
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- Standard Site Logic ---
+            document.getElementById('year').textContent = new Date().getFullYear();
+            const mbtn = document.getElementById('menuBtn');
+            const mmenu = document.getElementById('mobileMenu');
+            const mobileLinks = mmenu.querySelectorAll('a');
+            const toggleMenu = () => { const isHidden = mmenu.classList.toggle('hidden'); mbtn.setAttribute('aria-expanded', !isHidden); };
+            mbtn?.addEventListener('click', toggleMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', () => { if (!mmenu.classList.contains('hidden')) toggleMenu(); }));
+            const scrollTopBtn = document.getElementById('scrollTopBtn');
+            window.addEventListener('scroll', () => { scrollTopBtn.classList.toggle('visible', window.scrollY > 300); });
+            scrollTopBtn.addEventListener('click', () => { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+            
+            const localTimeEl = document.getElementById('local-time');
+            const footerLocalTimeEl = document.getElementById('footer-local-time');
+            if(localTimeEl || footerLocalTimeEl) {
+                const updateTime = () => {
+                    const now = new Date();
+                    const options = { timeZone: 'Asia/Manila', hour: 'numeric', minute: 'numeric', hour12: true };
+                    const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
+                    const fullString = `Location: Philippines • My local time: <span class="font-semibold text-white">${timeString} (PHT)</span>`;
+                    if(localTimeEl) localTimeEl.innerHTML = fullString;
+                    if(footerLocalTimeEl) footerLocalTimeEl.innerHTML = `Philippines (GMT+8) • ${new Intl.DateTimeFormat('en-US', { timeZone: 'Asia/Manila', hour: 'numeric', minute: 'numeric', hour12: true }).format(now)}`;
+
+                };
+                updateTime();
+                setInterval(updateTime, 60000);
+            }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('in-view');
+                        const progressBars = entry.target.querySelectorAll('[data-animate-width]');
+                        progressBars.forEach(bar => { bar.style.width = bar.dataset.animateWidth; });
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('[data-animate], [data-animate-entry]').forEach(el => observer.observe(el));
+            new Swiper('.testimonial-swiper', {
+                loop: true, slidesPerView: 1, spaceBetween: 40, centeredSlides: true,
+                autoplay: { delay: 6000, disableOnInteraction: false },
+                pagination: { el: '.swiper-pagination', clickable: true },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+            });
+
+            // --- Formspree AJAX Submission ---
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const form = e.target;
+                    const data = new FormData(form);
+                    const action = form.action;
+                    const formContent = document.getElementById('form-content');
+                    const successMessage = document.getElementById('form-success');
+                    const statusMessage = document.getElementById('form-status');
+                    const submitButton = document.getElementById('submit-button');
+
+                    statusMessage.textContent = 'Sending...';
+                    statusMessage.style.color = 'var(--color-neutral)';
+                    submitButton.disabled = true;
+
+                    fetch(action, {
+                        method: 'POST',
+                        body: data,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    }).then(response => {
+                        if (response.ok) {
+                            statusMessage.textContent = '';
+                            if (formContent) formContent.style.display = 'none';
+                            if (successMessage) successMessage.classList.remove('hidden');
+                            form.reset();
+                        } else {
+                            response.json().then(data => {
+                                if (Object.hasOwn(data, 'errors')) {
+                                    statusMessage.textContent = data["errors"].map(error => error["message"]).join(", ");
+                                } else {
+                                    statusMessage.textContent = 'Oops! There was a problem submitting your form.';
+                                }
+                                statusMessage.style.color = 'red';
+                                submitButton.disabled = false;
+                            })
+                        }
+                    }).catch(error => {
+                        statusMessage.textContent = 'Oops! There was a problem submitting your form.';
+                        statusMessage.style.color = 'red';
+                        submitButton.disabled = false;
+                    });
+                });
+            }
+
+            // --- Calendly Modal Logic ---
+            const modalOverlay = document.getElementById('calendly-modal-overlay');
+            const openModalButtons = document.querySelectorAll('.open-modal-button');
+            const closeModalBtn = document.getElementById('calendly-close-btn');
+            const calendlyIframe = document.getElementById('calendly-iframe');
+            const calendlySpinner = document.getElementById('calendly-spinner');
+            const calendlyUrl = 'https://calendly.com/elgaldones_works';
+
+            const openModal = () => {
+                modalOverlay.classList.add('visible');
+                calendlySpinner.style.display = 'block';
+                calendlyIframe.src = calendlyUrl;
+            };
+
+            const closeModal = () => {
+                modalOverlay.classList.remove('visible');
+                calendlyIframe.src = ''; // Stop loading to save resources
+            };
+
+            calendlyIframe.onload = () => {
+                 calendlySpinner.style.display = 'none';
+            };
+
+            openModalButtons.forEach(button => button.addEventListener('click', openModal));
+            closeModalBtn.addEventListener('click', closeModal);
+            modalOverlay.addEventListener('click', (e) => {
+                if (e.target === modalOverlay) {
+                    closeModal();
+                }
+            });
+            
+            // --- Nav Link Highlighting on Scroll ---
+            const sections = document.querySelectorAll('main section[id]');
+            const navLinks = document.querySelectorAll('header nav a');
+            const mobileNavLinks = document.querySelectorAll('#mobileMenu a');
+            const allNavLinks = [...navLinks, ...mobileNavLinks];
+            const headerHeight = document.querySelector('header').offsetHeight;
+
+            const onScroll = () => {
+                let currentSectionId = "hero"; // Default to hero
+
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    if (sectionTop <= headerHeight + 1) { 
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+
+                if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 2) {
+                   currentSectionId = sections[sections.length - 1].getAttribute('id');
+                }
+
+                allNavLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') === `#${currentSectionId}`) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', onScroll);
+
+
+        });
     </script>
 </body>
 </html>
+
+
 
