@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Insights & Resources • Edz Lilian Galdones</title>
+    <meta name="description" content="Actionable advice from Edz Lilian Galdones to help you gain control over your business finances." />
+    <meta name="theme-color" content="#14324F" />
+    <meta name="robots" content="noindex,nofollow" />
+
+    <!-- Google Fonts: Open Sans & Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        const defaultTheme = tailwind.defaultTheme;
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Open Sans', ...defaultTheme.fontFamily.sans],
+                        'display': ['Montserrat', ...defaultTheme.fontFamily.sans],
+                    },
+                    colors: {
+                        brand: { DEFAULT: 'var(--color-brand)' },
+                        accent: 'var(--color-accent)',
+                        surface: 'var(--color-surface)',
+                        box: 'var(--color-box)',
+                        neutral: {
+                            DEFAULT: 'var(--color-neutral)',
+                            light: 'var(--color-neutral-light)',
+                        }
+                    },
+                    boxShadow: {
+                        'elevate': '0 8px 30px rgba(20, 50, 79, 0.07)',
+                        'glow': '0 0 20px rgba(44, 160, 28, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        :root {
+            --color-surface: #FFFFFF;
+            --color-brand: #14324F;
+            --color-accent: #2CA01C;
+            --color-box: #FFFFFF;
+            --color-neutral: #000000;
+            --color-neutral-light: #EAF6F7;
+        }
+        html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+        body { color: var(--color-neutral); font-family: 'Open Sans', sans-serif; background-color: var(--color-surface); }
+        .display { font-family: 'Montserrat', sans-serif; letter-spacing: -0.02em; color: var(--color-brand); }
+        
+        .nav-link { position: relative; }
+        .nav-link::after { content: ''; position: absolute; width: 100%; transform: scaleX(0); height: 2px; bottom: -4px; left: 0; background-color: var(--color-accent); transform-origin: bottom right; transition: transform 0.25s ease-out; }
+        .nav-link:hover::after, .nav-link.active::after { 
+            transform: scaleX(1);
+            transform-origin: bottom left;
+         }
+        .nav-link.active {
+            color: var(--color-accent);
+        }
+
+        .interactive-card { transition: transform 0.3s ease-out, box-shadow 0.3s ease-out; }
+        .interactive-card:hover { transform: translateY(-8px); box-shadow: var(--tw-shadow-elevate); }
+        .section-divider { position: absolute; bottom: -1px; left: 0; width: 100%; line-height: 0; }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- ============ Header ============ -->
+    <header class="sticky top-0 z-40 backdrop-blur-lg supports-[backdrop-filter]:bg-surface/80 border-b border-gray-200">
+        <div class="mx-auto max-w-7xl px-4 md:px-6">
+            <div class="flex h-16 items-center justify-between">
+                <a href="./portfolio.html" class="flex items-center gap-3 font-semibold text-brand">
+                    <img src="https://placehold.co/36x28/14324F/ffffff?text=ELG" alt="Edz Lilian Galdones Logo" class="inline-flex h-7 w-9 items-center justify-center rounded-lg bg-surface">
+                    <span class="hidden sm:block font-display">Edz Lilian Galdones</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                    <a href="./portfolio.html#services" class="nav-link text-brand hover:text-accent transition-colors">Services</a>
+                    <a href="./portfolio.html#work" class="nav-link text-brand hover:text-accent transition-colors">Work</a>
+                    <a href="./portfolio.html#testimonials" class="nav-link text-brand hover:text-accent transition-colors">Testimonials</a>
+                    <a href="./portfolio.html#process" class="nav-link text-brand hover:text-accent transition-colors">Process</a>
+                    <a href="./portfolio.html#about" class="nav-link text-brand hover:text-accent transition-colors">About</a>
+                    <a href="./blog.html" class="nav-link text-brand hover:text-accent transition-colors active">Resources</a>
+                    <a href="./portfolio.html#faq" class="nav-link text-brand hover:text-accent transition-colors">FAQ</a>
+                    <a href="./portfolio.html#contact" class="nav-link text-brand hover:text-accent transition-colors">Contact</a>
+                </nav>
+                <div class="flex items-center gap-3">
+                    <a href="./portfolio.html#contact" class="hidden sm:inline-flex items-center gap-2 rounded-xl bg-accent px-4 py-2 text-sm font-semibold text-white shadow-glow hover:opacity-90 transition-all hover:scale-105">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                        Book a Free Call
+                    </a>
+                    <button class="md:hidden rounded-xl border border-gray-200 p-2" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobileMenu" class="md:hidden hidden border-t border-gray-200 bg-surface/95">
+            <div class="mx-auto max-w-7xl px-4 py-4 grid gap-3 text-sm font-semibold">
+                <a href="./portfolio.html#services" class="text-brand hover:text-accent">Services</a>
+                <a href="./portfolio.html#work" class="text-brand hover:text-accent">Work</a>
+                <a href="./portfolio.html#testimonials" class="text-brand hover:text-accent">Testimonials</a>
+                <a href="./portfolio.html#process" class="text-brand hover:text-accent">Process</a>
+                <a href="./portfolio.html#about" class="text-brand hover:text-accent">About</a>
+                <a href="./blog.html" class="text-accent font-bold">Resources</a>
+                <a href="./portfolio.html#faq" class="text-brand hover:text-accent">FAQ</a>
+                <a href="./portfolio.html#contact" class="text-brand hover:text-accent">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ============ Blog Hero ============ -->
+        <section class="relative bg-neutral-light pt-24 pb-28 md:pt-32 md:pb-36 text-center">
+            <div class="mx-auto max-w-4xl px-4 md:px-6 relative z-10">
+                <h1 class="display text-4xl font-bold tracking-tight sm:text-6xl">Insights from the Ledger</h1>
+                <p class="mt-6 text-lg leading-8 text-neutral">Actionable advice from my desk to yours. Explore these articles to help you gain control over your business finances, build confidence in your decisions, and unlock a more profitable future.</p>
+            </div>
+             <div class="section-divider">
+                <svg viewBox="0 0 1440 100" class="w-full h-auto" fill="var(--color-surface)">
+                    <path d="M0,70 C240,30,480,110,720,70 C960,30,1200,110,1440,70 L1440,100 L0,100 Z"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- ============ Articles Grid ============ -->
+        <section class="py-28 bg-surface">
+             <div class="mx-auto max-w-7xl px-4 md:px-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="interactive-card rounded-3xl border border-gray-200 bg-surface shadow-elevate flex flex-col overflow-hidden">
+                       <a href="./blog-post-1.html" class="block">
+                         <img src="https://placehold.co/600x400/EAF6F7/14324F?text=Financial+Health" alt="Abstract image representing financial health" class="w-full h-48 object-cover">
+                       </a>
+                       <div class="p-6 flex flex-col flex-grow">
+                           <h3 class="font-semibold text-brand display"><a href="./blog-post-1.html" class="hover:text-accent transition-colors">5 Signs Your Business Is Ready for a Professional Bookkeeper</a></h3>
+                           <p class="mt-2 text-sm text-neutral flex-grow">Are you spending more time on spreadsheets than on your actual business? It might be time for an expert.</p>
+                           <a href="./blog-post-1.html" class="mt-4 text-sm font-semibold text-accent self-start">Read More &rarr;</a>
+                       </div>
+                    </article>
+                    <article class="interactive-card rounded-3xl border border-gray-200 bg-surface shadow-elevate flex flex-col overflow-hidden">
+                       <a href="./blog-post-2.html" class="block">
+                         <img src="https://placehold.co/600x400/EAF6F7/14324F?text=Cash+Flow" alt="Abstract image representing cash flow" class="w-full h-48 object-cover">
+                       </a>
+                       <div class="p-6 flex flex-col flex-grow">
+                           <h3 class="font-semibold text-brand display"><a href="./blog-post-2.html" class="hover:text-accent transition-colors">Decoding Your Cash Flow Statement: A Simple Guide</a></h3>
+                           <p class="mt-2 text-sm text-neutral flex-grow">Learn how to read the one report that reveals the true health of your business operations.</p>
+                           <a href="./blog-post-2.html" class="mt-4 text-sm font-semibold text-accent self-start">Read More &rarr;</a>
+                       </div>
+                    </article>
+                    <article class="interactive-card rounded-3xl border border-gray-200 bg-surface shadow-elevate flex flex-col overflow-hidden">
+                       <a href="./blog-post-3.html" class="block">
+                        <img src="https://placehold.co/600x400/EAF6F7/14324F?text=Tax+Time" alt="Abstract image representing tax preparation" class="w-full h-48 object-cover">
+                       </a>
+                       <div class="p-6 flex flex-col flex-grow">
+                           <h3 class="font-semibold text-brand display"><a href="./blog-post-3.html" class="hover:text-accent transition-colors">How Clean Bookkeeping Makes Tax Time Stress-Free</a></h3>
+                           <p class="mt-2 text-sm text-neutral flex-grow">Discover how year-round financial discipline can save you time, money, and headaches when it's time to file.</p>
+                           <a href="./blog-post-3.html" class="mt-4 text-sm font-semibold text-accent self-start">Read More &rarr;</a>
+                       </div>
+                    </article>
+                </div>
+              </div>
+        </section>
+
+        <!-- ============ CTA Section ============ -->
+        <section class="py-28 bg-neutral-light relative">
+            <div class="mx-auto max-w-7xl px-4 md:px-6 text-center">
+                 <h2 class="display text-3xl font-semibold md:text-4xl">Ready to Gain Financial Clarity?</h2>
+                 <p class="mt-4 max-w-2xl mx-auto text-neutral">If you're ready to partner with a bookkeeper who provides not just numbers, but also peace of mind, let's connect. I’m here to help you build a stronger financial foundation for your business.</p>
+                 <div class="mt-8">
+                     <a href="./portfolio.html#contact" class="inline-flex items-center rounded-xl bg-accent px-8 py-4 font-semibold text-white hover:opacity-90 transition-transform hover:scale-105 shadow-glow">Book a Free Consultation</a>
+                 </div>
+            </div>
+        </section>
+    </main>
+    
+    <!-- ============ Footer ============ -->
+    <footer class="bg-brand text-slate-300 relative pt-16">
+        <div class="mx-auto max-w-7xl px-4 md:px-6 pb-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <!-- Column 1: Brand & Info -->
+                <div class="md:col-span-1">
+                    <h3 class="display text-xl font-bold text-white">Edz Lilian Galdones</h3>
+                    <p class="text-sm mt-2 text-slate-400">Your partner in financial clarity and business growth.</p>
+                    <div class="mt-4 text-sm" id="footer-local-time">Location: Philippines • Serving clients globally</div>
+                </div>
+
+                <!-- Column 2: Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Quick Links</h4>
+                    <ul class="mt-4 space-y-2 text-sm">
+                        <li><a href="./portfolio.html#services" class="hover:text-accent transition-colors">Services</a></li>
+                        <li><a href="./portfolio.html#work" class="hover:text-accent transition-colors">Case Studies</a></li>
+                        <li><a href="./portfolio.html#about" class="hover:text-accent transition-colors">About Me</a></li>
+                         <li><a href="./blog.html" class="hover:text-accent transition-colors">Resources</a></li>
+                        <li><a href="./portfolio.html#faq" class="hover:text-accent transition-colors">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Get in Touch -->
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Get in Touch</h4>
+                    <ul class="mt-4 space-y-3 text-sm">
+                        <li class="flex items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" /></svg>
+                           <a href="mailto:info@elgaldones.works" class="hover:text-accent transition-colors">info@elgaldones.works</a>
+                        </li>
+                         <li class="flex items-center gap-2">
+                           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd" /></svg>
+                           <a href="./portfolio.html#contact" class="hover:text-accent transition-colors">Book a Call</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Socials -->
+                <div>
+                    <h4 class="font-semibold text-white tracking-wider uppercase text-sm">Connect</h4>
+                    <div class="flex items-center gap-4 mt-4">
+                        <a href="#" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-accent transition-colors" aria-label="LinkedIn Profile">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 border-t border-slate-700 pt-6 text-center text-sm text-slate-400">
+                &copy; <span id="year"></span> Edz Lilian Galdones. All rights reserved. <a href="./portfolio.html" class="hover:text-accent">Back to Main Portfolio</a>.
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+        const mbtn = document.getElementById('menuBtn');
+        const mmenu = document.getElementById('mobileMenu');
+        mbtn?.addEventListener('click', () => mmenu.classList.toggle('hidden'));
+    </script>
+</body>
+</html>
+
